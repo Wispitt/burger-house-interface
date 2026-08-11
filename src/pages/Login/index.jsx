@@ -7,12 +7,17 @@ import {
     Paragraph,
     InputLogin,
     ButtonEnter,
-    DivGoogle,
-    DivApple,
-    Name
+    ContainersSocial,
+    Name,
+    ContainersForm,
+    EndParagraph,
+    GoogleContainer,
+    AppleContainer
 } from './styles';
 
 import logoBurger from '../../assets/burger-icon.png';
+import logoGoogle from '../../assets/google.png';
+import logoApple from '../../assets/apple.png';
 
 export function Login() {
     return (
@@ -23,30 +28,39 @@ export function Login() {
                     <h1>Burger House</h1>
                 </Titlle>
 
-                <Paragraph>Faça login para acessar sua conta.</Paragraph>
+                <Paragraph>Faça login para acessar sua conta</Paragraph>
                 <Form>
-                    <div>
+                    <ContainersForm>
                         <p>E-mail</p>
                         <InputLogin type='email' placeholder='Digite seu email' />
+                    </ContainersForm>
 
+                    <ContainersForm>
                         <p>Senha</p>
                         <InputLogin type='password' placeholder='Digite sua senha' />
+                    </ContainersForm>
 
+                    <ContainersForm>
                         <a>Esqueceu a senha?</a>
                         <ButtonEnter type='button'>Entar</ButtonEnter>
-                    </div>
+                    </ContainersForm>
+
                 </Form>
                 <p>ou continue com</p>
 
-                <DivGoogle>
-                    <Name>Google</Name>
-                </DivGoogle>
+                <ContainersSocial>
+                    <GoogleContainer>
+                        <img src={logoGoogle}></img>
+                        <Name>Google</Name>
+                    </GoogleContainer>
 
-                <DivApple>
-                    <Name>Apple</Name>
-                </DivApple>
+                    <AppleContainer>
+                        <img src={logoApple}></img>
+                        <Name>Apple</Name>
+                    </AppleContainer>
+                </ContainersSocial>
 
-                <p>Ainda não tem conta? <a>Cadastre-se</a></p>
+                <EndParagraph>Ainda não tem conta?<a>Cadastre-se</a></EndParagraph>
             </ContainerMain>
         </Container>
     )

@@ -14,7 +14,6 @@ export const Container = styled.div`
 export const ContainerMain = styled.div`
     width: 30%;
     height: 60%;
-    border: 2px solid;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,14 +30,16 @@ export const Titlle = styled.div`
     height: 60px;
 
     h1 {
-        font-size: 40px;
+        font-size: 180%;
+        font-family: "Sekuya", system-ui;
+        color: #4d2b12;
     }
 `
 
 export const Paragraph = styled.p`
     text-align: center;
-    font-size: 15px;
-    margin-bottom: 20px;
+    font-size: 13px;
+    font-family: "Roboto", sans-serif;
 `
 
 export const Form = styled.form`
@@ -47,27 +48,103 @@ export const Form = styled.form`
     justify-content: center;
     align-items: center;
     width: 88%;
+
+    p {
+        margin-left: 3px;
+    }
+
+    a {
+        margin-left: 3px;
+        color: #a65e41;
+
+        &:hover {
+        color: #d3812f;
+        }
+    }
+`
+
+export const ContainersForm = styled.div`
+    width: 100%;
+    margin-top: 14px;
 `
 
 export const InputLogin = styled.input`
     width: 100%;
-    height: 30px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 0 10px;
+    font-size: 13px;
+    border: 1px solid black;
 `
 
 export const ButtonEnter = styled.button`
     width: 100%;
-    height: 30px;
-    margin-top: 17px;
+    height: 37px;
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 18px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+
+    &:hover {
+        border: 1px solid #f09132;
+        color: #f09132;
+    }
+
+    &:active {
+        background-color: #f9eed8;
+        opacity: 0.6;
+    }
 `
 
-export const DivGoogle = styled.div`
+export const ContainersSocial = styled.div`
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 50%;
 
-`
-
-export const DivApple = styled.div`
-
+    img {
+        width: 20px;
+    }
 `
 
 export const Name = styled.h3`
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    cursor: pointer;
 
+    &:hover {
+        color: #f38820;
+    }
+`
+
+export const EndParagraph = styled.div`
+    height: 100%;
+    display: flex;
+    margin-top: 10px;
+    font-size: 16px;
+
+    a {
+        color: #e28930;
+        margin-left: 3px;
+
+        &:hover {
+        color: #c56d14;
+        }
+    }
+`
+
+export const GoogleContainer = styled.div`
+    display: flex;
+    gap: 3px;
+    height: 20px;
+`
+
+export const AppleContainer = styled.div`
+    display: flex;
+    gap: 3px;
+    height: 20px;
 `
