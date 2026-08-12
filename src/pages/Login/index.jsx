@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import {
     Container,
     ContainerMain,
@@ -19,7 +21,10 @@ import logoBurger from '../../assets/burger-icon.png';
 import logoGoogle from '../../assets/google.png';
 import logoApple from '../../assets/apple.png';
 
-export function Login() {
+export function LoginUser() {
+
+    const navigate = useNavigate()
+
     return (
         <Container>
             <ContainerMain>
@@ -60,7 +65,7 @@ export function Login() {
                     </AppleContainer>
                 </ContainersSocial>
 
-                <EndParagraph>Ainda não tem conta?<a>Cadastre-se</a></EndParagraph>
+                <EndParagraph>Ainda não tem conta?<a onClick={() => navigate('/cadastro-de-usuario')}>Cadastre-se</a></EndParagraph>
             </ContainerMain>
         </Container>
     )

@@ -55,11 +55,17 @@ export const Form = styled.form`
 
     a {
         margin-left: 3px;
-        color: #a65e41;
+        color: #ce5301;
 
         &:hover {
-        color: #d3812f;
+        color: #ad641a;
+        opacity: 0.8;
         }
+
+        &:active {
+            opacity: 0.6;
+        }
+        
     }
 `
 
@@ -72,7 +78,7 @@ export const InputLogin = styled.input`
     width: 100%;
     height: 36px;
     border-radius: 8px;
-    background-color: transparent;
+    background-color: #fff;
     padding: 0 10px;
     font-size: 13px;
     border: 1px solid black;
@@ -82,7 +88,8 @@ export const ButtonEnter = styled.button`
     width: 100%;
     height: 37px;
     border-radius: 8px;
-    background-color: transparent;
+    background-color: black;
+    color: #fff;
     font-size: 18px;
     border: 1px solid black;
     margin-bottom: 10px;
@@ -95,13 +102,12 @@ export const ButtonEnter = styled.button`
     }
 
     &:active {
-        background-color: #f9eed8;
-        opacity: 0.6;
+        opacity: 0.8;
     }
 `
 
 export const ContainersSocial = styled.div`
-    margin-top: 5px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     gap: 50%;
@@ -122,17 +128,20 @@ export const Name = styled.h3`
 `
 
 export const EndParagraph = styled.div`
-    height: 100%;
     display: flex;
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 16px;
 
     a {
-        color: #e28930;
+        color: #ce5301;
         margin-left: 3px;
 
         &:hover {
-        color: #c56d14;
+        color: #e6a768;
+        }
+
+        &:active {
+            opacity: 0.6;
         }
     }
 `
