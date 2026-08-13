@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import backGround from '../../assets/backgound-interface.jpeg'
+import backGround from '../../assets/img/backgound-interface.jpeg'
 
 export const Container = styled.div`
     background-image: url(${backGround});
@@ -23,42 +23,10 @@ export const IconLogo = styled.img`
     width: 70px;
 `
 
-export const Titlle = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-
-    h1 {
-        font-size: 184%;
-        font-family: "Sekuya", system-ui;
-        color: #4d2b12;
-    }
-`
-
-export const SnackBar = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 7px;
-
-    color: black;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 4px;
-
-    &::before, &::after {
-        content: "";
-        width: 50px;
-        height: 2px;
-        background: black;
-    }
-`
-
 export const Paragraph = styled.p`
-margin-top: 5px;
+    margin-top: 5px;
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     font-family: "Roboto", sans-serif;
 `
 
@@ -170,5 +138,5 @@ export const GoogleContainer = styled.div`
 export const AppleContainer = styled.div`
     display: flex;
     gap: 3px;
-    height: 20px;
+    height: 22px;
 `

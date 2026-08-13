@@ -5,7 +5,6 @@ import {
     ContainerMain,
     Form,
     IconLogo,
-    Titlle,
     Paragraph,
     InputLogin,
     ButtonEnter,
@@ -14,13 +13,12 @@ import {
     ContainersForm,
     EndParagraph,
     GoogleContainer,
-    AppleContainer,
-    SnackBar
+    AppleContainer
 } from './styles';
 
-import logoBurger from '../../assets/burger-icon.png';
-import logoGoogle from '../../assets/google.png';
-import logoApple from '../../assets/apple.png';
+import { Title } from '../../components/Title'
+import logoGoogle from '../../assets/img/google.png';
+import logoApple from '../../assets/img/apple.png';
 
 export function CadastroUser() {
 
@@ -29,14 +27,7 @@ export function CadastroUser() {
     return (
         <Container>
             <ContainerMain>
-                <Titlle>
-                    <IconLogo src={logoBurger} />
-                    <h1>Burger House</h1>
-                </Titlle>
-
-                <SnackBar>
-                    <span>SNACK BAR</span>
-                </SnackBar>
+                <Title></Title>
 
                 <Paragraph>Crie sua conta na Burger House</Paragraph>
 

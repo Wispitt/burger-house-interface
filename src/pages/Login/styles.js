@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import backGround from '../../assets/backgound-interface.jpeg'
+import backGround from '../../assets/img/backgound-interface.jpeg'
 
 export const Container = styled.div`
     background-image: url(${backGround});
@@ -17,23 +17,6 @@ export const ContainerMain = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-`
-
-export const IconLogo = styled.img`
-    width: 70px;
-`
-
-export const Titlle = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-
-    h1 {
-        font-size: 180%;
-        font-family: "Sekuya", system-ui;
-        color: #4d2b12;
-    }
 `
 
 export const Paragraph = styled.p`
@@ -155,5 +138,5 @@ export const GoogleContainer = styled.div`
 export const AppleContainer = styled.div`
     display: flex;
     gap: 3px;
-    height: 20px;
+    height: 22px;
 `

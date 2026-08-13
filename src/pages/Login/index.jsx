@@ -4,8 +4,6 @@ import {
     Container,
     ContainerMain,
     Form,
-    IconLogo,
-    Titlle,
     Paragraph,
     InputLogin,
     ButtonEnter,
@@ -17,9 +15,9 @@ import {
     AppleContainer
 } from './styles';
 
-import logoBurger from '../../assets/burger-icon.png';
-import logoGoogle from '../../assets/google.png';
-import logoApple from '../../assets/apple.png';
+import { Title } from '../../components/Title'
+import logoGoogle from '../../assets/img/google.png';
+import logoApple from '../../assets/img/apple.png';
 
 export function LoginUser() {
 
@@ -28,10 +26,7 @@ export function LoginUser() {
     return (
         <Container>
             <ContainerMain>
-                <Titlle>
-                    <IconLogo src={logoBurger} />
-                    <h1>Burger House</h1>
-                </Titlle>
+                <Title />
 
                 <Paragraph>Faça login para acessar sua conta</Paragraph>
                 <Form>
@@ -47,7 +42,7 @@ export function LoginUser() {
 
                     <ContainersForm>
                         <a>Esqueceu a senha?</a>
-                        <ButtonEnter type='button'>Entar</ButtonEnter>
+                        <ButtonEnter type='button' onClick={() => navigate('/Home')}>Entrar</ButtonEnter>
                     </ContainersForm>
 
                 </Form>
