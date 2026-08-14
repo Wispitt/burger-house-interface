@@ -14,7 +14,11 @@ import {
     Footer,
     FooterLeft,
     FooterMain,
-    FooterRight
+    IconAdd,
+    FooterRight,
+    TitleWrapper,
+    IconLogo,
+    SnackBar
 } from './styles'
 
 import { Title } from "../../components/Title"
@@ -37,8 +41,16 @@ export function Home() {
         <Container>
 
             <Section>
-                <Title />
+                <div>
+                    <TitleWrapper>
+                        <IconLogo src={logoBurger} alt="logo" />
+                        <h1>Burger House</h1>
+                    </TitleWrapper>
 
+                    <SnackBar>
+                        <span>SNACK BAR</span>
+                    </SnackBar>
+                </div>
                 <Header>
                     <a>Início</a>
                     <a>Cardápio</a>
@@ -56,13 +68,16 @@ export function Home() {
                 </Highlights>
             </Section>
 
+
+
+
             <Article>
                 <ProdutsMain>
                     <ProductImage src={firstBurger} />
                     <NameProduct>Classic Burger</NameProduct>
                     <p>Pão, carne, queijo, alface, tomate e maionese especial.</p>
                     <ProductValue>R$ 24,90</ProductValue>
-                    <img src={addIcon} />
+                    <IconAdd src={addIcon} />
                 </ProdutsMain>
 
                 <ProdutsMain>
@@ -70,7 +85,7 @@ export function Home() {
                     <NameProduct>Bacon House</NameProduct>
                     <p>Pão, carne, queijo, bacon crocante, cebola caramelizada e molho especial.</p>
                     <ProductValue>R$ 32,90</ProductValue>
-                    <img src={addIcon} />
+                    <IconAdd src={addIcon} />
                 </ProdutsMain>
 
                 <ProdutsMain>
@@ -78,7 +93,7 @@ export function Home() {
                     <NameProduct>Batata Frita</NameProduct>
                     <p>Poção de batata frita e crocante.</p>
                     <ProductValue>R$ 12,90</ProductValue>
-                    <img src={addIcon} />
+                    <IconAdd src={addIcon} />
                 </ProdutsMain>
 
                 <ProdutsMain>
@@ -86,13 +101,13 @@ export function Home() {
                     <NameProduct>Milk Shake</NameProduct>
                     <p>Diversos sabores para deixar seu dia mais doce!</p>
                     <ProductValue>R$ 16,90</ProductValue>
-                    <img src={addIcon} />
+                    <IconAdd src={addIcon} />
                 </ProdutsMain>
 
-                <Specifications src={specifications} />
-
                 <BannerCombo src={combosSpecial} />
+                <Specifications src={specifications} />
             </Article>
+
 
             <Footer>
                 <FooterLeft>
@@ -110,7 +125,7 @@ export function Home() {
                     <img />
                 </FooterRight>
             </Footer>
-            
+
         </Container>
     )
 }

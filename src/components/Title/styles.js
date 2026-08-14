@@ -20,7 +20,7 @@ export const IconLogo = styled.img`
 export const SnackBar = styled.div`
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 7px;
 
     color: black;
