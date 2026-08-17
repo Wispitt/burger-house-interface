@@ -4,15 +4,17 @@ import backGround from '../../assets/img/backgound-interface.jpeg'
 
 export const Container = styled.div`
     background-image: url(${backGround});
-    display: grid;
-    grid-template-rows: 62% 40% 40%;
-    padding: 4% 6% 0 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 4% 0 4%;
+    height: 250vh;
+    height: 100vw;
 `;
 
 export const Section = styled.div`
-    border: 1px solid;
     height: 100%;
-    width: 100%;
+    width: 96%;
     display: flex;
     flex-direction: column;
 `;
@@ -54,14 +56,22 @@ export const SnackBar = styled.div`
         height: 2px;
         background: black;
     }
-`
+`;
+
+export const ContainerTop = styled.div`
+    
+
+`;
 
 export const Header = styled.div`
     display: flex;
     justify-content: end;
-    align-items: center;
+    align-items: start;
     gap: 15px;
-    width: 47%;
+    width: 100%;
+    position: relative;
+    bottom: 51px;
+    right: 10px;
 
     img {
         width: 15px;
@@ -70,55 +80,78 @@ export const Header = styled.div`
 
 export const BannerMain = styled.img`
     width: 100%;
+    border-radius: 20px;
 `;
 
 export const Highlights = styled.div`
     width: 100px;
     height: 30px;
-    text-align: center;
-    margin: 0 50%;
+    margin: 7px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43%;
+    gap: 7px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    &::before, &::after {
+        content: "";
+        width: 70px;
+        height: 2px;
+        background: black;
+    }
 `;
 
 export const Article = styled.div`
+margin-bottom: 20px;
     border: 1px solid;
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 20%);
-    grid-template-rows: 80% 20%;
+    height: 40%;
+    width: 96%;
+    display: flex;
+    
 `;
 
 export const ProdutsMain = styled.div`
-    border: 1px solid;
-    height: 100%;
-    width: 100%;
+    border: 2px solid #d1b390;
+    border-radius: 15px;
+    height: 19vw;
+    width: 18%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    margin: 0 6px;
 
     p {
-        font-size: 15px;
+        font-size: 2vh;
+        width: 80%;
     }
 `;
 
 export const IconAdd = styled.img`
-    width: 20%;
-    display: flex;
-    align-items: end;
-    justify-content: end;
+    width: 19%;
+    margin: 0 5px 6px 0;
 `;
 
 export const ProductImage = styled.img`
     width: 80%;
 `;
 
-export const NameProduct = styled.h4``;
+export const NameProduct = styled.h4`
+    font-size: 18px;
+`;
+
+export const ValueAndIcon = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    height: 100%;
+`;
 
 export const ProductValue = styled.h3`
-    display: flex;
-    align-items: start;
-    justify-content: start;
+    margin: 0 0 14px 2px;
 `;
 
 export const Specifications = styled.img`
@@ -127,14 +160,15 @@ export const Specifications = styled.img`
 `;
 
 export const BannerCombo = styled.img`
-    height: 100%;
-    width: 100%;
+    width: 25%;
+    height: 95%;
+    border-radius: 20px;
 `;
 
 export const Footer = styled.div`
     border: 1px solid;
-    height: 30%;
-    width: 100%;
+    height: 50%;
+    width: 96%;
 `;
 
 export const FooterLeft = styled.div``;
