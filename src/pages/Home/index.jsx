@@ -20,7 +20,8 @@ import {
     IconLogo,
     SnackBar,
     ContainerTop,
-    ValueAndIcon
+    ValueAndIcon,
+    AllProducts
 } from './styles'
 
 import { Title } from "../../components/Title"
@@ -62,7 +63,7 @@ export function Home() {
                         <a>Contato</a>
                         <img src={cartIcon} alt="cart" />
                         <img src={userIcon} alt="user" />
-                        
+
                     </Header>
                 </ContainerTop>
 
@@ -73,57 +74,58 @@ export function Home() {
                 <span>DESTAQUES</span>
             </Highlights>
 
-            <Article>
-                <ProdutsMain>
-                    <ProductImage src={firstBurger} style={{width: '60%'}} />
-                    <NameProduct>Classic Burger</NameProduct>
-                    <p>Pão, carne, queijo, alface, tomate e maionese especial.</p>
+                <AllProducts>
+                    <ProdutsMain>
+                        <ProductImage src={firstBurger} style={{ width: '60%' }} />
+                        <NameProduct>Classic Burger</NameProduct>
+                        <p>Pão, carne, queijo, alface, tomate e maionese especial.</p>
 
-                    <ValueAndIcon>
-                        <ProductValue>R$ 24,90</ProductValue>
-                        <IconAdd src={addIcon} />
-                    </ValueAndIcon>
+                        <ValueAndIcon>
+                            <ProductValue>R$ 24,90</ProductValue>
+                            <IconAdd src={addIcon} />
+                        </ValueAndIcon>
 
-                </ProdutsMain>
+                    </ProdutsMain>
 
-                <ProdutsMain>
-                    <ProductImage src={secondBurger} />
-                    <NameProduct>Bacon House</NameProduct>
-                    <p>Pão, carne, queijo, bacon crocante, cebola caramelizada e molho especial.</p>
+                    <ProdutsMain>
+                        <ProductImage src={secondBurger} />
+                        <NameProduct>Bacon House</NameProduct>
+                        <p>Pão, carne, queijo, bacon crocante, cebola caramelizada e molho especial.</p>
 
-                    <ValueAndIcon>
-                        <ProductValue>R$ 32,90</ProductValue>
-                        <IconAdd src={addIcon} />
-                    </ValueAndIcon>
+                        <ValueAndIcon>
+                            <ProductValue>R$ 32,90</ProductValue>
+                            <IconAdd src={addIcon} />
+                        </ValueAndIcon>
 
-                </ProdutsMain>
+                    </ProdutsMain>
 
-                <ProdutsMain>
-                    <ProductImage src={frenchFries} />
-                    <NameProduct>Batata Frita</NameProduct>
-                    <p>Poção de batata frita e crocante.</p>
+                    <ProdutsMain>
+                        <ProductImage src={frenchFries} />
+                        <NameProduct>Batata Frita</NameProduct>
+                        <p>Poção de batata frita e crocante.</p>
 
-                    <ValueAndIcon>
-                        <ProductValue>R$ 12,90</ProductValue>
-                        <IconAdd src={addIcon} />
-                    </ValueAndIcon>
-                    
-                </ProdutsMain>
+                        <ValueAndIcon>
+                            <ProductValue>R$ 12,90</ProductValue>
+                            <IconAdd src={addIcon} />
+                        </ValueAndIcon>
 
-                <ProdutsMain>
-                    <ProductImage src={milkShake} style={{width: '40%'}} />
-                    <NameProduct>Milk Shake</NameProduct>
-                    <p>Diversos sabores para deixar seu dia mais doce!</p>
+                    </ProdutsMain>
 
-                    <ValueAndIcon>
-                        <ProductValue>R$ 16,90</ProductValue>
-                        <IconAdd src={addIcon} />
-                    </ValueAndIcon>
+                    <ProdutsMain>
+                        <ProductImage src={milkShake} style={{ width: '40%' }} />
+                        <NameProduct>Milk Shake</NameProduct>
+                        <p>Diversos sabores para deixar seu dia mais doce!</p>
 
-                </ProdutsMain>
-            
-                <BannerCombo src={combosSpecial} />
-            </Article>
+                        <ValueAndIcon>
+                            <ProductValue>R$ 16,90</ProductValue>
+                            <IconAdd src={addIcon} />
+                        </ValueAndIcon>
+
+                    </ProdutsMain>
+
+                    <BannerCombo src={combosSpecial} />
+                    <Specifications src={specifications} />
+                </AllProducts>
 
             <Footer>
                 <FooterLeft>
@@ -142,10 +144,10 @@ export function Home() {
                 </FooterRight>
             </Footer>
 
-            <Specifications src={specifications} />
 
 
-            
+
+
 
         </Container>
     )

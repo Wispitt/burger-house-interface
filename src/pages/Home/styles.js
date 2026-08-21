@@ -7,12 +7,12 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 2% 4% 0 4%;
-    height: 80vw;
 `;
 
 export const Section = styled.div`
-    height: 100%;
+    height: 40%;
     width: 96%;
     display: flex;
     flex-direction: column;
@@ -123,18 +123,18 @@ export const Highlights = styled.div`
 `;
 
 export const Article = styled.div`
-    margin-bottom: 20px;
-    height: 40%;
-    width: 96%;
-    display: flex;
-    border: 1px solid;
+    height: auto;
+`;
+
+export const AllProducts = styled.div`
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 18%;
+    grid-template-rows: 61% 30%;
 `;
 
 export const ProdutsMain = styled.div`
     border: 2px solid #ebc9a3;
     border-radius: 15px;
-    height: 20vw;
-    width: 19%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,29 +177,39 @@ export const ProductValue = styled.h3`
 `;
 
 export const Specifications = styled.img`
-    width: 78.5%;
-    height: 120%;
-    position: relative;
-    bottom: 21%;
-    right: 9.5%;
+    width: 90%;
+    grid-column: 1/5;
 `;
 
 export const BannerCombo = styled.img`
-    width: 20%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
+    grid-row: 1/3;
+    grid-column: 5/6;
 `;
 
 export const Footer = styled.div`
     border-radius: 10px;
-    height: 5%;
+    height: 100px;
     width: 101%;
     background-color: #402314;
+    display: flex;
+    justify-content: space-between;
 `;
 
-export const FooterLeft = styled.div``;
+export const FooterLeft = styled.div`
+    width: 200px;
+    border: 1px solid red;
+`;
 
-export const FooterMain = styled.div``;
+export const FooterMain = styled.div`
+    width: 200px;
+    border: 1px solid red;
+`;
 
-export const FooterRight = styled.div``;
+export const FooterRight = styled.div`
+    width: 200px;
+    border: 1px solid red;
+`;
 
