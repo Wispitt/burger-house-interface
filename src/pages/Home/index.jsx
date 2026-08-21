@@ -29,12 +29,12 @@ import userIcon from '../../assets/img/user-icon.png';
 import cartIcon from '../../assets/img/cart-icon.png';
 import bannerMain from '../../assets/img/banner-main.png';
 import logoBurger from '../../assets/img/burger-icon.png';
-import firstBurger from '../../assets/img/first-burger.jpg';
+import firstBurger from '../../assets/img/first-burger.png';
 import secondBurger from '../../assets/img/second-burger.png';
-import frenchFries from '../../assets/img/french-fries.jpg';
-import milkShake from '../../assets/img/milk-shake.jpg';
+import frenchFries from '../../assets/img/french-fries.png';
+import milkShake from '../../assets/img/milk-shake.png';
 import addIcon from '../../assets/img/add-cart-icon.png';
-import specifications from '../../assets/img/specifications-house.jpg';
+import specifications from '../../assets/img/specifications-house.png';
 import combosSpecial from '../../assets/img/combo-special.png';
 
 export function Home() {
@@ -60,8 +60,9 @@ export function Home() {
                         <a>Promoções</a>
                         <a>Sobre nós</a>
                         <a>Contato</a>
-                        <img src={userIcon} alt="user" />
                         <img src={cartIcon} alt="cart" />
+                        <img src={userIcon} alt="user" />
+                        
                     </Header>
                 </ContainerTop>
 
@@ -74,7 +75,7 @@ export function Home() {
 
             <Article>
                 <ProdutsMain>
-                    <ProductImage src={firstBurger} />
+                    <ProductImage src={firstBurger} style={{width: '60%'}} />
                     <NameProduct>Classic Burger</NameProduct>
                     <p>Pão, carne, queijo, alface, tomate e maionese especial.</p>
 
@@ -110,7 +111,7 @@ export function Home() {
                 </ProdutsMain>
 
                 <ProdutsMain>
-                    <ProductImage src={milkShake} />
+                    <ProductImage src={milkShake} style={{width: '40%'}} />
                     <NameProduct>Milk Shake</NameProduct>
                     <p>Diversos sabores para deixar seu dia mais doce!</p>
 
@@ -120,10 +121,9 @@ export function Home() {
                     </ValueAndIcon>
 
                 </ProdutsMain>
-
+            
                 <BannerCombo src={combosSpecial} />
             </Article>
-
 
             <Footer>
                 <FooterLeft>
@@ -141,6 +141,11 @@ export function Home() {
                     <img />
                 </FooterRight>
             </Footer>
+
+            <Specifications src={specifications} />
+
+
+            
 
         </Container>
     )

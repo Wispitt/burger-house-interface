@@ -8,8 +8,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 2% 4% 0 4%;
-    height: 250vh;
-    height: 100vw;
+    height: 80vw;
 `;
 
 export const Section = styled.div`
@@ -67,14 +66,34 @@ export const Header = styled.div`
     display: flex;
     justify-content: end;
     align-items: start;
-    gap: 15px;
+    gap: 20px;
     width: 100%;
     position: relative;
     bottom: 51px;
     right: 10px;
+    font-size: 18px;
 
     img {
-        width: 15px;
+        width: 17px;
+
+        &:hover {
+        opacity: 0.7;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+
+    }
+
+    a {
+        &:hover {
+        color: #ee8d2c;
+    }
+
+    &:active {
+        color: #ca6806;
+    }
     }
 `;
 
@@ -86,7 +105,7 @@ export const BannerMain = styled.img`
 export const Highlights = styled.div`
     width: 100px;
     height: 30px;
-    margin: 7px 0;
+    margin: 17px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,24 +123,24 @@ export const Highlights = styled.div`
 `;
 
 export const Article = styled.div`
-margin-bottom: 20px;
-    border: 1px solid;
+    margin-bottom: 20px;
     height: 40%;
     width: 96%;
     display: flex;
-    
+    border: 1px solid;
 `;
 
 export const ProdutsMain = styled.div`
-    border: 2px solid #d1b390;
+    border: 2px solid #ebc9a3;
     border-radius: 15px;
-    height: 19vw;
-    width: 18%;
+    height: 20vw;
+    width: 19%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
     margin: 0 6px;
+    background-color: #fce6ce;
 
     p {
         font-size: 2vh;
@@ -130,16 +149,18 @@ export const ProdutsMain = styled.div`
 `;
 
 export const IconAdd = styled.img`
-    width: 19%;
+    width: 17%;
     margin: 0 5px 6px 0;
 `;
 
 export const ProductImage = styled.img`
-    width: 80%;
+    width: 75%;
+    margin-top: 10px;
 `;
 
 export const NameProduct = styled.h4`
     font-size: 18px;
+    margin-top: 10px;
 `;
 
 export const ValueAndIcon = styled.div`
@@ -152,23 +173,28 @@ export const ValueAndIcon = styled.div`
 
 export const ProductValue = styled.h3`
     margin: 0 0 14px 2px;
+    font-size: 25px;
 `;
 
 export const Specifications = styled.img`
-    width: 10%;
-    grid-column: 1/5;
+    width: 78.5%;
+    height: 120%;
+    position: relative;
+    bottom: 21%;
+    right: 9.5%;
 `;
 
 export const BannerCombo = styled.img`
-    width: 25%;
+    width: 20%;
     height: 95%;
     border-radius: 20px;
 `;
 
 export const Footer = styled.div`
-    border: 1px solid;
-    height: 50%;
-    width: 96%;
+    border-radius: 10px;
+    height: 5%;
+    width: 101%;
+    background-color: #402314;
 `;
 
 export const FooterLeft = styled.div``;
