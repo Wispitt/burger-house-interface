@@ -22,7 +22,8 @@ import {
     AllProducts,
     HouseSpecifications,
     ButtonMenu,
-    HouseBannerCombo
+    HouseBannerCombo,
+    ButtonCombo
 } from './styles'
 
 import { Title } from "../../components/Title"
@@ -127,6 +128,8 @@ export function Home() {
                     </ValueAndIcon>
                 </ProdutsMain>
 
+                <ButtonCombo>Ver Cardápio <span>➜</span></ButtonCombo>
+                
                 <HouseBannerCombo>
                     <BannerCombo src={combosSpecial} />
                 </HouseBannerCombo>

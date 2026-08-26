@@ -61,7 +61,7 @@ export const SnackBar = styled.div`
 export const Header = styled.div`
     display: flex;
     justify-content: end;
-    align-items: start;
+    align-items: center;
     gap: 20px;
     width: 100%;
     position: relative;
@@ -70,16 +70,25 @@ export const Header = styled.div`
     font-size: 18px;
 
     img {
-        width: 20px;
+        width: 28px;
+        transition: transform 0.6s ease;
+
+        &:hover {
+        transform: scale(1.1);
+        }
     }
 
     a {
+        transition: transform 0.6s ease;
+
         &:hover {
-        color: #ee8d2c;
+        transform: scale(1.1);
+        color: #ca6806;
         }
 
-    &:active {
-        color: #ca6806;
+        &:active {
+        color: #ee8d2c;
+        opacity: 0.8;
         }
     }
 `;
@@ -95,10 +104,34 @@ export const ButtonMenu = styled.button`
     left: 120px;
     width: 17%;
     height: 40px;
-    border-radius: 20px;
-    background-color: #f7b34f;
-    font-size: 23px;
+    border-radius: 18px;
+    background-color: #f1a026;
+    font-size: 20px;
     font-weight: bold;
+    transition: transform 0.8s ease;
+
+    &:hover {
+        opacity: 0.9;
+        transform: scale(1.1);
+
+        span {
+            animation: mover 0.4s infinite alternate;
+             display: inline-block;
+
+            @keyframes mover {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(6px);
+                }
+            }
+        }
+    }
+
+    &:active {
+        opacity: 1;
+    }
 `;
 
 export const Highlights = styled.div`
@@ -138,13 +171,14 @@ export const ProdutsMain = styled.div`
     align-items: center;
     justify-content: start;
     background-color: #fce6ce;
+    transition: transform 0.9s ease;
 
     &:hover {
-        padding: 2px;
+        transform: scale(1.06);
     }
 
     p {
-        font-size: 99%;
+        font-size: 18px;
         font-weight: bold;
         width: 90%;
     }
@@ -153,20 +187,21 @@ export const ProdutsMain = styled.div`
 export const IconAdd = styled.img`
     width: 15%;
     margin: 0 8px 8px 0;
+    transition: transform 0.6s ease;
 
     &:hover {
-        width: 16%;
+        transform: scale(1.2);
     }
 `;
 
 export const ProductImage = styled.img`
     width: 72%;
-    margin-top: 18px;
+    margin-top: 20px;
 `;
 
 export const NameProduct = styled.h4`
     font-size: 18px;
-    margin-top: 5px;
+    margin-top: 8px;
 `;
 
 export const ValueAndIcon = styled.div`
@@ -195,11 +230,52 @@ export const Specifications = styled.img`
     margin-top: 10px;
     border: 2px solid #ebc9a3;
     border-radius: 15px;
+    transition: transform 0.9s ease;
+
+    &:hover {
+        transform: scale(1.02);
+    }
 `;
 
 export const HouseBannerCombo = styled.div`
     grid-row: 1/3;
     grid-column: 5/6;
+`;
+
+export const ButtonCombo = styled.button`
+    position: absolute;
+    right: 10%;
+    bottom: -47%;
+    width: 10%;
+    height: 40px;
+    border-radius: 18px;
+    background-color: #f19710;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.8s ease;
+
+    &:hover {
+        opacity: 0.9;
+        transform: scale(1.1);
+
+        span {
+            animation: mover 0.4s infinite alternate;
+             display: inline-block;
+
+            @keyframes mover {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(6px);
+                }
+            }
+        }
+    }
+
+    &:active {
+        opacity: 1;
+    }
 `;
 
 export const BannerCombo = styled.img`
@@ -236,7 +312,7 @@ export const FooterMain = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
     width: 18%;
     height: 65px;
     color: #fff;
@@ -244,7 +320,12 @@ export const FooterMain = styled.div`
 
     img {
         width: 22px;
-        margin: 0 7px;
+        margin: 0 9px;
+        transition: transform 0.9s ease;
+
+        &:hover {
+        transform: scale(1.4);
+        }
     }
 `;
 
