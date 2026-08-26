@@ -4,6 +4,7 @@ import backGround from '../../assets/img/backgound-interface.jpeg'
 
 export const Container = styled.div`
     background-image: url(${backGround});
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,11 +58,6 @@ export const SnackBar = styled.div`
     }
 `;
 
-export const ContainerTop = styled.div`
-    
-
-`;
-
 export const Header = styled.div`
     display: flex;
     justify-content: end;
@@ -74,26 +70,17 @@ export const Header = styled.div`
     font-size: 18px;
 
     img {
-        width: 17px;
-
-        &:hover {
-        opacity: 0.7;
-    }
-
-    &:active {
-        opacity: 0.5;
-    }
-
+        width: 20px;
     }
 
     a {
         &:hover {
         color: #ee8d2c;
-    }
+        }
 
     &:active {
         color: #ca6806;
-    }
+        }
     }
 `;
 
@@ -102,10 +89,20 @@ export const BannerMain = styled.img`
     border-radius: 20px;
 `;
 
+export const ButtonMenu = styled.button`
+    position: relative;
+    bottom: 100px;
+    left: 120px;
+    width: 17%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #f7b34f;
+    font-size: 23px;
+    font-weight: bold;
+`;
+
 export const Highlights = styled.div`
-    width: 100px;
-    height: 30px;
-    margin: 17px 0;
+    margin-bottom: 23px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,45 +119,54 @@ export const Highlights = styled.div`
     }
 `;
 
-export const Article = styled.div`
-    height: auto;
-`;
-
 export const AllProducts = styled.div`
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 18%;
-    grid-template-rows: 61% 30%;
+  display: grid;
+  width: 96%;
+  height: 58vh;
+  grid-template-columns: 19.7% 19.7% 19.7% 19.7% 20.9%;
+  grid-template-rows: 68% 30%;
+  gap: 1px;
+  border-radius: 15px;
 `;
 
 export const ProdutsMain = styled.div`
     border: 2px solid #ebc9a3;
     border-radius: 15px;
+    width: 96%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    margin: 0 6px;
     background-color: #fce6ce;
 
+    &:hover {
+        padding: 2px;
+    }
+
     p {
-        font-size: 2vh;
-        width: 80%;
+        font-size: 99%;
+        font-weight: bold;
+        width: 90%;
     }
 `;
 
 export const IconAdd = styled.img`
-    width: 17%;
-    margin: 0 5px 6px 0;
+    width: 15%;
+    margin: 0 8px 8px 0;
+
+    &:hover {
+        width: 16%;
+    }
 `;
 
 export const ProductImage = styled.img`
-    width: 75%;
-    margin-top: 10px;
+    width: 72%;
+    margin-top: 18px;
 `;
 
 export const NameProduct = styled.h4`
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 5px;
 `;
 
 export const ValueAndIcon = styled.div`
@@ -169,47 +175,92 @@ export const ValueAndIcon = styled.div`
     align-items: end;
     width: 100%;
     height: 100%;
+    margin-top: 2px;
 `;
 
 export const ProductValue = styled.h3`
     margin: 0 0 14px 2px;
-    font-size: 25px;
+    font-size: 24px;
+`;
+
+export const HouseSpecifications = styled.div`
+   width: 90%;
+   height: 100%;
+   grid-column: 1/5;
 `;
 
 export const Specifications = styled.img`
-    width: 90%;
-    grid-column: 1/5;
+    width: 110%;
+    height: 147px;
+    margin-top: 10px;
+    border: 2px solid #ebc9a3;
+    border-radius: 15px;
 `;
 
-export const BannerCombo = styled.img`
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
+export const HouseBannerCombo = styled.div`
     grid-row: 1/3;
     grid-column: 5/6;
 `;
 
+export const BannerCombo = styled.img`
+    width: 100%;
+    height: 98.4%;
+    border-radius: 20px;
+`;
+
 export const Footer = styled.div`
-    border-radius: 10px;
-    height: 100px;
-    width: 101%;
-    background-color: #402314;
-    display: flex;
-    justify-content: space-between;
+  grid-column: 1 / -1;
+  height: 110px;
+  width: 100%;
+  border-radius: 7px;
+  background-color: #402314;
+  display: flex;
+  gap: 28%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18px;
 `;
 
 export const FooterLeft = styled.div`
-    width: 200px;
-    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 14%;
+    height: 50px;
+    font-size: 13px;
+    color: #fff;
+    margin-left: 20px;
 `;
 
 export const FooterMain = styled.div`
-    width: 200px;
-    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+    width: 18%;
+    height: 65px;
+    color: #fff;
+    font-size: 16px;
+
+    img {
+        width: 22px;
+        margin: 0 7px;
+    }
 `;
 
 export const FooterRight = styled.div`
-    width: 200px;
-    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 14%;
+    height: 50px;
+    color: #fff;
+    margin-right: 20px;
+    font-size: 16px;
+
+    img {
+        width: 22px;
+        margin: 5px 7px;
+    }
 `;
 

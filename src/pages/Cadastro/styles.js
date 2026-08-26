@@ -8,7 +8,7 @@ export const Container = styled.div`
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;  
 `
 
 export const ContainerMain = styled.div`
@@ -17,6 +17,7 @@ export const ContainerMain = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 `
 
 export const IconLogo = styled.img`
@@ -81,7 +82,6 @@ export const ButtonEnter = styled.button`
 
     &:hover {
         border: 1px solid #f09132;
-        color: #f09132;
     }
 
     &:active {
@@ -110,22 +110,24 @@ export const Name = styled.h3`
     }
 `
 
-export const EndParagraph = styled.div`
+export const EndParagraph = styled.p`
     display: flex;
     margin-top: 15px;
     font-size: 17px;
+    margin-bottom: 50px;
 
     a {
-        color: #ce5301;
         margin-left: 3px;
+        color: #cc590c;
 
         &:hover {
-        color: #e6a768;
+        opacity: 0.7;
         }
 
         &:active {
-            opacity: 0.6;
+            color: #e72525;
         }
+        
     }
 `
 

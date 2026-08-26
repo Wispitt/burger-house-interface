@@ -35,26 +35,25 @@ export const Form = styled.form`
     p {
         margin-left: 3px;
     }
-
-    a {
-        margin-left: 3px;
-        color: #ce5301;
-
-        &:hover {
-        color: #ad641a;
-        opacity: 0.8;
-        }
-
-        &:active {
-            opacity: 0.6;
-        }
-        
-    }
 `
 
 export const ContainersForm = styled.div`
     width: 100%;
     margin-top: 14px;
+
+    a {
+        margin-left: 3px;
+        color: #cc590c;
+
+        &:hover {
+        opacity: 0.7;
+        }
+
+        &:active {
+            color: #e72525;
+        }
+        
+    }
 `
 
 export const InputLogin = styled.input`
@@ -81,7 +80,6 @@ export const ButtonEnter = styled.button`
 
     &:hover {
         border: 1px solid #f09132;
-        color: #f09132;
     }
 
     &:active {
@@ -116,16 +114,17 @@ export const EndParagraph = styled.div`
     font-size: 16px;
 
     a {
-        color: #ce5301;
         margin-left: 3px;
+        color: #cc590c;
 
         &:hover {
-        color: #e6a768;
+        opacity: 0.7;
         }
 
         &:active {
-            opacity: 0.6;
+            color: #e72525;
         }
+        
     }
 `
 
