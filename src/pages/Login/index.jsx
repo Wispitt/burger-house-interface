@@ -42,7 +42,7 @@ export function LoginUser() {
 
                     <ContainersForm>
                         <a>Esqueceu a senha?</a>
-                        <ButtonEnter type='button' onClick={() => navigate('/Home')}>Entrar</ButtonEnter>
+                        <ButtonEnter type='button' onClick={() => navigate('/home')}>Entrar</ButtonEnter>
                     </ContainersForm>
 
                 </Form>

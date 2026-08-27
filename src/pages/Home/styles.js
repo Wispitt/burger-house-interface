@@ -155,7 +155,7 @@ export const Highlights = styled.div`
 export const AllProducts = styled.div`
   display: grid;
   width: 96%;
-  height: 58vh;
+  height: 67vh;
   grid-template-columns: 19.7% 19.7% 19.7% 19.7% 20.9%;
   grid-template-rows: 68% 30%;
   gap: 1px;
@@ -245,7 +245,7 @@ export const HouseBannerCombo = styled.div`
 export const ButtonCombo = styled.button`
     position: absolute;
     right: 10%;
-    bottom: -47%;
+    bottom: -53%;
     width: 10%;
     height: 40px;
     border-radius: 18px;
@@ -280,7 +280,7 @@ export const ButtonCombo = styled.button`
 
 export const BannerCombo = styled.img`
     width: 100%;
-    height: 98.4%;
+    height: 94.4%;
     border-radius: 20px;
 `;
 

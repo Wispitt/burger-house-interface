@@ -126,7 +126,7 @@ export function Home() {
                     </ValueAndIcon>
                 </ProductsMain>
 
-                <ButtonCombo>Ver Cardápio <span>➜</span></ButtonCombo>
+                <ButtonCombo>Combo <span>➜</span></ButtonCombo>
                 
                 <HouseBannerCombo>
                     <BannerCombo src={combosSpecial} />
