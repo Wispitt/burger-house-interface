@@ -4,7 +4,7 @@ import {
     Header,
     BannerMain,
     Highlights,
-    ProdutsMain,
+    ProductsMain,
     ProductImage,
     NameProduct,
     ProductValue,
@@ -25,8 +25,6 @@ import {
     HouseBannerCombo,
     ButtonCombo
 } from './styles'
-
-import { Title } from "../../components/Title"
 
 import userIcon from '../../assets/img/user-icon.png';
 import cartIcon from '../../assets/img/cart-icon.png';
@@ -71,8 +69,8 @@ export function Home() {
                     <a>Promoções</a>
                     <a>Sobre nós</a>
                     <a>Contato</a>
-                    <img src={cartIcon} alt="cart" />
-                    <img src={userIcon} alt="user" />
+                    <img src={cartIcon} alt='Carrinho' />
+                    <img src={userIcon} alt='Usuário' />
                 </Header>
 
                 <BannerMain src={bannerMain} />
@@ -84,7 +82,7 @@ export function Home() {
             </Highlights>
 
             <AllProducts>
-                <ProdutsMain>
+                <ProductsMain>
                     <ProductImage src={firstBurger} style={{ width: '60%' }} />
                     <NameProduct>Classic Burger</NameProduct>
                     <p>Pão, carne, queijo, alface, tomate e maionese especial.</p>
@@ -93,9 +91,9 @@ export function Home() {
                         <ProductValue>R$ 24,90</ProductValue>
                         <IconAdd src={addIcon} />
                     </ValueAndIcon>
-                </ProdutsMain>
+                </ProductsMain>
 
-                <ProdutsMain>
+                <ProductsMain>
                     <ProductImage src={secondBurger} style={{ width: '68%' }} />
                     <NameProduct>Bacon House</NameProduct>
                     <p>Pão, carne, queijo, bacon crocante, cebola caramelizada e molho especial.</p>
@@ -104,20 +102,20 @@ export function Home() {
                         <ProductValue>R$ 32,90</ProductValue>
                         <IconAdd src={addIcon} />
                     </ValueAndIcon>
-                </ProdutsMain>
+                </ProductsMain>
 
-                <ProdutsMain>
+                <ProductsMain>
                     <ProductImage src={frenchFries} />
                     <NameProduct>Batata Frita</NameProduct>
-                    <p>Poção de batata frita e crocante.</p>
+                    <p>Porção de batata frita e crocante.</p>
 
                     <ValueAndIcon>
                         <ProductValue>R$ 12,90</ProductValue>
                         <IconAdd src={addIcon} />
                     </ValueAndIcon>
-                </ProdutsMain>
+                </ProductsMain>
 
-                <ProdutsMain>
+                <ProductsMain>
                     <ProductImage src={milkShake} style={{ width: '40%' }} />
                     <NameProduct>Milk Shake</NameProduct>
                     <p>Diversos sabores para deixar seu dia mais doce!</p>
@@ -126,7 +124,7 @@ export function Home() {
                         <ProductValue>R$ 16,90</ProductValue>
                         <IconAdd src={addIcon} />
                     </ValueAndIcon>
-                </ProdutsMain>
+                </ProductsMain>
 
                 <ButtonCombo>Ver Cardápio <span>➜</span></ButtonCombo>
                 
@@ -142,24 +140,24 @@ export function Home() {
             <Footer>
                 <FooterLeft>
                     <h4>BURGER HOUSE SNACK BAR</h4>
-                    <p>2024 Todos os direitos resevados.</p>
+                    <p>2024 Todos os direitos reservados.</p>
                 </FooterLeft>
 
                 <FooterMain>
                     <p>Siga-nos nas redes sociais!</p>
                     <div>
-                        <img src={instagramIcon} />
-                        <img src={facebookIcon} />
+                        <img src={instagramIcon} alt='Instagram' />
+                        <img src={facebookIcon} alt='Facebook' />
                     </div>
                 </FooterMain>
 
                 <FooterRight>
                     <p>Formas de pagamento</p>
                     <div>
-                        <img src={visaIcon} />
-                        <img src={masterCardIcon} />
-                        <img src={eloIcon} />
-                        <img src={pixIcon} />
+                        <img src={visaIcon} alt='Visa' />
+                        <img src={masterCardIcon} alt='Mastercard' />
+                        <img src={eloIcon} alt='Elo' />
+                        <img src={pixIcon} alt='Pix' />
                     </div>
                 </FooterRight>
             </Footer>

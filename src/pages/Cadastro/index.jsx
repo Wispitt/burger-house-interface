@@ -4,7 +4,6 @@ import {
     Container,
     ContainerMain,
     Form,
-    IconLogo,
     Paragraph,
     InputLogin,
     ButtonEnter,
@@ -16,18 +15,18 @@ import {
     AppleContainer
 } from './styles';
 
-import { Title } from '../../components/Title'
+import { Title } from '../../components/Title';
 import logoGoogle from '../../assets/img/google.png';
 import logoApple from '../../assets/img/apple.png';
 
 export function CadastroUser() {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     return (
         <Container>
             <ContainerMain>
-                <Title></Title>
+                <Title />
 
                 <Paragraph>Crie sua conta na Burger House</Paragraph>
 
@@ -61,12 +60,12 @@ export function CadastroUser() {
 
                 <ContainersSocial>
                     <GoogleContainer>
-                        <img src={logoGoogle}></img>
+                        <img src={logoGoogle} alt='Google' />
                         <Name>Google</Name>
                     </GoogleContainer>
 
                     <AppleContainer>
-                        <img src={logoApple}></img>
+                        <img src={logoApple} alt='Apple' />
                         <Name>Apple</Name>
                     </AppleContainer>
                 </ContainersSocial>
@@ -74,5 +73,5 @@ export function CadastroUser() {
                 <EndParagraph>Já tem uma conta?<a onClick={() => navigate('/')}>Entrar</a></EndParagraph>
             </ContainerMain>
         </Container>
-    )
-};
+    );
+}

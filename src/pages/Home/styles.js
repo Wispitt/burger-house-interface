@@ -162,7 +162,7 @@ export const AllProducts = styled.div`
   border-radius: 15px;
 `;
 
-export const ProdutsMain = styled.div`
+export const ProductsMain = styled.div`
     border: 2px solid #ebc9a3;
     border-radius: 15px;
     width: 96%;
