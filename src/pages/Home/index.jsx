@@ -26,8 +26,6 @@ import {
     ButtonCombo
 } from './styles'
 
-import userIcon from '../../assets/img/user-icon.png';
-import cartIcon from '../../assets/img/cart-icon.png';
 import bannerMain from '../../assets/img/banner-main.png';
 import logoBurger from '../../assets/img/burger-icon.png';
 
@@ -69,8 +67,8 @@ export function Home() {
                     <a>Promoções</a>
                     <a>Sobre nós</a>
                     <a>Contato</a>
-                    <img src={cartIcon} alt='Carrinho' />
-                    <img src={userIcon} alt='Usuário' />
+                    <i class="ri-shopping-cart-line"></i>
+                    <i class="ri-user-line"></i>
                 </Header>
 
                 <BannerMain src={bannerMain} />

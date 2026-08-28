@@ -22,14 +22,14 @@ export const Section = styled.div`
 export const TitleWrapper = styled.div`
     display: flex;
     align-items: center;
-    justify-content: start;
     height: 50px;
-    width: 43%;
+    width: 25%;
 
     h1 {
-        font-size: 184%;
-        font-family: "Sekuya", system-ui;
+        font-size: 240%;
+        font-family: "Roboto", sans-serif;
         color: #4d2b12;
+        margin-bottom: 3px;
     }
 `
 
@@ -41,10 +41,8 @@ export const SnackBar = styled.div`
     display: flex;
     align-items: center;
     justify-content: start;
-    margin-left: 40px;
     width: 43%;
     gap: 7px;
-
     color: black;
     font-size: 11px;
     font-weight: 700;
@@ -52,7 +50,7 @@ export const SnackBar = styled.div`
 
     &::before, &::after {
         content: "";
-        width: 90px;
+        width: 85px;
         height: 2px;
         background: black;
     }
@@ -62,19 +60,22 @@ export const Header = styled.div`
     display: flex;
     justify-content: end;
     align-items: center;
-    gap: 20px;
+    gap: 22px;
     width: 100%;
     position: relative;
     bottom: 51px;
     right: 10px;
     font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
 
-    img {
-        width: 28px;
+    i {
+        font-size: 28px;
         transition: transform 0.6s ease;
 
         &:hover {
         transform: scale(1.1);
+        cursor: pointer;
         }
     }
 
@@ -191,6 +192,7 @@ export const IconAdd = styled.img`
 
     &:hover {
         transform: scale(1.2);
+        cursor: pointer;
     }
 `;
 
@@ -325,6 +327,7 @@ export const FooterMain = styled.div`
 
         &:hover {
         transform: scale(1.4);
+        cursor: pointer;
         }
     }
 `;
