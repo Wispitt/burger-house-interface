@@ -43,7 +43,7 @@ import facebookIcon from '../../assets/img/facebook-icon.png';
 import visaIcon from '../../assets/img/visa-icon.png';
 import masterCardIcon from '../../assets/img/mastercard-icon.png';
 import eloIcon from '../../assets/img/elo-icon.png';
-import pixIcon from '../../assets/img/pix-icon.png';
+import pixIcon from '../../assets/img/pix-icon.jpg';
 
 export function Home() {
 
@@ -62,17 +62,17 @@ export function Home() {
                     </SnackBar>
                 </div>
                 <Header>
-                    <a>Início</a>
+                    <a><span>Início</span></a>
                     <a>Cardápio</a>
                     <a>Promoções</a>
                     <a>Sobre nós</a>
                     <a>Contato</a>
                     <i class="ri-shopping-cart-line"></i>
-                    <i class="ri-user-line"></i>
+                    <i class="ri-user-3-line"></i>
                 </Header>
 
                 <BannerMain src={bannerMain} />
-                <ButtonMenu>Ver Cardápio <span>➜</span></ButtonMenu>
+                <ButtonMenu>Ver Cardápio <i class="ri-arrow-right-line"></i> </ButtonMenu>
             </Section>
 
             <Highlights>
@@ -123,11 +123,10 @@ export function Home() {
                         <IconAdd src={addIcon} />
                     </ValueAndIcon>
                 </ProductsMain>
-
-                <ButtonCombo>Combo <span>➜</span></ButtonCombo>
-                
+ 
                 <HouseBannerCombo>
                     <BannerCombo src={combosSpecial} />
+                    <ButtonCombo>Combo <i class="ri-arrow-right-line"></i></ButtonCombo>
                 </HouseBannerCombo>
 
                 <HouseSpecifications>

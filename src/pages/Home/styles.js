@@ -26,8 +26,8 @@ export const TitleWrapper = styled.div`
     width: 25%;
 
     h1 {
-        font-size: 240%;
-        font-family: "Roboto", sans-serif;
+        font-size: 140%;
+        font-family: "Sekuya", system-ui;
         color: #4d2b12;
         margin-bottom: 3px;
     }
@@ -44,13 +44,13 @@ export const SnackBar = styled.div`
     width: 43%;
     gap: 7px;
     color: black;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 4px;
 
     &::before, &::after {
         content: "";
-        width: 85px;
+        width: 86px;
         height: 2px;
         background: black;
     }
@@ -68,6 +68,10 @@ export const Header = styled.div`
     font-size: 18px;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
+
+    span {
+        text-decoration: underline;
+    }
 
     i {
         font-size: 28px;
@@ -100,6 +104,7 @@ export const BannerMain = styled.img`
 `;
 
 export const ButtonMenu = styled.button`
+    font-family: "Sekuya", system-ui;
     position: relative;
     bottom: 100px;
     left: 120px;
@@ -107,16 +112,20 @@ export const ButtonMenu = styled.button`
     height: 40px;
     border-radius: 18px;
     background-color: #f1a026;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     transition: transform 0.8s ease;
+
+    i {
+        font-size: 20px;
+    }
 
     &:hover {
         opacity: 0.9;
         transform: scale(1.1);
 
-        span {
-            animation: mover 0.4s infinite alternate;
+        i {
+            animation: mover 0.6s infinite alternate;
              display: inline-block;
 
             @keyframes mover {
@@ -156,9 +165,9 @@ export const Highlights = styled.div`
 export const AllProducts = styled.div`
   display: grid;
   width: 96%;
-  height: 67vh;
+  height: 63vh;
   grid-template-columns: 19.7% 19.7% 19.7% 19.7% 20.9%;
-  grid-template-rows: 68% 30%;
+  grid-template-rows: 64% 30%;
   gap: 1px;
   border-radius: 15px;
 `;
@@ -175,7 +184,7 @@ export const ProductsMain = styled.div`
     transition: transform 0.9s ease;
 
     &:hover {
-        transform: scale(1.06);
+        transform: scale(1.05);
     }
 
     p {
@@ -228,7 +237,7 @@ export const HouseSpecifications = styled.div`
 
 export const Specifications = styled.img`
     width: 110%;
-    height: 147px;
+    height: 85%;
     margin-top: 10px;
     border: 2px solid #ebc9a3;
     border-radius: 15px;
@@ -240,29 +249,38 @@ export const Specifications = styled.img`
 `;
 
 export const HouseBannerCombo = styled.div`
-    grid-row: 1/3;
-    grid-column: 5/6;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 136.4%;
 `;
 
 export const ButtonCombo = styled.button`
-    position: absolute;
-    right: 10%;
-    bottom: -53%;
-    width: 10%;
+    font-family: "Sekuya", system-ui;
+    width: 63%;
     height: 40px;
+    margin-bottom: 20px;
     border-radius: 18px;
     background-color: #f19710;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     transition: transform 0.8s ease;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    justify-self: center;
+
+    i {
+        font-size: 20px;
+    }
 
     &:hover {
         opacity: 0.9;
         transform: scale(1.1);
 
-        span {
-            animation: mover 0.4s infinite alternate;
-             display: inline-block;
+        i {
+            animation: mover 0.6s infinite alternate;
+            display: inline-block;
 
             @keyframes mover {
                 0% {
@@ -282,8 +300,11 @@ export const ButtonCombo = styled.button`
 
 export const BannerCombo = styled.img`
     width: 100%;
-    height: 94.4%;
+    height: 545px;
     border-radius: 20px;
+    grid-column: 1;
+    grid-row: 1;
+    transition: transform 0.9s ease;
 `;
 
 export const Footer = styled.div`
@@ -291,12 +312,11 @@ export const Footer = styled.div`
   height: 110px;
   width: 100%;
   border-radius: 7px;
-  background-color: #402314;
+  background-color: #3f1d0c;
   display: flex;
   gap: 28%;
   justify-content: center;
   align-items: center;
-  margin-top: 18px;
 `;
 
 export const FooterLeft = styled.div`
@@ -344,7 +364,6 @@ export const FooterRight = styled.div`
 
     img {
         width: 22px;
-        margin: 5px 7px;
+        margin: 5px 3px;
     }
 `;
-

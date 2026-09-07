@@ -1,4 +1,8 @@
+import * as Yup from 'yup';
+import { api } from '../../services/api.js';
 import { useNavigate } from 'react-router-dom';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form';
 
 import {
     Container,
@@ -21,6 +25,19 @@ import logoApple from '../../assets/img/apple.png';
 
 export function CadastroUser() {
 
+    const schema = Yup.object({
+        name: Yup.string().required('O nome é obrigatório'),
+        email: Yup.string().email('Digite um e-mail válido').required('O e-mail é obrigatório'),
+        password: Yup.string().min(6, 'A senha deve ter no mínimo 6 caracteres').required('A senha é obrigatória'),
+        confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'As senhas devem ser iguais').required('A confirmação de senha é obrigatória')
+    })
+
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(schema)
+    });
+
+    const onSubmit = async (data) => console.log(data);
+
     const navigate = useNavigate();
 
     return (
@@ -30,25 +47,25 @@ export function CadastroUser() {
 
                 <Paragraph>Crie sua conta na Burger House</Paragraph>
 
-                <Form>
+                <Form onSubmit={handleSubmit(onSubmit)}>
                     <ContainersForm>
                         <p>Nome</p>
-                        <InputLogin type='string' placeholder='Digite seu nome' />
+                        <InputLogin type='string' {...register('name')} placeholder='Digite seu nome' />
                     </ContainersForm>
 
                     <ContainersForm>
                         <p>E-mail</p>
-                        <InputLogin type='email' placeholder='Digite seu email' />
+                        <InputLogin type='email' {...register('email')} placeholder='Digite seu email' />
                     </ContainersForm>
 
                     <ContainersForm>
                         <p>Senha</p>
-                        <InputLogin type='password' placeholder='Crie uma senha' />
+                        <InputLogin type='password' {...register('password')} placeholder='Crie uma senha' />
                     </ContainersForm>
 
                     <ContainersForm>
                         <p>Confirmar senha</p>
-                        <InputLogin type='password' placeholder='Confirme sua senha' />
+                        <InputLogin type='password' {...register('confirmPassword')} placeholder='Confirme sua senha' />
                     </ContainersForm>
 
                     <ContainersForm>

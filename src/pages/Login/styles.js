@@ -79,7 +79,7 @@ export const ButtonEnter = styled.button`
     font-size: 20px;
 
     &:hover {
-        border: 1px solid #f09132;
+        opacity: 0.9;
     }
 
     &:active {
