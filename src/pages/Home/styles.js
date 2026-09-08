@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import backGround from '../../assets/img/backgound-interface.jpeg'
+import backGround from '../../assets/img/backgound-interface.jpeg';
 
 export const Container = styled.div`
     background-image: url(${backGround});
@@ -31,7 +31,7 @@ export const TitleWrapper = styled.div`
         color: #4d2b12;
         margin-bottom: 3px;
     }
-`
+`;
 
 export const IconLogo = styled.img`
     width: 50px;

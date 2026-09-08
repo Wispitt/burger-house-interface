@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import backGround from '../../assets/img/backgound-interface.jpeg'
+import backGround from '../../assets/img/backgound-interface.jpeg';
 
 export const Container = styled.div`
     background-image: url(${backGround});
@@ -9,7 +9,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;  
-`
+`;
 
 export const ContainerMain = styled.div`
     width: 29%;
@@ -18,18 +18,18 @@ export const ContainerMain = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-`
+`;
 
 export const IconLogo = styled.img`
     width: 70px;
-`
+`;
 
 export const Paragraph = styled.p`
     margin-top: 5px;
     text-align: center;
     font-size: 13px;
     font-family: "Roboto", sans-serif;
-`
+`;
 
 export const Form = styled.form`
     display: flex;
@@ -51,43 +51,32 @@ export const Form = styled.form`
         }
         
     }
-`
+`;
 
 export const ContainersForm = styled.div`
     width: 100%;
-    margin-top: 14px;
-`
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+
+    span {
+        font-size: 12px;
+        margin-left: 5px;
+        color: #c50233;
+        font-weight: 600;
+        height: 20px;
+    }
+`;
 
 export const InputLogin = styled.input`
     width: 100%;
-    height: 36px;
+    height: 38px;
     border-radius: 8px;
     background-color: #fff;
     padding: 0 10px;
     font-size: 13px;
     border: 1px solid black;
-`
-
-export const ButtonEnter = styled.button`
-    width: 100%;
-    height: 40px;
-    border-radius: 8px;
-    background-color: black;
-    color: #fff;
-    font-size: 19px;
-    border: 1px solid black;
-    margin-bottom: 10px;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-
-    &:hover {
-        border: 1px solid #f09132;
-    }
-
-    &:active {
-        opacity: 0.8;
-    }
-`
+`;
 
 export const ContainersSocial = styled.div`
     margin-top: 10px;
@@ -98,7 +87,7 @@ export const ContainersSocial = styled.div`
     img {
         width: 20px;
     }
-`
+`;
 
 export const Name = styled.h3`
     font-family: "Roboto", sans-serif;
@@ -106,9 +95,9 @@ export const Name = styled.h3`
     cursor: pointer;
 
     &:hover {
-        color: #f38820;
+        color: #cf3057;
     }
-`
+`;
 
 export const EndParagraph = styled.p`
     display: flex;
@@ -118,10 +107,11 @@ export const EndParagraph = styled.p`
 
     a {
         margin-left: 3px;
-        color: #cc590c;
+        font-weight: 600;
+        color: #cf3057;
 
         &:hover {
-        opacity: 0.7;
+            color: #a82c4b;
         }
 
         &:active {
@@ -129,16 +119,16 @@ export const EndParagraph = styled.p`
         }
         
     }
-`
+`;
 
 export const GoogleContainer = styled.div`
     display: flex;
     gap: 3px;
     height: 20px;
-`
+`;
 
 export const AppleContainer = styled.div`
     display: flex;
     gap: 3px;
     height: 22px;
-`
+`;
