@@ -39,17 +39,7 @@ export const Form = styled.form`
     width: 88%;
 
     p {
-        margin-left: 3px;
-    }
-
-    a {
-        margin-left: 3px;
-        color: #ce5301;
-
-        &:hover {
-        color: #d17f2d;
-        }
-        
+        margin-left: 5px;
     }
 `;
 
@@ -96,6 +86,7 @@ export const Name = styled.h3`
 
     &:hover {
         color: #cf3057;
+        text-decoration: underline;
     }
 `;
 
@@ -111,7 +102,7 @@ export const EndParagraph = styled.p`
         color: #cf3057;
 
         &:hover {
-            color: #a82c4b;
+            text-decoration: underline;
         }
 
         &:active {

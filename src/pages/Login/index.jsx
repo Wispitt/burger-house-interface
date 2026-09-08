@@ -40,7 +40,12 @@ export function LoginUser() {
 		resolver: yupResolver(schema),
 	});
 
-	const onSubmit = async (data) => console.log(data);
+	const onSubmit = async (data) => {
+		const response = await api.post('/sessions', {
+			emal: data.email,
+			password: data.password,
+		})
+	};
 
 	const navigate = useNavigate();
 
@@ -78,7 +83,7 @@ export function LoginUser() {
 						</Button>
 					</ContainersForm>
 				</Form>
-				<p>ou continue com</p>
+				<p style={{ fontSize: '17px' }}>ou continue com</p>
 
 				<ContainersSocial>
 					<GoogleContainer>

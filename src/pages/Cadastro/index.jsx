@@ -101,7 +101,7 @@ export function CadastroUser() {
 						<Button type="submit">Cadastrar-se</Button>
 					</ContainersForm>
 				</Form>
-				<p>ou cadastre-se com</p>
+				<p style={{ fontSize: '17px' }}>ou cadastre-se com</p>
 
 				<ContainersSocial>
 					<GoogleContainer>

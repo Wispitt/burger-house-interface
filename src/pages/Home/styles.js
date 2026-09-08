@@ -88,12 +88,11 @@ export const Header = styled.div`
 
         &:hover {
         transform: scale(1.1);
-        color: #ca6806;
+        color: #ca0627;
         }
 
         &:active {
-        color: #ee8d2c;
-        opacity: 0.8;
+        opacity: 0.5;
         }
     }
 `;
