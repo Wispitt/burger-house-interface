@@ -49,16 +49,19 @@ export function CadastroUser() {
 	const onSubmit = async (data) => {
 		const reponse = await toast.promise(
 			api.post('/users', {
-			name: data.name,
-			email: data.email,
-			password: data.password,
-		}),
+				name: data.name,
+				email: data.email,
+				password: data.password,
+			}),
 			{
 				pending: 'Cadastrando usuário...',
 				success: 'Cadastro realizado com sucesso!',
 				error: 'Erro ao cadastrar usuário',
-			}
-		)
+			},
+		);
+		// if ( === true) {
+		// 		navigate('/cadastro-de-usuario')
+		// }
 	};
 
 	const navigate = useNavigate();

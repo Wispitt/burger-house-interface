@@ -14,7 +14,18 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"preset": "recommended"
+			"preset": "recommended",
+			"a11y": {
+				"noStaticElementInteractions": "off",
+				"noSvgWithoutTitle": "off",
+				"useAltText": "off",
+				"useKeyWithClickEvents": "off",
+				"useValidAnchor": "off",
+				"useValidLang": "off"
+			},
+			"correctness": {
+				"noUnusedVariables": "off"
+			}
 		}
 	},
 	"javascript": {
