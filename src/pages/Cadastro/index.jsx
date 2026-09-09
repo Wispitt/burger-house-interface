@@ -3,6 +3,7 @@ import { api } from '../../services/api.js';
 import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 import {
 	Container,
@@ -45,7 +46,20 @@ export function CadastroUser() {
 		resolver: yupResolver(schema),
 	});
 
-	const onSubmit = async (data) => console.log(data);
+	const onSubmit = async (data) => {
+		const reponse = await toast.promise(
+			api.post('/users', {
+			name: data.name,
+			email: data.email,
+			password: data.password,
+		}),
+			{
+				pending: 'Cadastrando usuário...',
+				success: 'Cadastro realizado com sucesso!',
+				error: 'Erro ao cadastrar usuário',
+			}
+		)
+	};
 
 	const navigate = useNavigate();
 

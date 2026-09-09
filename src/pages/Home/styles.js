@@ -71,7 +71,9 @@ export const Header = styled.div`
 
     span {
         text-decoration: underline;
-    }
+        color: #bd2f47;
+        cursor: pointer;
+        }
 
     i {
         font-size: 28px;

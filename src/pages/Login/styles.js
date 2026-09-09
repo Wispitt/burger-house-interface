@@ -44,8 +44,9 @@ export const ContainersForm = styled.div`
     flex-direction: column;
 
     a {
-        max-width: 127px;
-        margin-left: 3px;
+        font-size: 97%;
+        max-width: 42%;
+        margin-left: 5px;
         color: #cf3057;
 
         &:hover {
@@ -98,7 +99,7 @@ export const Name = styled.h3`
 export const EndParagraph = styled.div`
     display: flex;
     margin-top: 15px;
-    font-size: 16px;
+    font-size: 18px;
 
     a {
         margin-left: 3px;

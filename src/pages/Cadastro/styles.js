@@ -93,7 +93,7 @@ export const Name = styled.h3`
 export const EndParagraph = styled.p`
     display: flex;
     margin-top: 15px;
-    font-size: 17px;
+    font-size: 18px;
     margin-bottom: 50px;
 
     a {

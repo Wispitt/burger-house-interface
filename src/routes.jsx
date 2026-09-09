@@ -5,16 +5,16 @@ import { CadastroUser } from './pages/Cadastro';
 import { Home } from './pages/Home';
 
 export const router = createHashRouter([
-    {
-        path: '/',
-        element: <LoginUser />,
-    },
-    {
-        path: '/cadastro-de-usuario',
-        element: <CadastroUser />
-    },
-    {
-        path: '/home',
-        element: <Home />
-    }
+	{
+		path: '/',
+		element: <LoginUser />,
+	},
+	{
+		path: '/cadastro-de-usuario',
+		element: <CadastroUser />,
+	},
+	{
+		path: '/home',
+		element: <Home />,
+	},
 ]);

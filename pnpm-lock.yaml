@@ -29,6 +29,9 @@ importers:
       react-router-dom:
         specifier: ^7.18.2
         version: 7.18.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      react-toastify:
+        specifier: ^11.1.0
+        version: 11.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       styled-components:
         specifier: ^6.5.1
         version: 6.5.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -586,6 +589,10 @@ packages:
 
   cli-width@1.1.1:
     resolution: {integrity: sha512-eMU2akIeEIkCxGXUNmDnJq1KzOIiPnJ+rKqRe6hcxE3vIOPvpMrBYOn/Bl7zNlYJj/zQxXquAnozHUCf9Whnsg==}
+
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
 
   code-point-at@1.1.0:
     resolution: {integrity: sha512-RpAVKQA5T63xEj6/giIbUEtZwJ4UFIc3ZtvEkiaUERylqe8xb5IvqcgOurZLahv93CLKfxcw5YI+DZcUBRyLXA==}
@@ -1232,6 +1239,12 @@ packages:
       react-dom:
         optional: true
 
+  react-toastify@11.1.0:
+    resolution: {integrity: sha512-e9h23x3phN0wbFeB6yovmWp7lobzV4CaCH0LO8nVP6H7Y+3GbcLpIzMm9dJhcp1RXbpyfvjgpfXqO80QAmn7sg==}
+    peerDependencies:
+      react: ^18 || ^19
+      react-dom: ^18 || ^19
+
   react@19.2.8:
     resolution: {integrity: sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==}
     engines: {node: '>=0.10.0'}
@@ -1874,6 +1887,8 @@ snapshots:
 
   cli-width@1.1.1: {}
 
+  clsx@2.1.1: {}
+
   code-point-at@1.1.0: {}
 
   combined-stream@1.0.8:
@@ -2471,6 +2486,12 @@ snapshots:
       react: 19.2.8
       set-cookie-parser: 2.7.2
     optionalDependencies:
+      react-dom: 19.2.8(react@19.2.8)
+
+  react-toastify@11.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+    dependencies:
+      clsx: 2.1.1
+      react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
 
   react@19.2.8: {}

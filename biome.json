@@ -1,5 +1,4 @@
 {
-	
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -16,11 +15,7 @@
 		"enabled": true,
 		"rules": {
 			"preset": "recommended"
-		},
-		"ally": {
-			"enabled": true
 		}
-		
 	},
 	"javascript": {
 		"formatter": {

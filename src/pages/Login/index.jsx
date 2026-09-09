@@ -3,6 +3,7 @@ import { api } from '../../services/api.js';
 import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 import {
 	Container,
@@ -41,10 +42,17 @@ export function LoginUser() {
 	});
 
 	const onSubmit = async (data) => {
-		const response = await api.post('/sessions', {
-			emal: data.email,
-			password: data.password,
-		})
+		const response = await toast.promise(
+			api.post('/sessions', {
+				emal: data.email,
+				password: data.password,
+			}),
+			{
+				pending: 'Verificando dados...',
+				success: 'Login realizado com sucesso!',
+				error: 'E-mail ou senha incorretos',
+			},
+		);
 	};
 
 	const navigate = useNavigate();

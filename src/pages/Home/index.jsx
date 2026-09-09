@@ -60,9 +60,7 @@ export function Home() {
 					</SnackBar>
 				</div>
 				<Header>
-					<a>
-						<span>Início</span>
-					</a>
+					<span>Início</span>
 					<a>Cardápio</a>
 					<a>Promoções</a>
 					<a>Sobre nós</a>
