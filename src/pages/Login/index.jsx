@@ -23,6 +23,7 @@ import { Title } from '../../components/Title';
 import logoGoogle from '../../assets/img/google.png';
 import logoApple from '../../assets/img/apple.png';
 import { Button } from '../../components/Button';
+import { AxiosError } from 'axios';
 
 export function LoginUser() {
 	const schema = Yup.object({
@@ -42,17 +43,20 @@ export function LoginUser() {
 	});
 
 	const onSubmit = async (data) => {
-		const response = await toast.promise(
-			api.post('/sessions', {
+		const { status } = await api.post(
+			'/sessions',
+			{
 				emal: data.email,
 				password: data.password,
-			}),
+			},
 			{
-				pending: 'Verificando dados...',
-				success: 'Login realizado com sucesso!',
-				error: 'E-mail ou senha incorretos',
+				validateStatus: () => true,
 			},
 		);
+
+		if (status === 200  status === 201)
+
+		console.log(status);
 	};
 
 	const navigate = useNavigate();

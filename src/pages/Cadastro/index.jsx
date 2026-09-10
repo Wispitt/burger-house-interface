@@ -47,7 +47,7 @@ export function CadastroUser() {
 	});
 
 	const onSubmit = async (data) => {
-		const reponse = await toast.promise(
+		const response = await toast.promise(
 			api.post('/users', {
 				name: data.name,
 				email: data.email,
