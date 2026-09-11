@@ -25,6 +25,8 @@ import logoApple from '../../assets/img/apple.png';
 import { Button } from '../../components/Button';
 
 export function CadastroUser() {
+	const navigate = useNavigate();
+
 	const schema = Yup.object({
 		name: Yup.string().required('O nome é obrigatório'),
 		email: Yup.string()
@@ -34,7 +36,7 @@ export function CadastroUser() {
 			.min(6, 'A senha deve ter no mínimo 6 caracteres')
 			.required('A senha é obrigatória'),
 		confirmPassword: Yup.string()
-			.oneOf([Yup.ref('password'), null], 'As senhas devem ser iguais')
+			.oneOf([Yup.ref('password')], 'As senhas devem ser iguais')
 			.required('A confirmação de senha é obrigatória'),
 	});
 
@@ -47,24 +49,35 @@ export function CadastroUser() {
 	});
 
 	const onSubmit = async (data) => {
-		const response = await toast.promise(
-			api.post('/users', {
-				name: data.name,
-				email: data.email,
-				password: data.password,
-			}),
-			{
-				pending: 'Cadastrando usuário...',
-				success: 'Cadastro realizado com sucesso!',
-				error: 'Erro ao cadastrar usuário',
-			},
-		);
-		// if ( === true) {
-		// 		navigate('/cadastro-de-usuario')
-		// }
-	};
+		try {
+			const { status } = await api.post(
+				'/users',
+				{
+					name: data.name,
+					email: data.email,
+					password: data.password,
+				},
+				{
+					validateStatus: () => true,
+				},
+			);
 
-	const navigate = useNavigate();
+			if (status === 200 || status === 201) {
+				toast.success('Cadastro realizado com sucesso!');
+				setTimeout(() => {
+					navigate('/');
+				}, 1000);
+			} else if (status === 409) {
+				toast.error(
+					'Este e-mail já está em uso! Faça login ou use outro e-mail.',
+				);
+			} else {
+				throw new Error();
+			}
+		} catch {
+			toast.error('Ocorreu um erro! Tente novamente.');
+		}
+	};
 
 	return (
 		<Container>

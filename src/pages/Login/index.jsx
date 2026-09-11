@@ -23,9 +23,10 @@ import { Title } from '../../components/Title';
 import logoGoogle from '../../assets/img/google.png';
 import logoApple from '../../assets/img/apple.png';
 import { Button } from '../../components/Button';
-import { AxiosError } from 'axios';
 
-export function LoginUser() {
+export function Login() {
+	const navigate = useNavigate();
+
 	const schema = Yup.object({
 		email: Yup.string()
 			.email('E-mail ou senha incorretos')
@@ -43,23 +44,32 @@ export function LoginUser() {
 	});
 
 	const onSubmit = async (data) => {
-		const { status } = await api.post(
+		try {
+			const { status } = await api.post(
 			'/sessions',
 			{
-				emal: data.email,
+				email: data.email,
 				password: data.password,
 			},
 			{
 				validateStatus: () => true,
 			},
-		);
+			);
 
-		if (status === 200  status === 201)
-
-		console.log(status);
+			if (status === 200 || status === 201) {
+				toast.success('Login realizado com sucesso!');
+				setTimeout(() => {
+					navigate('/home');
+				}, 1000);
+			} else if (status === 400) {
+				toast.error('E-mail ou senha incorretos!');
+			} else {	
+				throw new Error();
+			} 
+		} catch {
+			toast.error('Ocorreu um erro! Tente novamente.');
+		}
 	};
-
-	const navigate = useNavigate();
 
 	return (
 		<Container>
@@ -90,7 +100,7 @@ export function LoginUser() {
 
 					<ContainersForm>
 						<a>Esqueceu a senha?</a>
-						<Button type="submit" onClick={() => navigate('/home')}>
+						<Button type="submit">
 							Entrar
 						</Button>
 					</ContainersForm>

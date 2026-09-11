@@ -45,7 +45,7 @@ export const ContainersForm = styled.div`
 
     a {
         font-size: 97%;
-        max-width: 42%;
+        width: 127px;
         margin-left: 5px;
         color: #cf3057;
 

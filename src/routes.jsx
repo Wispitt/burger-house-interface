@@ -1,13 +1,13 @@
 import { createHashRouter } from 'react-router-dom';
 
-import { LoginUser } from './pages/Login';
+import { Login } from './pages/Login';
 import { CadastroUser } from './pages/Cadastro';
 import { Home } from './pages/Home';
 
 export const router = createHashRouter([
 	{
 		path: '/',
-		element: <LoginUser />,
+		element: <Login />,
 	},
 	{
 		path: '/cadastro-de-usuario',

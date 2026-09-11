@@ -27,6 +27,7 @@ export const TitleWrapper = styled.div`
 
     h1 {
         font-size: 140%;
+        height: 15px;
         font-family: "Sekuya", system-ui;
         color: #4d2b12;
         margin-bottom: 3px;
