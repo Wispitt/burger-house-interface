@@ -100,6 +100,10 @@ export const Header = styled.div`
     }
 `;
 
+export const ContainerMainAndButton = styled.div`
+    position: relative;
+`;
+
 export const BannerMain = styled.img`
     width: 100%;
     border-radius: 20px;
@@ -107,14 +111,14 @@ export const BannerMain = styled.img`
 
 export const ButtonMenu = styled.button`
     font-family: "Sekuya", system-ui;
-    position: relative;
-    bottom: 100px;
-    left: 120px;
+    position: absolute;
+    bottom: 50px;
+    left: 90px;
     width: 17%;
-    height: 40px;
+    height: 9%;
     border-radius: 18px;
     background-color: #f1a026;
-    font-size: 16px;
+    font-size: 1.1vw;
     font-weight: bold;
     transition: transform 0.8s ease;
 
@@ -144,6 +148,10 @@ export const ButtonMenu = styled.button`
     &:active {
         opacity: 1;
     }
+
+    @media screen and (max-width: 1350px){
+        display: none;
+    }
 `;
 
 export const Highlights = styled.div`
@@ -172,6 +180,18 @@ export const AllProducts = styled.div`
   grid-template-rows: 64% 30%;
   gap: 1px;
   border-radius: 15px;
+
+   @media screen and (max-width: 1320px){
+        grid-template-columns: 25.2% 25.2% 25.2% 25.2%;
+        grid-template-rows: 57% 30%;
+    }
+
+    @media screen and (max-width: 1100px){
+        width: 80%;
+        height: 60vh;
+        grid-template-columns: 30% 30%;
+        grid-template-rows: 50% 30% 30%;
+    }
 `;
 
 export const ProductsMain = styled.div`
@@ -193,11 +213,12 @@ export const ProductsMain = styled.div`
         font-size: 18px;
         font-weight: bold;
         width: 90%;
+        margin-top: 3px;
     }
 `;
 
 export const IconAdd = styled.img`
-    width: 15%;
+    width: 16%;
     margin: 0 8px 8px 0;
     transition: transform 0.6s ease;
 
@@ -213,7 +234,7 @@ export const ProductImage = styled.img`
 `;
 
 export const NameProduct = styled.h4`
-    font-size: 18px;
+    font-size: 21px;
     margin-top: 8px;
 `;
 
@@ -235,6 +256,10 @@ export const HouseSpecifications = styled.div`
    width: 90%;
    height: 100%;
    grid-column: 1/5;
+
+    @media screen and (max-width: 1320px){
+        grid-column: 1/6;
+    }
 `;
 
 export const Specifications = styled.img`
@@ -255,6 +280,10 @@ export const HouseBannerCombo = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     height: 136.4%;
+
+    @media screen and (max-width: 1320px){
+        display: none;
+    }
 `;
 
 export const ButtonCombo = styled.button`
@@ -298,6 +327,8 @@ export const ButtonCombo = styled.button`
     &:active {
         opacity: 1;
     }
+
+
 `;
 
 export const BannerCombo = styled.img`

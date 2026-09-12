@@ -24,6 +24,7 @@ import {
 	ButtonMenu,
 	HouseBannerCombo,
 	ButtonCombo,
+	ContainerMainAndButton,
 } from './styles';
 
 import bannerMain from '../../assets/img/banner-main.png';
@@ -68,11 +69,12 @@ export function Home() {
 					<i class="ri-shopping-cart-line"></i>
 					<i class="ri-user-3-line"></i>
 				</Header>
-
-				<BannerMain src={bannerMain} />
-				<ButtonMenu>
-					Ver Cardápio <i class="ri-arrow-right-line"></i>{' '}
-				</ButtonMenu>
+				<ContainerMainAndButton>
+					<BannerMain src={bannerMain} />
+					<ButtonMenu>
+						Ver Cardápio <i class="ri-arrow-right-line"></i>{' '}
+					</ButtonMenu>
+				</ContainerMainAndButton>
 			</Section>
 
 			<Highlights>

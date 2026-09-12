@@ -45,15 +45,18 @@ export function Login() {
 
 	const onSubmit = async (data) => {
 		try {
-			const { status } = await api.post(
-			'/sessions',
-			{
-				email: data.email,
-				password: data.password,
-			},
-			{
-				validateStatus: () => true,
-			},
+			const {
+				data: { token },
+				status,
+			} = await api.post(
+				'/sessions',
+				{
+					email: data.email,
+					password: data.password,
+				},
+				{
+					validateStatus: () => true,
+				},
 			);
 
 			if (status === 200 || status === 201) {
@@ -63,9 +66,11 @@ export function Login() {
 				}, 1000);
 			} else if (status === 400) {
 				toast.error('E-mail ou senha incorretos!');
-			} else {	
+			} else {
 				throw new Error();
-			} 
+			}
+
+			localStorage.setItem('token', token);
 		} catch {
 			toast.error('Ocorreu um erro! Tente novamente.');
 		}
@@ -100,9 +105,7 @@ export function Login() {
 
 					<ContainersForm>
 						<a>Esqueceu a senha?</a>
-						<Button type="submit">
-							Entrar
-						</Button>
+						<Button type="submit">Entrar</Button>
 					</ContainersForm>
 				</Form>
 				<p style={{ fontSize: '17px' }}>ou continue com</p>
