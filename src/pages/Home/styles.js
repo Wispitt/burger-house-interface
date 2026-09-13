@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import backGround from '../../assets/img/backgound-interface.jpeg'
+import backGround from '../../assets/img/backgound-interface.jpeg';
 
 export const Container = styled.div`
     background-image: url(${backGround});
@@ -26,12 +26,13 @@ export const TitleWrapper = styled.div`
     width: 25%;
 
     h1 {
-        font-size: 240%;
-        font-family: "Roboto", sans-serif;
+        font-size: 140%;
+        height: 15px;
+        font-family: "Sekuya", system-ui;
         color: #4d2b12;
         margin-bottom: 3px;
     }
-`
+`;
 
 export const IconLogo = styled.img`
     width: 50px;
@@ -44,13 +45,13 @@ export const SnackBar = styled.div`
     width: 43%;
     gap: 7px;
     color: black;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 4px;
 
     &::before, &::after {
         content: "";
-        width: 85px;
+        width: 86px;
         height: 2px;
         background: black;
     }
@@ -69,6 +70,12 @@ export const Header = styled.div`
     font-family: "Roboto", sans-serif;
     font-weight: 500;
 
+    span {
+        text-decoration: underline;
+        color: #bd2f47;
+        cursor: pointer;
+        }
+
     i {
         font-size: 28px;
         transition: transform 0.6s ease;
@@ -84,14 +91,17 @@ export const Header = styled.div`
 
         &:hover {
         transform: scale(1.1);
-        color: #ca6806;
+        color: #ca0627;
         }
 
         &:active {
-        color: #ee8d2c;
-        opacity: 0.8;
+        opacity: 0.5;
         }
     }
+`;
+
+export const ContainerMainAndButton = styled.div`
+    position: relative;
 `;
 
 export const BannerMain = styled.img`
@@ -100,23 +110,28 @@ export const BannerMain = styled.img`
 `;
 
 export const ButtonMenu = styled.button`
-    position: relative;
-    bottom: 100px;
-    left: 120px;
+    font-family: "Sekuya", system-ui;
+    position: absolute;
+    bottom: 50px;
+    left: 90px;
     width: 17%;
-    height: 40px;
+    height: 9%;
     border-radius: 18px;
     background-color: #f1a026;
-    font-size: 20px;
+    font-size: 1.1vw;
     font-weight: bold;
     transition: transform 0.8s ease;
+
+    i {
+        font-size: 20px;
+    }
 
     &:hover {
         opacity: 0.9;
         transform: scale(1.1);
 
-        span {
-            animation: mover 0.4s infinite alternate;
+        i {
+            animation: mover 0.6s infinite alternate;
              display: inline-block;
 
             @keyframes mover {
@@ -132,6 +147,10 @@ export const ButtonMenu = styled.button`
 
     &:active {
         opacity: 1;
+    }
+
+    @media screen and (max-width: 1350px){
+        display: none;
     }
 `;
 
@@ -156,11 +175,23 @@ export const Highlights = styled.div`
 export const AllProducts = styled.div`
   display: grid;
   width: 96%;
-  height: 67vh;
+  height: 63vh;
   grid-template-columns: 19.7% 19.7% 19.7% 19.7% 20.9%;
-  grid-template-rows: 68% 30%;
+  grid-template-rows: 64% 30%;
   gap: 1px;
   border-radius: 15px;
+
+   @media screen and (max-width: 1320px){
+        grid-template-columns: 25.2% 25.2% 25.2% 25.2%;
+        grid-template-rows: 57% 30%;
+    }
+
+    @media screen and (max-width: 1100px){
+        width: 80%;
+        height: 60vh;
+        grid-template-columns: 30% 30%;
+        grid-template-rows: 50% 30% 30%;
+    }
 `;
 
 export const ProductsMain = styled.div`
@@ -175,18 +206,19 @@ export const ProductsMain = styled.div`
     transition: transform 0.9s ease;
 
     &:hover {
-        transform: scale(1.06);
+        transform: scale(1.05);
     }
 
     p {
         font-size: 18px;
         font-weight: bold;
         width: 90%;
+        margin-top: 3px;
     }
 `;
 
 export const IconAdd = styled.img`
-    width: 15%;
+    width: 16%;
     margin: 0 8px 8px 0;
     transition: transform 0.6s ease;
 
@@ -202,7 +234,7 @@ export const ProductImage = styled.img`
 `;
 
 export const NameProduct = styled.h4`
-    font-size: 18px;
+    font-size: 21px;
     margin-top: 8px;
 `;
 
@@ -224,11 +256,15 @@ export const HouseSpecifications = styled.div`
    width: 90%;
    height: 100%;
    grid-column: 1/5;
+
+    @media screen and (max-width: 1320px){
+        grid-column: 1/6;
+    }
 `;
 
 export const Specifications = styled.img`
     width: 110%;
-    height: 147px;
+    height: 85%;
     margin-top: 10px;
     border: 2px solid #ebc9a3;
     border-radius: 15px;
@@ -240,29 +276,42 @@ export const Specifications = styled.img`
 `;
 
 export const HouseBannerCombo = styled.div`
-    grid-row: 1/3;
-    grid-column: 5/6;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 136.4%;
+
+    @media screen and (max-width: 1320px){
+        display: none;
+    }
 `;
 
 export const ButtonCombo = styled.button`
-    position: absolute;
-    right: 10%;
-    bottom: -53%;
-    width: 10%;
+    font-family: "Sekuya", system-ui;
+    width: 63%;
     height: 40px;
+    margin-bottom: 20px;
     border-radius: 18px;
     background-color: #f19710;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     transition: transform 0.8s ease;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    justify-self: center;
+
+    i {
+        font-size: 20px;
+    }
 
     &:hover {
         opacity: 0.9;
         transform: scale(1.1);
 
-        span {
-            animation: mover 0.4s infinite alternate;
-             display: inline-block;
+        i {
+            animation: mover 0.6s infinite alternate;
+            display: inline-block;
 
             @keyframes mover {
                 0% {
@@ -278,12 +327,17 @@ export const ButtonCombo = styled.button`
     &:active {
         opacity: 1;
     }
+
+
 `;
 
 export const BannerCombo = styled.img`
     width: 100%;
-    height: 94.4%;
+    height: 545px;
     border-radius: 20px;
+    grid-column: 1;
+    grid-row: 1;
+    transition: transform 0.9s ease;
 `;
 
 export const Footer = styled.div`
@@ -291,12 +345,11 @@ export const Footer = styled.div`
   height: 110px;
   width: 100%;
   border-radius: 7px;
-  background-color: #402314;
+  background-color: #3f1d0c;
   display: flex;
   gap: 28%;
   justify-content: center;
   align-items: center;
-  margin-top: 18px;
 `;
 
 export const FooterLeft = styled.div`
@@ -344,7 +397,6 @@ export const FooterRight = styled.div`
 
     img {
         width: 22px;
-        margin: 5px 7px;
+        margin: 5px 3px;
     }
 `;
-

@@ -1,4 +1,5 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const GlobalStyles = createGlobalStyle`
     *{
@@ -12,4 +13,4 @@ export const GlobalStyles = createGlobalStyle`
         cursor: pointer;
         border: none;
     }
-`
+`;

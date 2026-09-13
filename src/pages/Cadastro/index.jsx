@@ -1,77 +1,154 @@
+import * as Yup from 'yup';
+import { api } from '../../services/api.js';
 import { useNavigate } from 'react-router-dom';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 import {
-    Container,
-    ContainerMain,
-    Form,
-    Paragraph,
-    InputLogin,
-    ButtonEnter,
-    ContainersSocial,
-    Name,
-    ContainersForm,
-    EndParagraph,
-    GoogleContainer,
-    AppleContainer
+	Container,
+	ContainerMain,
+	Form,
+	Paragraph,
+	InputLogin,
+	ContainersSocial,
+	Name,
+	ContainersForm,
+	EndParagraph,
+	GoogleContainer,
+	AppleContainer,
 } from './styles';
 
 import { Title } from '../../components/Title';
 import logoGoogle from '../../assets/img/google.png';
 import logoApple from '../../assets/img/apple.png';
+import { Button } from '../../components/Button';
 
 export function CadastroUser() {
+	const navigate = useNavigate();
 
-    const navigate = useNavigate();
+	const schema = Yup.object({
+		name: Yup.string().required('O nome é obrigatório'),
+		email: Yup.string()
+			.email('Digite um e-mail válido')
+			.required('O e-mail é obrigatório'),
+		password: Yup.string()
+			.min(6, 'A senha deve ter no mínimo 6 caracteres')
+			.required('A senha é obrigatória'),
+		confirmPassword: Yup.string()
+			.oneOf([Yup.ref('password')], 'As senhas devem ser iguais')
+			.required('A confirmação de senha é obrigatória'),
+	});
 
-    return (
-        <Container>
-            <ContainerMain>
-                <Title />
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm({
+		resolver: yupResolver(schema),
+	});
 
-                <Paragraph>Crie sua conta na Burger House</Paragraph>
+	const onSubmit = async (data) => {
+		try {
+			const { status } = await api.post(
+				'/users',
+				{
+					name: data.name,
+					email: data.email,
+					password: data.password,
+				},
+				{
+					validateStatus: () => true,
+				},
+			);
 
-                <Form>
-                    <ContainersForm>
-                        <p>Nome</p>
-                        <InputLogin type='string' placeholder='Digite seu nome' />
-                    </ContainersForm>
+			if (status === 200 || status === 201) {
+				toast.success('Cadastro realizado com sucesso!');
+				setTimeout(() => {
+					navigate('/');
+				}, 1000);
+			} else if (status === 409) {
+				toast.error(
+					'Este e-mail já está em uso! Faça login ou use outro e-mail.',
+				);
+			} else {
+				throw new Error();
+			}
+		} catch {
+			toast.error('Ocorreu um erro! Tente novamente.');
+		}
+	};
 
-                    <ContainersForm>
-                        <p>E-mail</p>
-                        <InputLogin type='email' placeholder='Digite seu email' />
-                    </ContainersForm>
+	return (
+		<Container>
+			<ContainerMain>
+				<Title />
 
-                    <ContainersForm>
-                        <p>Senha</p>
-                        <InputLogin type='password' placeholder='Crie uma senha' />
-                    </ContainersForm>
+				<Paragraph>Crie sua conta na Burger House</Paragraph>
 
-                    <ContainersForm>
-                        <p>Confirmar senha</p>
-                        <InputLogin type='password' placeholder='Confirme sua senha' />
-                    </ContainersForm>
+				<Form onSubmit={handleSubmit(onSubmit)}>
+					<ContainersForm>
+						<p>Nome</p>
+						<InputLogin
+							type="text"
+							{...register('name')}
+							placeholder="Digite seu nome"
+						/>
+						<span>{errors?.name?.message}</span>
+					</ContainersForm>
 
-                    <ContainersForm>
-                        <ButtonEnter type='button'>Cadastrar-se</ButtonEnter>
-                    </ContainersForm>
+					<ContainersForm>
+						<p>E-mail</p>
+						<InputLogin
+							type="email"
+							{...register('email')}
+							placeholder="Digite seu email"
+						/>
+						<span>{errors?.email?.message}</span>
+					</ContainersForm>
 
-                </Form>
-                <p>ou cadastre-se com</p>
+					<ContainersForm>
+						<p>Senha</p>
+						<InputLogin
+							type="password"
+							{...register('password')}
+							placeholder="Crie uma senha"
+						/>
+						<span>{errors?.password?.message}</span>
+					</ContainersForm>
 
-                <ContainersSocial>
-                    <GoogleContainer>
-                        <img src={logoGoogle} alt='Google' />
-                        <Name>Google</Name>
-                    </GoogleContainer>
+					<ContainersForm>
+						<p>Confirmar senha</p>
+						<InputLogin
+							type="password"
+							{...register('confirmPassword')}
+							placeholder="Confirme sua senha"
+						/>
+						<span>{errors?.confirmPassword?.message}</span>
+					</ContainersForm>
 
-                    <AppleContainer>
-                        <img src={logoApple} alt='Apple' />
-                        <Name>Apple</Name>
-                    </AppleContainer>
-                </ContainersSocial>
+					<ContainersForm>
+						<Button type="submit">Cadastrar-se</Button>
+					</ContainersForm>
+				</Form>
+				<p style={{ fontSize: '17px' }}>ou cadastre-se com</p>
 
-                <EndParagraph>Já tem uma conta?<a onClick={() => navigate('/')}>Entrar</a></EndParagraph>
-            </ContainerMain>
-        </Container>
-    );
+				<ContainersSocial>
+					<GoogleContainer>
+						<img src={logoGoogle} alt="Google" />
+						<Name>Google</Name>
+					</GoogleContainer>
+
+					<AppleContainer>
+						<img src={logoApple} alt="Apple" />
+						<Name>Apple</Name>
+					</AppleContainer>
+				</ContainersSocial>
+
+				<EndParagraph>
+					Já tem uma conta?<a onClick={() => navigate('/')}>Entrar</a>
+				</EndParagraph>
+			</ContainerMain>
+		</Container>
+	);
 }

@@ -1,13 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { RouterProvider } from 'react-router-dom'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
-import { router } from './routes.jsx'
-import { GlobalStyles } from './styles/GlobalStyles.js'
+import { router } from './routes.jsx';
+import { GlobalStyles } from './styles/GlobalStyles.js';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-    <GlobalStyles />
-  </StrictMode>,
-)
+	<StrictMode>
+		<RouterProvider router={router} />
+		<GlobalStyles />
+		<ToastContainer autoClose={1500} theme='dark' />
+	</StrictMode>,
+);
