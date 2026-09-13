@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import backGround from '../../assets/img/backgound-interface.jpeg'
+import backGround from '../../assets/img/backgound-interface.jpeg';
 
 export const Container = styled.div`
     background-image: url(${backGround});
@@ -9,7 +9,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-`
+`;
 
 export const ContainerMain = styled.div`
     width: 30%;
@@ -17,13 +17,13 @@ export const ContainerMain = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-`
+`;
 
 export const Paragraph = styled.p`
     text-align: center;
     font-size: 13px;
     font-family: "Roboto", sans-serif;
-`
+`;
 
 export const Form = styled.form`
     display: flex;
@@ -33,59 +33,46 @@ export const Form = styled.form`
     width: 88%;
 
     p {
-        margin-left: 3px;
+        margin-left: 5px;
     }
-`
+`;
 
 export const ContainersForm = styled.div`
     width: 100%;
-    margin-top: 14px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
 
     a {
-        margin-left: 3px;
-        color: #cc590c;
+        font-size: 97%;
+        width: 127px;
+        margin-left: 5px;
+        color: #cf3057;
 
         &:hover {
-        opacity: 0.7;
-        }
-
-        &:active {
-            color: #e72525;
+            text-decoration: underline;
         }
         
     }
-`
+
+    span {
+        font-size: 12px;
+        margin-left: 5px;
+        color: #c50233;
+        font-weight: 600;
+        height: 20px;
+    }
+`;
 
 export const InputLogin = styled.input`
     width: 100%;
-    height: 36px;
+    height: 38px;
     border-radius: 8px;
     background-color: #fff;
     padding: 0 10px;
     font-size: 13px;
     border: 1px solid black;
-`
-
-export const ButtonEnter = styled.button`
-    width: 100%;
-    height: 37px;
-    border-radius: 8px;
-    background-color: black;
-    color: #fff;
-    font-size: 18px;
-    border: 1px solid black;
-    margin-bottom: 10px;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-
-    &:hover {
-        border: 1px solid #f09132;
-    }
-
-    &:active {
-        opacity: 0.8;
-    }
-`
+`;
 
 export const ContainersSocial = styled.div`
     margin-top: 10px;
@@ -96,7 +83,7 @@ export const ContainersSocial = styled.div`
     img {
         width: 20px;
     }
-`
+`;
 
 export const Name = styled.h3`
     font-family: "Roboto", sans-serif;
@@ -104,21 +91,23 @@ export const Name = styled.h3`
     cursor: pointer;
 
     &:hover {
-        color: #f38820;
+        color: #cf3057;
+        text-decoration: underline;
     }
-`
+`;
 
 export const EndParagraph = styled.div`
     display: flex;
     margin-top: 15px;
-    font-size: 16px;
+    font-size: 18px;
 
     a {
         margin-left: 3px;
-        color: #cc590c;
+        font-weight: 600;
+        color: #cf3057;
 
         &:hover {
-        opacity: 0.7;
+            text-decoration: underline;
         }
 
         &:active {
@@ -126,16 +115,16 @@ export const EndParagraph = styled.div`
         }
         
     }
-`
+`;
 
 export const GoogleContainer = styled.div`
     display: flex;
     gap: 3px;
     height: 20px;
-`
+`;
 
 export const AppleContainer = styled.div`
     display: flex;
     gap: 3px;
     height: 22px;
-`
+`;

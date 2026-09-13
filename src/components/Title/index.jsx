@@ -1,5 +1,5 @@
+import { TitleWrapper, IconLogo, SnackBar } from './styles';
 import logoBurger from '../../assets/img/burger-icon.png';
-import { IconLogo, SnackBar, TitleWrapper } from './styles';
 
 export function Title() {
 	return (

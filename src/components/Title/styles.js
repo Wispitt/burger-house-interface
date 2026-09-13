@@ -11,7 +11,7 @@ export const TitleWrapper = styled.div`
         font-family: "Sekuya", system-ui;
         color: #4d2b12;
     }
-`
+`;
 
 export const IconLogo = styled.img`
     width: 50px;
@@ -34,4 +34,4 @@ export const SnackBar = styled.div`
         height: 2px;
         background: black;
     }
-`
+`;
