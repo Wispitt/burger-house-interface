@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import {
 	Container,
 	Section,
@@ -35,6 +37,7 @@ import secondBurger from '../../assets/img/second-burger.png';
 import frenchFries from '../../assets/img/french-fries.png';
 import milkShake from '../../assets/img/milk-shake.png';
 import addIcon from '../../assets/img/add-cart-icon.png';
+
 import specifications from '../../assets/img/specifications-house.png';
 import combosSpecial from '../../assets/img/combo-special.png';
 
@@ -47,6 +50,9 @@ import eloIcon from '../../assets/img/elo-icon.png';
 import pixIcon from '../../assets/img/pix-icon.jpg';
 
 export function Home() {
+
+	const navigate = useNavigate();
+
 	return (
 		<Container>
 			<Section>
@@ -62,7 +68,7 @@ export function Home() {
 				</div>
 				<Header>
 					<span>Início</span>
-					<a>Cardápio</a>
+					<a onClick={() => navigate('/cardapio')}>Cardápio</a>
 					<a>Promoções</a>
 					<a>Sobre nós</a>
 					<a>Contato</a>

@@ -71,9 +71,22 @@ export const Header = styled.div`
     font-weight: 500;
 
     span {
-        text-decoration: underline;
-        color: #bd2f47;
-        cursor: pointer;
+            color: #bd2f47;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 3px;
+                right: 495px;
+                width: 46px;
+                height: 2.4px;
+                background-color: #bd2f47;
+            }
+
+            &:hover {
+                opacity: 0.6;
+            }
         }
 
     i {
@@ -81,7 +94,7 @@ export const Header = styled.div`
         transition: transform 0.6s ease;
 
         &:hover {
-        transform: scale(1.1);
+        transform: scale(1.2);
         cursor: pointer;
         }
     }
