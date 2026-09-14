@@ -10,10 +10,13 @@ export function CarouselBurger() {
 
 	useEffect(() => {
 		async function fetchProducts() {
-			const { data } = await api.get('/products');
-
-			console.log(data);
-			setProducts(data);
+			try {
+				const { data } = await api.get('/products');
+				
+				setProducts(data);
+			} catch (error) {
+				console.error('Erro ao buscar produtos:', error);
+			}
 		}
 
 		fetchProducts();

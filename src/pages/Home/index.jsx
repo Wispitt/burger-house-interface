@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import { api } from '../../services/api';
+import { useEffect, useState } from 'react';
 
 import {
 	Container,
@@ -53,6 +55,19 @@ export function Home() {
 
 	const navigate = useNavigate();
 
+	const [products, setProducts] = useState([]);
+	
+		useEffect(() => {
+			async function fetchProducts() {
+				const { data } = await api.get('/products');
+	
+				console.log(data);
+				setProducts(data);
+			}
+	
+			fetchProducts();
+		}, []);
+
 	return (
 		<Container>
 			<Section>
@@ -88,6 +103,18 @@ export function Home() {
 			</Highlights>
 
 			<AllProducts>
+				{products.map((product) =>  (
+
+					<ProductsMain key={product.id}>
+						<ProductImage src={product.url}/>
+						<NameProduct> {product.name} </NameProduct>
+						<li>Pão, carne, queijo, alface, tomate e maionese especial.</li>
+						<ValueAndIcon>
+							<ProductValue> {product.price} </ProductValue>
+							<IconAdd src={addIcon} />
+						</ValueAndIcon>
+					</ProductsMain>
+				))}
 				<ProductsMain>
 					<ProductImage src={firstBurger} style={{ width: '60%' }} />
 					<NameProduct>Classic Burger</NameProduct>
