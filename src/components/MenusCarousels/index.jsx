@@ -1,7 +1,6 @@
 import { api } from '../../services/api';
 import { useEffect, useState } from 'react';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import useEmblaCarousel from 'embla-carousel-react';
 
 import { Container, ContainerProducts } from './styles';
 
@@ -12,7 +11,8 @@ export function CarouselBurger() {
 		async function fetchProducts() {
 			try {
 				const { data } = await api.get('/products');
-				
+
+				console.log(data.url);
 				setProducts(data);
 			} catch (error) {
 				console.error('Erro ao buscar produtos:', error);
@@ -22,40 +22,21 @@ export function CarouselBurger() {
 		fetchProducts();
 	}, []);
 
-	const responsive = {
-		superLargeDesktop: {
-			breakpoint: { max: 4000, min: 3000 },
-			items: 4,
-		},
-		desktop: {
-			breakpoint: { max: 3000, min: 1280 },
-			items: 4,
-		},
-		tablet: {
-			breakpoint: { max: 1280, min: 690 },
-			items: 3,
-		},
-		mobile: {
-			breakpoint: { max: 690, min: 0 },
-			items: 2,
-		},
-	};
+	const [emblaRef] = useEmblaCarousel({ loop: true });
 
 	return (
 		<Container>
-			<Carousel
-			responsive={responsive}
-			infinite={true}
-			partialVisible={false}
-			itemClass="carousel-items"
-			>
-				{products.map((product) => (
-					<ContainerProducts key={product.id} imgURL={product.url}>
-						{product.name}
-					</ContainerProducts>
-				))}
-		</Carousel>
-
+			<div className='embla' ref={emblaRef}>
+				<div className='embla__container' style={{ display: 'flex' }}>
+					{products.map((product) => (
+						<div className='embla__slide' key={product.id} style={{ flex: '0 0 auto' }}>
+							<ContainerProducts imgURL={product.url}>
+								{product.name}
+							</ContainerProducts>
+						</div>
+					))}
+				</div>
+			</div>
 		</Container>
-	);
+);
 }

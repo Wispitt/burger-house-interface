@@ -73,7 +73,6 @@ export const Header = styled.div`
     span {
             color: #bd2f47;
             cursor: pointer;
-
             &::after {
                 content: '';
                 position: absolute;
@@ -168,7 +167,7 @@ export const ButtonMenu = styled.button`
 `;
 
 export const Highlights = styled.div`
-    margin-bottom: 23px;
+    margin: 7px 0 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -231,7 +230,7 @@ export const ProductsMain = styled.div`
 `;
 
 export const IconAdd = styled.img`
-    width: 16%;
+    width: 19%;
     margin: 0 8px 8px 0;
     transition: transform 0.6s ease;
 
@@ -242,8 +241,8 @@ export const IconAdd = styled.img`
 `;
 
 export const ProductImage = styled.img`
-    width: 72%;
-    margin-top: 20px;
+    width: 87%;
+    margin-top: 30px;
 `;
 
 export const NameProduct = styled.h4`
@@ -262,7 +261,7 @@ export const ValueAndIcon = styled.div`
 
 export const ProductValue = styled.h3`
     margin: 0 0 14px 2px;
-    font-size: 24px;
+    font-size: 31px;
 `;
 
 export const HouseSpecifications = styled.div`

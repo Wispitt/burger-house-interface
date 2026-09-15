@@ -34,10 +34,6 @@ import {
 import bannerMain from '../../assets/img/banner-main.png';
 import logoBurger from '../../assets/img/burger-icon.png';
 
-import firstBurger from '../../assets/img/first-burger.png';
-import secondBurger from '../../assets/img/second-burger.png';
-import frenchFries from '../../assets/img/french-fries.png';
-import milkShake from '../../assets/img/milk-shake.png';
 import addIcon from '../../assets/img/add-cart-icon.png';
 
 import specifications from '../../assets/img/specifications-house.png';
@@ -52,21 +48,24 @@ import eloIcon from '../../assets/img/elo-icon.png';
 import pixIcon from '../../assets/img/pix-icon.jpg';
 
 export function Home() {
-
 	const navigate = useNavigate();
 
 	const [products, setProducts] = useState([]);
-	
-		useEffect(() => {
-			async function fetchProducts() {
+
+	useEffect(() => {
+		async function fetchProducts() {
+			try {
 				const { data } = await api.get('/products');
-	
+
 				console.log(data);
 				setProducts(data);
+			} catch (error) {
+				console.error('Erro ao buscar produtos:', error);
 			}
-	
-			fetchProducts();
-		}, []);
+		}
+
+		fetchProducts();
+	}, []);
 
 	return (
 		<Container>
@@ -99,68 +98,25 @@ export function Home() {
 			</Section>
 
 			<Highlights>
-				<span>DESTAQUES</span>
+				<span>ESCOLHAS DIVERSAS</span>
 			</Highlights>
 
 			<AllProducts>
-				{products.map((product) =>  (
-
-					<ProductsMain key={product.id}>
-						<ProductImage src={product.url}/>
-						<NameProduct> {product.name} </NameProduct>
-						<li>Pão, carne, queijo, alface, tomate e maionese especial.</li>
-						<ValueAndIcon>
-							<ProductValue> {product.price} </ProductValue>
-							<IconAdd src={addIcon} />
-						</ValueAndIcon>
-					</ProductsMain>
-				))}
-				<ProductsMain>
-					<ProductImage src={firstBurger} style={{ width: '60%' }} />
-					<NameProduct>Classic Burger</NameProduct>
-					<p>Pão, carne, queijo, alface, tomate e maionese especial.</p>
-
-					<ValueAndIcon>
-						<ProductValue>R$ 24,90</ProductValue>
-						<IconAdd src={addIcon} />
-					</ValueAndIcon>
-				</ProductsMain>
-
-				<ProductsMain>
-					<ProductImage src={secondBurger} style={{ width: '68%' }} />
-					<NameProduct>Bacon House</NameProduct>
-					<p>
-						Pão, carne, queijo, bacon crocante, cebola caramelizada e molho
-						especial.
-					</p>
-
-					<ValueAndIcon>
-						<ProductValue>R$ 32,90</ProductValue>
-						<IconAdd src={addIcon} />
-					</ValueAndIcon>
-				</ProductsMain>
-
-				<ProductsMain>
-					<ProductImage src={frenchFries} />
-					<NameProduct>Batata Frita</NameProduct>
-					<p>Porção de batata frita e crocante.</p>
-
-					<ValueAndIcon>
-						<ProductValue>R$ 12,90</ProductValue>
-						<IconAdd src={addIcon} />
-					</ValueAndIcon>
-				</ProductsMain>
-
-				<ProductsMain>
-					<ProductImage src={milkShake} style={{ width: '40%' }} />
-					<NameProduct>Milk Shake</NameProduct>
-					<p>Diversos sabores para deixar seu dia mais doce!</p>
-
-					<ValueAndIcon>
-						<ProductValue>R$ 16,90</ProductValue>
-						<IconAdd src={addIcon} />
-					</ValueAndIcon>
-				</ProductsMain>
+				{products
+					.filter((product) => [44, 45, 46, 69].includes(product.id))
+					.map((product) => (
+						<ProductsMain key={product.id}>
+							<ProductImage
+								style={product.id === 44 ? { width: '40%' } : undefined}
+								src={product.url}
+							/>
+							<NameProduct> {product.name} </NameProduct>
+							<ValueAndIcon>
+								<ProductValue> {product.price} </ProductValue>
+								<IconAdd src={addIcon} />
+							</ValueAndIcon>
+						</ProductsMain>
+					))}
 
 				<HouseBannerCombo>
 					<BannerCombo src={combosSpecial} />
