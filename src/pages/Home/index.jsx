@@ -31,6 +31,8 @@ import combosSpecial from '../../assets/img/combo-special.png';
 
 import { FooterAll } from '../../components/Footer';
 import { CartButton } from '../../components/CartButton';
+import { formatePrice } from '../../utils/formatePrice';
+
 
 export function Home() {
 	const navigate = useNavigate();
@@ -39,13 +41,9 @@ export function Home() {
 
 	useEffect(() => {
 		async function fetchProducts() {
-			try {
-				const { data } = await api.get('/products');
+			const { data } = await api.get('/products');
 
-				setProducts(data);
-			} catch (error) {
-				console.error('Erro ao buscar produtos:', error);
-			}
+			setProducts(data);
 		}
 
 		fetchProducts();
@@ -95,8 +93,8 @@ export function Home() {
 							/>
 							<NameProduct> {product.name} </NameProduct>
 							<ValueAndIcon>
-								<ProductValue> {product.price} </ProductValue>
-								<CartButton style={{marginLeft: '10vw'}} />
+								<ProductValue> {formatePrice(product.price)} </ProductValue>
+								<CartButton />
 							</ValueAndIcon>
 						</ProductsMain>
 					))}

@@ -5,6 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { NextButton, PrevButton } from './EmblaButtons';
 import { usePrevNextButtons } from './usePrevNextButtons';
 import { CartButton } from '../CartButton';
+import { formatePrice } from '../../utils/formatePrice';
 
 import {
 	Container,
@@ -20,13 +21,9 @@ function Carousel({ categoryId }) {
 
 	useEffect(() => {
 		async function fetchProducts() {
-			try {
-				const { data } = await api.get('/products');
+			const { data } = await api.get('/products');
 
-				setProducts(data);
-			} catch (error) {
-				console.error('Erro ao buscar produtos:', error);
-			}
+			setProducts(data);
 		}
 
 		fetchProducts();
@@ -41,9 +38,12 @@ function Carousel({ categoryId }) {
 		onNextButtonClick,
 	} = usePrevNextButtons(emblaApi);
 
-	const categoryProducts = products.filter(
-		(product) => product.category?.id === categoryId,
-	);
+	const categoryProducts = products
+		.filter((product) => product.category?.id === categoryId)
+		.map((product) => ({
+			currencyValue: formatePrice(product.price),
+			...product,
+		}));
 
 	return (
 		<Container>
@@ -68,12 +68,12 @@ function Carousel({ categoryId }) {
 						<div className="embla__slide" key={product.id}>
 							<ProductsMain>
 								<ProductImage
-								src={product.url}
-								style={product.id === 44 ? { width: '34%' } : undefined}
+									src={product.url}
+									style={product.id === 44 ? { width: '34%' } : undefined}
 								/>
 								<NameProduct> {product.name} </NameProduct>
 								<ValueAndIcon>
-									<ProductValue> {product.price} </ProductValue>
+									<ProductValue> {product.currencyValue} </ProductValue>
 									<CartButton />
 								</ValueAndIcon>
 							</ProductsMain>

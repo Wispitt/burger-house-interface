@@ -10,7 +10,6 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     padding: 2% 4% 0 4%;
-    width: 100vw;
 `;
 
 export const Section = styled.div`
@@ -71,15 +70,7 @@ export const Header = styled.div`
     span {
             color: #bd2f47;
             cursor: pointer;
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: 3px;
-                right: 495px;
-                width: 46px;
-                height: 2.4px;
-                background-color: #bd2f47;
-            }
+            border-bottom: 2.9px solid #bd2f47;
 
             &:hover {
                 opacity: 0.6;
@@ -133,7 +124,7 @@ export const ButtonMenu = styled.button`
     transition: transform 0.8s ease;
 
     i {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     &:hover {
@@ -246,8 +237,8 @@ export const ValueAndIcon = styled.div`
 `;
 
 export const ProductValue = styled.h3`
-    margin: 0 0 14px 2px;
-    font-size: 31px;
+    margin: 0 0 20px 15px;
+    font-size: 28px;
 `;
 
 export const HouseSpecifications = styled.div`
@@ -285,10 +276,11 @@ export const HouseBannerCombo = styled.div`
 `;
 
 export const ButtonCombo = styled.button`
+    position: absolute;
     font-family: "Sekuya", system-ui;
-    width: 63%;
+    width: 11%;
     height: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     border-radius: 18px;
     background-color: #f19710;
     font-size: 16px;
@@ -301,6 +293,10 @@ export const ButtonCombo = styled.button`
 
     i {
         font-size: 20px;
+
+        &:hover {
+            
+        }
     }
 
     &:hover {
@@ -330,10 +326,10 @@ export const ButtonCombo = styled.button`
 `;
 
 export const BannerCombo = styled.img`
+    position: relative;
     width: 100%;
     height: 545px;
     border-radius: 20px;
     grid-column: 1;
     grid-row: 1;
-    transition: transform 0.9s ease;
 `;

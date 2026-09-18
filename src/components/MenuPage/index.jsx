@@ -10,9 +10,13 @@ import {
 	ButtonsMenus,
 	AllButtonsMenus,
 	MenuProducts,
+	// Banner,
 } from './styles';
 
 import { FooterAll } from '../Footer';
+// import { useState } from 'react';
+// import { useEffect } from 'react';
+// import { api } from '../../services/api';
 
 const menuItems = [
 	['Hambúrguers', '/hamburguers'],
@@ -22,6 +26,23 @@ const menuItems = [
 ];
 
 export function MenuPage({ activeCategory, Carousel }) {
+	// const [categories, setCategories] = useState([]);
+
+	// useEffect(() => {
+	// 	async function fetchCategories() {
+	// 		const { data } = await api.get('/categories');
+
+	// 		setCategories(data);
+	// 	}
+
+	// 	fetchCategories();
+	// }, []);
+
+	// const category = categories.filter(
+	// 	(item) => item.name === activeCategory
+	// ).map((category) => category.url);
+
+	// console.log(categories);
 	const navigate = useNavigate();
 
 	return (

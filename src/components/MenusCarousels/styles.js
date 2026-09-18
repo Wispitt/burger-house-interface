@@ -81,7 +81,7 @@ export const ProductImage = styled.img`
 
 export const NameProduct = styled.h4`
     font-size: 21px;
-    margin-top: 8px;
+    margin-top: 6px;
 `;
 
 export const ValueAndIcon = styled.div`
@@ -94,6 +94,6 @@ export const ValueAndIcon = styled.div`
 `;
 
 export const ProductValue = styled.h3`
-    margin: 0 0 14px 2px;
+    margin: 0 0 20px 15px;
     font-size: 31px;
 `;

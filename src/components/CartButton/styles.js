@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const IconAdd = styled.img`
-    width: 20%;
-    margin: 0 10px 8px 10.5vw;
+    width: 3vw;
+    margin: 0 10px 8px 0;
     transition: transform 0.6s ease;
 
     &:hover {

@@ -70,16 +70,7 @@ export const Header = styled.div`
     span {
             color: #bd2f47;
             cursor: pointer;
-
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: 3px;
-                right: 401px;
-                width: 72px;
-                height: 2.4px;
-                background-color: #bd2f47;
-            }
+            border-bottom: 2.9px solid #bd2f47;
 
             &:hover {
                 opacity: 0.6;
@@ -113,12 +104,12 @@ export const Header = styled.div`
 export const ContainerMenuAndButtons = styled.div`
     background: linear-gradient(rgb(45, 28, 14));
     width: 100%;
-    height: 250px;
+    height: 270px;
     border-radius: 20px;
 
     h2 {
         font-family: "Sekuya", system-ui;
-        font-size: 44px;
+        font-size: 50px;
         font-weight: 500;
         color: #f6f0e4;
         margin: 35px 0 0 25px;
@@ -126,10 +117,16 @@ export const ContainerMenuAndButtons = styled.div`
 
     p {
         font-family: "Sekuya", system-ui;
-        font-size: 13px;
+        font-size: 15px;
         color: #f6f0e4;
         margin-left: 35px;
     }
+`;
+
+export const Banner = styled.img`
+    position: relative;
+    width: 100%;
+    height: 200px;
 `;
 
 export const AllButtonsMenus = styled.div`
@@ -143,7 +140,7 @@ export const ButtonsMenus = styled.button`
     bottom: -90px;
     width: 12%;
     margin-left: 20px;
-    height: 35px;
+    height: 37px;
     border-radius: 18px;
     border: 1px solid #fff;
     color: #f6f0e4;

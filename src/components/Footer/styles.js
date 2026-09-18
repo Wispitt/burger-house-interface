@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Footer = styled.div`
   height: 110px;
-  width: 100vw;
+  width: 99vw;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   background-color: #3f1d0c;
