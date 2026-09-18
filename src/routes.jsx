@@ -3,7 +3,7 @@ import { createHashRouter } from 'react-router-dom';
 import { Login } from './pages/Login';
 import { CadastroUser } from './pages/Cadastro';
 import { Home } from './pages/Home';
-import { MenuBurger } from './pages/MenuBurger';
+import { MenuBurger, MenuDesserts, MenuApps, MenuDrinks } from './pages/MenusProducts';
 
 export const router = createHashRouter([
 	{
@@ -19,7 +19,19 @@ export const router = createHashRouter([
 		element: <Home />,
 	},
 	{
-		path: '/cardapio',
+		path: '/hamburguers',
 		element: <MenuBurger />,
+	},
+	{
+		path: '/entradas',
+		element: <MenuApps />,
+	},
+	{
+		path: '/bebidas',
+		element: <MenuDrinks />,
+	},
+	{
+		path: '/sobremesas',
+		element: <MenuDesserts />,
 	},
 ]);

@@ -26,15 +26,13 @@ export const TitleWrapper = styled.div`
     width: 25%;
 
     h1 {
+        margin-left: 28px;
         font-size: 140%;
         height: 15px;
         font-family: "Sekuya", system-ui;
         color: #4d2b12;
         margin-bottom: 3px;
     }
-`;
-
-export const IconLogo = styled.img`
 `;
 
 export const SnackBar = styled.div`
@@ -115,7 +113,7 @@ export const Header = styled.div`
 export const ContainerMenuAndButtons = styled.div`
     background: linear-gradient(rgb(45, 28, 14));
     width: 100%;
-    height: 200px;
+    height: 250px;
     border-radius: 20px;
 
     h2 {
@@ -123,14 +121,14 @@ export const ContainerMenuAndButtons = styled.div`
         font-size: 44px;
         font-weight: 500;
         color: #f6f0e4;
-        margin: 27px 0 0 20px;
+        margin: 35px 0 0 25px;
     }
 
     p {
         font-family: "Sekuya", system-ui;
         font-size: 13px;
         color: #f6f0e4;
-        margin-left: 30px;
+        margin-left: 35px;
     }
 `;
 
@@ -142,10 +140,10 @@ export const AllButtonsMenus = styled.div`
 export const ButtonsMenus = styled.button`
     font-family: "Sekuya", system-ui;
     position: relative;
-    bottom: -55px;
+    bottom: -90px;
     width: 12%;
     margin-left: 20px;
-    height: 27px;
+    height: 35px;
     border-radius: 18px;
     border: 1px solid #fff;
     color: #f6f0e4;

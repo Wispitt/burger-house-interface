@@ -10,6 +10,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     padding: 2% 4% 0 4%;
+    width: 100vw;
 `;
 
 export const Section = styled.div`
@@ -26,16 +27,13 @@ export const TitleWrapper = styled.div`
     width: 25%;
 
     h1 {
+        margin-left: 28px;
         font-size: 140%;
         height: 15px;
         font-family: "Sekuya", system-ui;
         color: #4d2b12;
         margin-bottom: 3px;
     }
-`;
-
-export const IconLogo = styled.img`
-    width: 50px;
 `;
 
 export const SnackBar = styled.div`
@@ -229,17 +227,6 @@ export const ProductsMain = styled.div`
     }
 `;
 
-export const IconAdd = styled.img`
-    width: 19%;
-    margin: 0 8px 8px 0;
-    transition: transform 0.6s ease;
-
-    &:hover {
-        transform: scale(1.2);
-        cursor: pointer;
-    }
-`;
-
 export const ProductImage = styled.img`
     width: 87%;
     margin-top: 30px;
@@ -256,7 +243,6 @@ export const ValueAndIcon = styled.div`
     align-items: end;
     width: 100%;
     height: 100%;
-    margin-top: 2px;
 `;
 
 export const ProductValue = styled.h3`
@@ -350,65 +336,4 @@ export const BannerCombo = styled.img`
     grid-column: 1;
     grid-row: 1;
     transition: transform 0.9s ease;
-`;
-
-export const Footer = styled.div`
-  grid-column: 1 / -1;
-  height: 110px;
-  width: 100%;
-  border-radius: 7px;
-  background-color: #3f1d0c;
-  display: flex;
-  gap: 28%;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const FooterLeft = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 14%;
-    height: 50px;
-    font-size: 13px;
-    color: #fff;
-    margin-left: 20px;
-`;
-
-export const FooterMain = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 6px;
-    width: 18%;
-    height: 65px;
-    color: #fff;
-    font-size: 16px;
-
-    img {
-        width: 22px;
-        margin: 0 9px;
-        transition: transform 0.9s ease;
-
-        &:hover {
-        transform: scale(1.4);
-        cursor: pointer;
-        }
-    }
-`;
-
-export const FooterRight = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 14%;
-    height: 50px;
-    color: #fff;
-    margin-right: 20px;
-    font-size: 16px;
-
-    img {
-        width: 22px;
-        margin: 5px 3px;
-    }
 `;

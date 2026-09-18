@@ -14,13 +14,7 @@ import {
 	ProductValue,
 	Specifications,
 	BannerCombo,
-	Footer,
-	FooterLeft,
-	FooterMain,
-	IconAdd,
-	FooterRight,
 	TitleWrapper,
-	IconLogo,
 	SnackBar,
 	ValueAndIcon,
 	AllProducts,
@@ -32,20 +26,11 @@ import {
 } from './styles';
 
 import bannerMain from '../../assets/img/banner-main.png';
-import logoBurger from '../../assets/img/burger-icon.png';
-
-import addIcon from '../../assets/img/add-cart-icon.png';
-
 import specifications from '../../assets/img/specifications-house.png';
 import combosSpecial from '../../assets/img/combo-special.png';
 
-import instagramIcon from '../../assets/img/instagram-icon.png';
-import facebookIcon from '../../assets/img/facebook-icon.png';
-
-import visaIcon from '../../assets/img/visa-icon.png';
-import masterCardIcon from '../../assets/img/mastercard-icon.png';
-import eloIcon from '../../assets/img/elo-icon.png';
-import pixIcon from '../../assets/img/pix-icon.jpg';
+import { FooterAll } from '../../components/Footer';
+import { CartButton } from '../../components/CartButton';
 
 export function Home() {
 	const navigate = useNavigate();
@@ -57,7 +42,6 @@ export function Home() {
 			try {
 				const { data } = await api.get('/products');
 
-				console.log(data);
 				setProducts(data);
 			} catch (error) {
 				console.error('Erro ao buscar produtos:', error);
@@ -72,7 +56,6 @@ export function Home() {
 			<Section>
 				<div>
 					<TitleWrapper>
-						<IconLogo src={logoBurger} alt="logo" />
 						<h1>Burger House</h1>
 					</TitleWrapper>
 
@@ -82,7 +65,7 @@ export function Home() {
 				</div>
 				<Header>
 					<span>Início</span>
-					<a onClick={() => navigate('/cardapio')}>Cardápio</a>
+					<a onClick={() => navigate('/hamburguers')}>Cardápio</a>
 					<a>Promoções</a>
 					<a>Sobre nós</a>
 					<a>Contato</a>
@@ -91,7 +74,7 @@ export function Home() {
 				</Header>
 				<ContainerMainAndButton>
 					<BannerMain src={bannerMain} />
-					<ButtonMenu>
+					<ButtonMenu onClick={() => navigate('/hamburguers')}>
 						Ver Cardápio <i class="ri-arrow-right-line"></i>{' '}
 					</ButtonMenu>
 				</ContainerMainAndButton>
@@ -113,7 +96,7 @@ export function Home() {
 							<NameProduct> {product.name} </NameProduct>
 							<ValueAndIcon>
 								<ProductValue> {product.price} </ProductValue>
-								<IconAdd src={addIcon} />
+								<CartButton style={{marginLeft: '10vw'}} />
 							</ValueAndIcon>
 						</ProductsMain>
 					))}
@@ -129,31 +112,9 @@ export function Home() {
 					<Specifications src={specifications} />
 				</HouseSpecifications>
 			</AllProducts>
-
-			<Footer>
-				<FooterLeft>
-					<h4>BURGER HOUSE SNACK BAR</h4>
-					<p>2024 Todos os direitos reservados.</p>
-				</FooterLeft>
-
-				<FooterMain>
-					<p>Siga-nos nas redes sociais!</p>
-					<div>
-						<img src={instagramIcon} alt="Instagram" />
-						<img src={facebookIcon} alt="Facebook" />
-					</div>
-				</FooterMain>
-
-				<FooterRight>
-					<p>Formas de pagamento</p>
-					<div>
-						<img src={visaIcon} alt="Visa" />
-						<img src={masterCardIcon} alt="Mastercard" />
-						<img src={eloIcon} alt="Elo" />
-						<img src={pixIcon} alt="Pix" />
-					</div>
-				</FooterRight>
-			</Footer>
+			
+			<FooterAll/>
+			
 		</Container>
 	);
 }
