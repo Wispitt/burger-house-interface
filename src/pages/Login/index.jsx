@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import { useUser } from '../../hooks/UserContext.jsx';
 
 import {
 	Container,
@@ -27,6 +28,8 @@ import { Button } from '../../components/Button';
 export function Login() {
 	const navigate = useNavigate();
 
+	const { putUserData } = useUser();
+
 	const schema = Yup.object({
 		email: Yup.string()
 			.email('E-mail ou senha incorretos')
@@ -45,10 +48,7 @@ export function Login() {
 
 	const onSubmit = async (data) => {
 		try {
-			const {
-				data: { token },
-				status,
-			} = await api.post(
+			const reponse = await api.post(
 				'/sessions',
 				{
 					email: data.email,
@@ -59,18 +59,19 @@ export function Login() {
 				},
 			);
 
-			if (status === 200 || status === 201) {
+			if (reponse.status === 200 || reponse.status === 201) {
 				toast.success('Login realizado com sucesso!');
 				setTimeout(() => {
 					navigate('/home');
 				}, 1000);
-			} else if (status === 400) {
+			} else if (reponse.status === 400) {
 				toast.error('E-mail ou senha incorretos!');
 			} else {
 				throw new Error();
 			}
 
-			localStorage.setItem('token', token);
+			putUserData(reponse);
+			// localStorage.setItem('token', token);
 		} catch {
 			toast.error('Ocorreu um erro! Tente novamente.');
 		}
