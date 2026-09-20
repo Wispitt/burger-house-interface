@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         outline: none;
+        max-width: 1900px;
     }
 
     button, a {

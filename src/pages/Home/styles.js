@@ -119,7 +119,7 @@ export const ButtonMenu = styled.button`
     height: 9%;
     border-radius: 18px;
     background-color: #f1a026;
-    font-size: 1.1vw;
+    font-size: 17px;
     font-weight: bold;
     transition: transform 0.8s ease;
 
@@ -199,6 +199,8 @@ export const ProductsMain = styled.div`
     border: 2px solid #ebc9a3;
     border-radius: 15px;
     width: 96%;
+    height: 100%;
+    min-height: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -265,6 +267,7 @@ export const Specifications = styled.img`
 `;
 
 export const HouseBannerCombo = styled.div`
+    position: relative;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -277,10 +280,10 @@ export const HouseBannerCombo = styled.div`
 
 export const ButtonCombo = styled.button`
     position: absolute;
+    bottom: 3px;
     font-family: "Sekuya", system-ui;
-    width: 11%;
+    width: 52%;
     height: 40px;
-    margin-bottom: 5px;
     border-radius: 18px;
     background-color: #f19710;
     font-size: 16px;
@@ -326,9 +329,8 @@ export const ButtonCombo = styled.button`
 `;
 
 export const BannerCombo = styled.img`
-    position: relative;
     width: 100%;
-    height: 545px;
+    height: 57.5vh;
     border-radius: 20px;
     grid-column: 1;
     grid-row: 1;

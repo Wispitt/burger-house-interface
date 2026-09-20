@@ -145,7 +145,7 @@ export const ButtonsMenus = styled.button`
     border: 1px solid #fff;
     color: #f6f0e4;
     background-color: transparent;
-    font-size: 0.9vw;
+    font-size: 17px;
     font-weight: 500;
     transition: transform 0.5s ease;
 
