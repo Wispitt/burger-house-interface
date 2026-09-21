@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import {
 	Container,
 	Section,
-	Header,
 	BannerMain,
 	Highlights,
 	ProductsMain,
@@ -14,8 +13,6 @@ import {
 	ProductValue,
 	Specifications,
 	BannerCombo,
-	TitleWrapper,
-	SnackBar,
 	ValueAndIcon,
 	AllProducts,
 	HouseSpecifications,
@@ -31,8 +28,8 @@ import combosSpecial from '../../assets/img/combo-special.png';
 
 import { FooterAll } from '../../components/Footer';
 import { CartButton } from '../../components/CartButton';
+import { HeaderAll } from '../../components/Header';
 import { formatePrice } from '../../utils/formatePrice';
-
 
 export function Home() {
 	const navigate = useNavigate();
@@ -51,29 +48,12 @@ export function Home() {
 
 	return (
 		<Container>
+			<HeaderAll />
 			<Section>
-				<div>
-					<TitleWrapper>
-						<h1>Burger House</h1>
-					</TitleWrapper>
-
-					<SnackBar>
-						<span>SNACK BAR</span>
-					</SnackBar>
-				</div>
-				<Header>
-					<span>Início</span>
-					<a onClick={() => navigate('/hamburguers')}>Cardápio</a>
-					<a>Promoções</a>
-					<a>Sobre nós</a>
-					<a>Contato</a>
-					<i class="ri-shopping-cart-line"></i>
-					<i class="ri-user-3-line"></i>
-				</Header>
 				<ContainerMainAndButton>
 					<BannerMain src={bannerMain} />
 					<ButtonMenu onClick={() => navigate('/hamburguers')}>
-						Ver Cardápio <i class="ri-arrow-right-line"></i>{' '}
+							Ver Cardápio <i className="ri-arrow-right-line"></i>{' '}
 					</ButtonMenu>
 				</ContainerMainAndButton>
 			</Section>
@@ -102,7 +82,7 @@ export function Home() {
 				<HouseBannerCombo>
 					<BannerCombo src={combosSpecial} />
 					<ButtonCombo>
-						Combo <i class="ri-arrow-right-line"></i>
+						Combo <i className="ri-arrow-right-line"></i>
 					</ButtonCombo>
 				</HouseBannerCombo>
 
@@ -110,9 +90,8 @@ export function Home() {
 					<Specifications src={specifications} />
 				</HouseSpecifications>
 			</AllProducts>
-			
-			<FooterAll/>
-			
+
+			<FooterAll />
 		</Container>
 	);
 }

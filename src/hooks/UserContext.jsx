@@ -3,20 +3,29 @@ import { useContext, useState, createContext, useEffect } from 'react';
 const UserContext = createContext(null);
 
 export const UserProvider = ({ children }) => {
-	const [userInf, setUserInf] = useState({});
+	const [userInfo, setUserInfo] = useState({});
 
-	const putUserData = (UserInf) => {
-		setUserInf(UserInf);
-		localStorage.setItem('burger-house:userData', JSON.stringify(UserInf));
+	const putUserData = (userInfo) => {
+		setUserInfo(userInfo);
+		localStorage.setItem('burger-house:userData', JSON.stringify(userInfo));
 	};
 
 	const logout = () => {
-		setUserInf({});
+		setUserInfo({});
 		localStorage.removeItem('burger-house:userData');
 	};
 
+	useEffect(() => {
+		const userInfoLocalStorage = localStorage.getItem('burger-house:userData');
+
+		if (userInfoLocalStorage) {
+
+			setUserInfo(JSON.parse(userInfoLocalStorage));
+		}
+	}, []);
+
 	return (
-		<UserContext.Provider value={{ userInf, putUserData, logout }}>
+		<UserContext.Provider value={{ userInfo, putUserData, logout }}>
 			{children}
 		</UserContext.Provider>
 	);

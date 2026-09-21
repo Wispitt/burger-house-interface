@@ -14,6 +14,8 @@ import {
 } from './styles';
 
 import { FooterAll } from '../Footer';
+import { HeaderAll } from '../../components/Header';
+
 // import { useState } from 'react';
 // import { useEffect } from 'react';
 // import { api } from '../../services/api';
@@ -47,24 +49,8 @@ export function MenuPage({ activeCategory, Carousel }) {
 
 	return (
 		<Container>
+			<HeaderAll />
 			<Section>
-				<div>
-					<TitleWrapper>
-						<h1>Burger House</h1>
-					</TitleWrapper>
-					<SnackBar>
-						<span>SNACK BAR</span>
-					</SnackBar>
-				</div>
-				<Header>
-					<a onClick={() => navigate('/home')}>Início</a>
-					<span>Cardápio</span>
-					<a>Promoções</a>
-					<a>Sobre nós</a>
-					<a>Contato</a>
-					<i className="ri-shopping-cart-line" />
-					<i className="ri-user-3-line" />
-				</Header>
 				<ContainerMenuAndButtons>
 					<h2>NOSSO CARDÁPIO</h2>
 					<p>Escolha o que vai te deixar com água na boca</p>
