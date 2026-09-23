@@ -2,6 +2,7 @@ import {
 	Container,
 	Banner,
 	CartItens,
+	UserItems,
 	Main,
 	ButtonReturn,
 	Section,
@@ -16,7 +17,7 @@ import {
 } from './styles';
 
 import bannerCart from '../../assets/img/banner-cart.png';
-import { FooterAll, HeaderAll } from '../../components';
+import { FooterAll, HeaderAll, CartItems } from '../../components';
 
 export function Cart() {
 	return (
@@ -31,6 +32,9 @@ export function Cart() {
 				<Main>
 					<CartItens>
 						<h4>SEUS ITENS</h4>
+						<UserItems>
+							<CartItems />
+						</UserItems>
 						<ButtonReturn>Continuar comprando</ButtonReturn>
 					</CartItens>
 					<Section>

@@ -53,6 +53,10 @@ export const CartItens = styled.div`
     }
 `;
 
+export const UserItems = styled.div`
+    padding-left: 20px;
+`;
+
 export const Main = styled.div`
     height: 60vh;
     width: 100%;

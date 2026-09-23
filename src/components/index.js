@@ -6,3 +6,5 @@ export * from './MenuPage';
 export * from './MenusCarousels';
 export * from './SideBar';
 export * from './Title';
+export * from './Table';
+export * from './CartItems';

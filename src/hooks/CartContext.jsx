@@ -1,4 +1,5 @@
-import { useContext, createContext, useState, useEffect } from 'react';
+/* eslint-disable react-refresh/only-export-components */
+import { useContext, createContext, useState } from 'react';
 
 const CartContext = createContext();
 
