@@ -4,17 +4,25 @@ import backGround from '../../assets/img/backgound-interface.jpeg';
 
 export const Container = styled.div`
     background-image: url(${backGround});
-    height: 98vh;
+    padding-left: 1px;
+`;
+
+export const ContainerCart = styled.div`
+    padding: 2% 4% 0 4%;
+    height: 100vh;
+    margin-bottom: 10vw;
 `;
 
 export const Header = styled.div`
-    width: 96%;
-    margin: 0 0 0 54px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const Banner = styled.img`
     width: 100%;
-    padding: 2% 4% 0 4%;
+    border-radius: 17px;
 `;
 export const CartItens = styled.div`
     display: flex;
@@ -46,11 +54,11 @@ export const CartItens = styled.div`
 `;
 
 export const Main = styled.div`
-    height: 55%;
+    height: 60vh;
     width: 100%;
     display: flex;
-    padding: 0 4% 0 4%;
-    margin: 47px 0;
+    margin: 25px 0;
+    padding: 0 1% 0 1%;
 `;
 
 export const Section = styled.div`
@@ -61,7 +69,6 @@ export const Section = styled.div`
     border: 1px solid #c9a879;
     border-radius: 7px;
     background-color: #f9e5cc;
-    margin-right: 16px;
 
     h4 {
         font-family: "Sekuya", system-ui;
@@ -83,22 +90,30 @@ export const Section = styled.div`
 `;
 
 export const Content = styled.div`
+position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
 `;
 
 export const ValueOrder = styled.div`
+    position: absolute;
     font-size: 17px;
     font-weight: bold;
     display: flex;
     width: 100%;
     margin: 5px 0 0 40px;
-    gap: 60px;
+    gap: 56%;
+`;
 
-    span {
-        margin-left: 95px;
-    }
+export const ValueDelivery = styled.div`
+    font-size: 17px;
+    font-weight: bold;
+    display: flex;
+    width: 100%;
+    margin: 5px 0 0 40px;
+    gap: 45%;
+    margin-top: 30px;
 `;
 
 export const ValueOrderAll = styled.div`
@@ -124,7 +139,7 @@ export const ValueOrderAll = styled.div`
     }
 
     h3 {
-        margin-left: 105px;
+        margin-left: 32%;
         font-size: 25px;
     }
 `;

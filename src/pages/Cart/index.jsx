@@ -10,47 +10,51 @@ import {
 	Content,
 	ValueOrder,
 	ValueOrderAll,
-    Header,
+	ContainerCart,
+	Header,
+	ValueDelivery,
 } from './styles';
 
 import bannerCart from '../../assets/img/banner-cart.png';
-import { FooterAll } from '../../components/Footer';
-import { HeaderAll } from '../../components/Header';
+import { FooterAll, HeaderAll } from '../../components';
 
 export function Cart() {
 	return (
 		<Container>
-			<Header>
-				<HeaderAll />
-			</Header>
-			<Banner src={bannerCart} alt="banner do carrinho" />
-			<Main>
-				<CartItens>
-					<h4>SEUS ITENS</h4>
-					<ButtonReturn>Continuar comprando</ButtonReturn>
-				</CartItens>
-				<Section>
-					<h4>RESUMO DO PEDIDO</h4>
-					<Content>
-						<ValueOrder>
-							<p>Subtotal</p>
-							<span style={{ marginLeft: '137px' }}>R$ 62,70</span>
-						</ValueOrder>
-						<ValueOrder>
-							<p>Taxa de entrega</p>
-							<span>R$ 5,00</span>
-						</ValueOrder>
-						<ValueOrderAll>
-							<h2>Total</h2>
-							<h3>R$ 67,70</h3>
-						</ValueOrderAll>
+			<ContainerCart>
 
-						<ButtonOrder>Finalizar pedido</ButtonOrder>
-						<ButtonClearCart>Limpar carrinho</ButtonClearCart>
-					</Content>
-				</Section>
-			</Main>
+				<Header>
+					<HeaderAll />
+					<Banner src={bannerCart} alt="banner do carrinho" />
+				</Header>
 
+				<Main>
+					<CartItens>
+						<h4>SEUS ITENS</h4>
+						<ButtonReturn>Continuar comprando</ButtonReturn>
+					</CartItens>
+					<Section>
+						<h4>RESUMO DO PEDIDO</h4>
+						<Content>
+							<ValueOrder>
+								<p>Subtotal</p>
+								<span>R$ 62,70</span>
+							</ValueOrder>
+							<ValueDelivery>
+								<p>Taxa de entrega</p>
+								<span>R$ 5,00</span>
+							</ValueDelivery>
+							<ValueOrderAll>
+								<h2>Total</h2>
+								<h3>R$ 67,70</h3>
+							</ValueOrderAll>
+
+							<ButtonOrder>Finalizar pedido</ButtonOrder>
+							<ButtonClearCart>Limpar carrinho</ButtonClearCart>
+						</Content>
+					</Section>
+				</Main>
+			</ContainerCart>
 			<FooterAll />
 		</Container>
 	);

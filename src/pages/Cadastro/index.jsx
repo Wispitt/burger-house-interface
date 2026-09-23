@@ -19,10 +19,9 @@ import {
 	AppleContainer,
 } from './styles';
 
-import { Title } from '../../components/Title';
+import { Title, Button } from '../../components';
 import logoGoogle from '../../assets/img/google.png';
 import logoApple from '../../assets/img/apple.png';
-import { Button } from '../../components/Button';
 
 export function CadastroUser() {
 	const navigate = useNavigate();

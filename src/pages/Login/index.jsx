@@ -1,10 +1,8 @@
 import * as Yup from 'yup';
-import { api } from '../../services/api.js';
 import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { useUser } from '../../hooks/UserContext.jsx';
 
 import {
 	Container,
@@ -20,10 +18,12 @@ import {
 	AppleContainer,
 } from './styles';
 
-import { Title } from '../../components/Title';
+import { api } from '../../services/api.js';
+import { useUser } from '../../hooks/UserContext.jsx';
+
+import { Title, Button } from '../../components';
 import logoGoogle from '../../assets/img/google.png';
 import logoApple from '../../assets/img/apple.png';
-import { Button } from '../../components/Button';
 
 export function Login() {
 	const navigate = useNavigate();

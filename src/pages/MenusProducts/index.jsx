@@ -1,5 +1,5 @@
 import { CarouselApps, CarouselBurger, CarouselDesserts, CarouselDrinks} from '../../components/MenusCarousels';
-import { MenuPage } from '../../components/MenuPage';
+import { MenuPage } from '../../components';
 
 export const MenuApps = () => (
 	<MenuPage activeCategory="Entradas" Carousel={CarouselApps} />

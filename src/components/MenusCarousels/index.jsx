@@ -74,7 +74,7 @@ function Carousel({ categoryId }) {
 								<NameProduct> {product.name} </NameProduct>
 								<ValueAndIcon>
 									<ProductValue> {product.currencyValue} </ProductValue>
-									<CartButton />
+									<CartButton product={product} />
 								</ValueAndIcon>
 							</ProductsMain>
 						</div>

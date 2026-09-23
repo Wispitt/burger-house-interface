@@ -1,10 +1,15 @@
 import { createHashRouter } from 'react-router-dom';
 
-import { Login } from './pages/Login';
-import { CadastroUser } from './pages/Cadastro';
-import { Home } from './pages/Home';
-import { Cart } from './pages/Cart';
-import { MenuBurger, MenuDesserts, MenuApps, MenuDrinks } from './pages/MenusProducts';
+import {
+	Login,
+	CadastroUser,
+	Home,
+	Cart,
+	MenuBurger,
+	MenuDesserts,
+	MenuApps,
+	MenuDrinks,
+} from './pages';
 
 export const router = createHashRouter([
 	{

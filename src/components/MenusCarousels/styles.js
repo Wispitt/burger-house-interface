@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    position: relative;
     height: 55vh;
+    max-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,17 +36,19 @@ export const Container = styled.div`
     };
 
     .buttonNext {
+        z-index: 9999;
         font-size: 1vw;
         position: absolute;
-        right: 20px;
+        right: -50px;
         background-color: transparent;
         opacity: 0.8;
     }
 
     .buttonPrev {
+        z-index: 9999;
         font-size: 1vw;
         position: absolute;
-        left: 20px;
+        left: -50px;
         background-color: transparent;
         opacity: 0.8;
     }

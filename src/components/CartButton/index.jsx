@@ -1,11 +1,18 @@
 import { IconAdd } from './styles';
 
 import addIcon from '../../assets/img/add-cart-icon.png';
+import { useCart } from '../../hooks/CartContext';
 
-export function CartButton({...props}) {
+export function CartButton({ product }) {
+	const { putProductInCart } = useCart();
+
 	return (
 		<div>
-			<IconAdd {...props} src={addIcon} />
+			<IconAdd
+				onClick={() => putProductInCart(product)}
+
+				src={addIcon}
+			/>
 		</div>
 	);
 }

@@ -26,9 +26,7 @@ import bannerMain from '../../assets/img/banner-main.png';
 import specifications from '../../assets/img/specifications-house.png';
 import combosSpecial from '../../assets/img/combo-special.png';
 
-import { FooterAll } from '../../components/Footer';
-import { CartButton } from '../../components/CartButton';
-import { HeaderAll } from '../../components/Header';
+import { FooterAll, CartButton, HeaderAll } from '../../components';
 import { formatePrice } from '../../utils/formatePrice';
 
 export function Home() {
@@ -74,7 +72,7 @@ export function Home() {
 							<NameProduct> {product.name} </NameProduct>
 							<ValueAndIcon>
 								<ProductValue> {formatePrice(product.price)} </ProductValue>
-								<CartButton />
+								<CartButton product={product} />
 							</ValueAndIcon>
 						</ProductsMain>
 					))}
