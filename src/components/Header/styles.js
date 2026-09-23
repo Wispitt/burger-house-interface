@@ -50,15 +50,18 @@ export const Content = styled.div`
     align-items: center;
 `;
 
+const isActive = ({ $isActive, $isActiveApps, $isActiveDrinks, $isActiveDesserts }) =>
+    $isActive || $isActiveApps || $isActiveDrinks || $isActiveDesserts;
+
 export const NavItem = styled.span`
-    color: ${({ $isActive }) => ($isActive ? '#bd2f47' : 'black')};
+    color: ${({ ...props }) => (isActive(props) ? '#bd2f47' : 'black')};
     cursor: pointer;
-    border-bottom: ${({ $isActive }) => $isActive ? '2.9px solid #bd2f47' : 'none'};
-    transition: ${({ $isActive }) => $isActive ? 'none' : 'transform 0.6s ease'};
+    border-bottom: ${({ ...props }) => (isActive(props) ? '2.9px solid #bd2f47' : 'none')};
+    transition: transform 0.6s ease, opacity 0.2s ease, color 0.2s ease;
 
     &:hover {
-        opacity: ${({ $isActive }) => ($isActive ? '0.7' : 'none')};
-        transform: ${({ $isActive }) => $isActive ? 'none' : 'scale(1.1)'};
+        opacity: ${({ ...props }) => (isActive(props) ? 0.7 : 1)};
+        transform: ${({ ...props }) => (isActive(props) ? 'none' : 'scale(1.1)')};
         color: #bd2f47;
     }
 `;
@@ -86,7 +89,7 @@ export const Links = styled.div`
         cursor: pointer;
         }
     }
-
+    
     a {
         transition: transform 0.6s ease;
 

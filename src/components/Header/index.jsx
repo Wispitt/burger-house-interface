@@ -28,13 +28,17 @@ export function HeaderAll() {
 					<NavItem $isActive={pathname === '/home'} onClick={() => navigate('/home')}>
 						Início
 					</NavItem>
-					<NavItem $isActive={pathname === '/hamburguers'} onClick={() => navigate('/hamburguers')}>
+					<NavItem $isActive={pathname === '/hamburguers'}
+							$isActiveApps={pathname === '/entradas'}
+							$isActiveDrinks={pathname === '/bebidas'}
+							$isActiveDesserts={pathname === '/sobremesas'}
+					onClick={() => navigate('/hamburguers')}>
 						Cardápio
 					</NavItem>
 					<a>Promoções</a>
 					<a>Sobre nós</a>
 					<a>Contato</a>
-					<i className="ri-shopping-cart-line"></i>
+					<i onClick={() => navigate('/carrinho')} className="ri-shopping-cart-line"></i>
 					<i onClick={activeSideBar} className="ri-user-3-line"></i>
 					{sideBar && <SideBar active={setSideBar} />}
 				</Links>
