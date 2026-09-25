@@ -24,6 +24,15 @@ export const Banner = styled.img`
     width: 100%;
     border-radius: 17px;
 `;
+
+export const Main = styled.div`
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    margin: 25px 0;
+    padding: 0 1% 0 1%;
+`;
+
 export const CartInterfaceMain = styled.div`
     position: relative;
     display: flex;
@@ -61,19 +70,16 @@ export const UserItems = styled.div`
     padding-left: 20px;
 `;
 
-export const Main = styled.div`
-    height: 60vh;
-    width: 100%;
-    display: flex;
-    margin: 25px 0;
-    padding: 0 1% 0 1%;
+export const Content = styled.div`
+    position: absolute;
+    bottom: -180px;
 `;
 
 export const ButtonReturn = styled.button`
-    position: fixed;
-    bottom: 140px;
+    position: absolute;
+    bottom: 35px;
     width: 200px;
-    height: 25px;
+    height: 30px;
     font-weight: bold;
     background-color: transparent;
     border: 1px solid black;

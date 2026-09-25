@@ -7,6 +7,7 @@ import {
 	ButtonReturn,
 	ContainerCart,
 	Header,
+	Content,
 } from './styles';
 
 import bannerCart from '../../assets/img/banner-cart.png';
@@ -27,8 +28,10 @@ export function Cart() {
 						<UserItems>
 							<CartItems />
 						</UserItems>
-							<ButtonReturn>Continuar comprando</ButtonReturn>
 					</CartInterfaceMain>
+					<Content>
+							<ButtonReturn>Continuar comprando</ButtonReturn>
+						</Content>
 
 					<CartResume />
 				</Main>

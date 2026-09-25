@@ -24,6 +24,7 @@ export function SideBar({ active }) {
 				</Bar>
 				<Content>
 					<a className="data">Acessar seus dados</a>
+					<a className="data" onClick={() => navigate('/carrinho')} >Carrinho</a>
 					<a style={{ color: '#9E1C00' }} className="logout" onClick={logoutUser}>
 						Sair da conta
 					</a>

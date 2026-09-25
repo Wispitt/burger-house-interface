@@ -27,7 +27,7 @@ export function CartItems() {
 						<Table.Tr key={product.id}>
 							<Table.Td>
 								<ProductImage
-									style={product.id === 44 ? { width: '78px' } : undefined}
+									style={product.id === 44 ? { width: '68px' } : undefined}
 									src={product.url}
 								/>
 							</Table.Td>

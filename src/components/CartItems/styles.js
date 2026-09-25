@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const ProductImage = styled.img`
-    width: 90px;
-    border-radius: 16px;
+    width: 80px;
 `;
 
 export const ButtonGroup = styled.div`

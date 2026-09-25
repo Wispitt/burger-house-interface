@@ -71,7 +71,6 @@ export function Login() {
 			}
 
 			putUserData(response);
-			// localStorage.setItem('token', token);
 		} catch {
 			toast.error('Ocorreu um erro! Tente novamente.');
 		}
