@@ -34,7 +34,7 @@ export function CartResume() {
 
 	const submitOrder = async () => {
 		const products = cartProducts.map( (product) => {
-			return {id: product.id, quantity: product.quantity};
+			return { id: product.id, quantity: product.quantity };
 		});
 
 		try {
@@ -45,12 +45,12 @@ export function CartResume() {
 					validateStatus: () => true,
 				},
 			);
-
+			console.log(response.data)
 			if (response.status === 200 || response.status === 201) {
 				toast.success('Pedido realizado com sucesso!');
 				setTimeout(() => {
 					navigate('/home');
-					clearCart;
+					clearCart();
 				}, 1000);
 			} else if (response.status === 400) {
 				toast.error('Falha ao realizar seu pedido!');

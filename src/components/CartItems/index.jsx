@@ -53,7 +53,7 @@ export function CartItems() {
 						</Table.Tr>
 					))
 				) : (
-					<EmptyCart>Carrinho vaziou</EmptyCart>
+					<EmptyCart>Seu carrinho esta vacio. Adicione itens para comprar.</EmptyCart>
 				)}
 			</Table.Body>
 		</Table.Root>

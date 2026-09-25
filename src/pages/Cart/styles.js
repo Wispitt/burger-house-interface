@@ -43,9 +43,6 @@ export const CartInterfaceMain = styled.div`
     border-radius: 7px;
     background-color: #f9e5cc;
     margin-right: 16px;
-    overflow: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 
     h4 {
         font-family: "Sekuya", system-ui;
@@ -67,19 +64,18 @@ export const CartInterfaceMain = styled.div`
 `;
 
 export const UserItems = styled.div`
+    height: 100%;
     padding-left: 20px;
-`;
-
-export const Content = styled.div`
-    position: absolute;
-    bottom: -180px;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 `;
 
 export const ButtonReturn = styled.button`
-    position: absolute;
-    bottom: 35px;
+    position: relative;
+    bottom: 11px;
     width: 200px;
-    height: 30px;
+    height: 37px;
     font-weight: bold;
     background-color: transparent;
     border: 1px solid black;

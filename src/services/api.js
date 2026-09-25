@@ -7,9 +7,11 @@ export const api = axios.create({
 api.interceptors.request.use((config) => {
 	const userData = localStorage.getItem('burger-house:userData');
 
-	const token = userData && JSON.parse(userData).token;
+	const token = userData && JSON.parse(userData).data.token;
 
 	config.headers.authorization = `Bearer ${token}`;
 
 	return config;
 });
+
+

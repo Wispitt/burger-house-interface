@@ -27,8 +27,10 @@ export const ButtonGroup = styled.div`
 `;
 
 export const EmptyCart = styled.p`
-    font-size: 20px;
-    text-align: center;
+    position: absolute;
+    left: 10vw;
+    top: 50%;
+    font-size: 17/px;
     font-weight: bold;
 `;
 
