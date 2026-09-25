@@ -4,7 +4,11 @@ import { useContext, createContext, useState } from 'react';
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-	const [cartProducts, setCartProducts] = useState([]);
+	const [cartProducts, setCartProducts] = useState(() => {
+		const clientCartData = localStorage.getItem('burger-house:cartInfo');
+
+		return clientCartData ? JSON.parse(clientCartData) : [];
+	});
 
 	const putProductInCart = (product) => {
 		const cartIndex = cartProducts.findIndex((prd) => prd.id === product.id);
@@ -68,14 +72,6 @@ export const CartProvider = ({ children }) => {
 	const updateLocalStorage = (products) => {
 		localStorage.setItem('burger-house:cartInfo', JSON.stringify(products));
 	};
-
-	useEffect(() => {
-		const clienteCartData = localStorage.getItem('burger-house:cartInfo');
-
-		if (clienteCartData) {
-			setCartProducts(JSON.parse(clienteCartData));
-		}
-	}, []);
 
 	return (
 		<CartContext.Provider

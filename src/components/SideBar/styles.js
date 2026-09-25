@@ -48,8 +48,8 @@ export const Container = styled.div`
 
 export const Bar = styled.div`
     background-color: #0b0d13;
-    box-shadow: 0 0 20px 3px;
-    width: 100%;
+    box-shadow: 0 0 16px 1px;
+    width: 97%;
     height: 100px;
 
     p {

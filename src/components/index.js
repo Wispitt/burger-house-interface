@@ -8,3 +8,4 @@ export * from './SideBar';
 export * from './Title';
 export * from './Table';
 export * from './CartItems';
+export * from './CartResume';

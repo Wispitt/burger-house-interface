@@ -19,11 +19,10 @@ export const ButtonGroup = styled.div`
         border-radius: 100%;
         background-color: #dc9c41;
         opacity: 0.8;
-        transition: all .0.4;
         border: none;
 
         &:hover {
-            background-color: #6f357c;
+            opacity: 0.7;
         }
     }
 `;
@@ -35,7 +34,11 @@ export const EmptyCart = styled.p`
 `;
 
 export const TrashImage = styled.img`
-    height: 20px;
-    width: 20px;
+    width: 25px;
     cursor: pointer;
+    transition: transform 0.9s ease;
+
+    &:hover {
+        transform: scale(1.20);
+    }
 `;
