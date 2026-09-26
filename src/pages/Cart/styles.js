@@ -9,8 +9,6 @@ export const Container = styled.div`
 
 export const ContainerCart = styled.div`
     padding: 2% 4% 0 4%;
-    height: 100vh;
-    margin-bottom: 10vw;
 `;
 
 export const Header = styled.div`
@@ -26,7 +24,7 @@ export const Banner = styled.img`
 `;
 
 export const Main = styled.div`
-    height: 60vh;
+    height: 70vh;
     width: 100%;
     display: flex;
     margin: 25px 0;

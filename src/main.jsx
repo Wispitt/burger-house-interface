@@ -7,11 +7,12 @@ import { Elements } from '@stripe/react-stripe-js';
 import AppProvider from './hooks/index.jsx';
 import { router } from './routes.jsx';
 import { GlobalStyles } from './styles/GlobalStyles.js';
+import { stripePromise } from './config/stripeConfig.js';
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
 		<AppProvider>
-			<Elements>
+			<Elements stripe={stripePromise}>
 				<RouterProvider router={router} />
 			</Elements>
 			<GlobalStyles />

@@ -9,6 +9,8 @@ import {
 	MenuDesserts,
 	MenuApps,
 	MenuDrinks,
+	Checkout,
+	CompletePayment,
 } from './pages';
 
 export const router = createHashRouter([
@@ -43,5 +45,13 @@ export const router = createHashRouter([
 	{
 		path: '/carrinho',
 		element: <Cart />,
+	},
+	{
+		path: '/checkout',
+		element: <Checkout />,
+	},
+	{
+		path: '/complete',
+		element: <CompletePayment />,
 	},
 ]);

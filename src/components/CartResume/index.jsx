@@ -16,7 +16,6 @@ import { api } from '../../services/api';
 import { formatePrice } from '../../utils/formatePrice';
 
 export function CartResume() {
-
 	const navigate = useNavigate();
 
 	const { cartProducts, clearCart } = useCart();
@@ -25,7 +24,7 @@ export function CartResume() {
 	const [deliveryTax] = useState(500);
 
 	useEffect(() => {
-		const sumAllItems = cartProducts.reduce( (acc, current) => {
+		const sumAllItems = cartProducts.reduce((acc, current) => {
 			return current.price * current.quantity + acc;
 		}, 0);
 
@@ -33,33 +32,41 @@ export function CartResume() {
 	}, [cartProducts]);
 
 	const submitOrder = async () => {
-		const products = cartProducts.map( (product) => {
-			return { id: product.id, quantity: product.quantity };
+		const products = cartProducts.map((product) => {
+			return {
+				id: product.id,
+				quantity: product.quantity,
+				price: product.price,
+			};
 		});
 
 		try {
-			const response = await api.post(
-				'/orders', 
-				{ products }, 
-				{
-					validateStatus: () => true,
-				},
-			);
-			console.log(response.data)
-			if (response.status === 200 || response.status === 201) {
-				toast.success('Pedido realizado com sucesso!');
-				setTimeout(() => {
-					navigate('/home');
-					clearCart();
-				}, 1000);
-			} else if (response.status === 400) {
-				toast.error('Falha ao realizar seu pedido!');
-			} else {
-				throw new Error();
-			}
-		} catch {
-			toast.error('Ocorreu um erro! Tente novamente.');
-		}
+			const response = await api.post('/create-payment-intent', { products });
+		} catch (err) {}
+
+		// try {
+		// 	const response = await api.post(
+		// 		'/orders',
+		// 		{ products },
+		// 		{
+		// 			validateStatus: () => true,
+		// 		},
+		// 	);
+		// 	console.log(response.data)
+		// 	if (response.status === 200 || response.status === 201) {
+		// 		toast.success('Pedido realizado com sucesso!');
+		// 		setTimeout(() => {
+		// 			navigate('/home');
+		// 			clearCart();
+		// 		}, 1000);
+		// 	} else if (response.status === 400) {
+		// 		toast.error('Falha ao realizar seu pedido!');
+		// 	} else {
+		// 		throw new Error();
+		// 	}
+		// } catch {
+		// 	toast.error('Ocorreu um erro! Tente novamente.');
+		// }
 	};
 
 	return (
@@ -67,14 +74,17 @@ export function CartResume() {
 			<h4>RESUMO DO PEDIDO</h4>
 			<Content>
 				<ValueOrderAndDelivery>
-					<p className='subtotal'>Subtotal</p>
-					<p className='value-subtotal'>{formatePrice(finalPrice)}</p>
-					<p className='delivery'>Taxa de entrega</p>
-					<p className='value-delivery'>{formatePrice(deliveryTax)}</p>
+					<p className="subtotal">Subtotal</p>
+					<p className="value-subtotal">{formatePrice(finalPrice)}</p>
+					<p className="delivery">Taxa de entrega</p>
+					<p className="value-delivery">{formatePrice(deliveryTax)}</p>
 				</ValueOrderAndDelivery>
 				<ValueOrderAll>
-					<h2 className='all-product'>Total</h2>
-					<h3 className='value-all'> {formatePrice(finalPrice + deliveryTax)} </h3>
+					<h2 className="all-product">Total</h2>
+					<h3 className="value-all">
+						{' '}
+						{formatePrice(finalPrice + deliveryTax)}{' '}
+					</h3>
 				</ValueOrderAll>
 
 				<ButtonOrder onClick={submitOrder}>Finalizar pedido</ButtonOrder>
