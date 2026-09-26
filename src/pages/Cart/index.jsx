@@ -26,7 +26,9 @@ export function Cart() {
 						<UserItems>
 							<CartItems />
 						</UserItems>
-							<ButtonReturn>Continuar comprando</ButtonReturn>
+							<ButtonReturn>
+								<i className="ri-arrow-left-line"></i>
+								Continuar comprando</ButtonReturn>
 					</CartInterfaceMain>
 					<CartResume />
 				</Main>

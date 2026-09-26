@@ -87,4 +87,10 @@ export const ButtonReturn = styled.button`
     &:active {
         background-color: #acacac70;
     }
+
+    .ri-arrow-left-line {
+        font-weight: bold;
+        font-size: 15px;
+        margin-right: 5px;
+    }
 `;

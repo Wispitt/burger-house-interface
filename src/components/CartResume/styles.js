@@ -127,6 +127,10 @@ export const ButtonOrder = styled.button`
     &:active {
         opacity: 0.7;
     }
+
+    .ri-arrow-right-line {
+        
+    }
 `;
 
 export const ButtonClearCart = styled.button`

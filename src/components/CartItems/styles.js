@@ -21,15 +21,20 @@ export const ButtonGroup = styled.div`
         border: none;
 
         &:hover {
-            opacity: 0.7;
+            background-color: #e6a54c;
+            box-shadow: 0 0 0 3px rgba(232, 120, 24, 0.12);
+        }
+
+        .ri-subtract-line, .ri-add-line {
+            font-weight: bold;
+            font-size: 16px;
         }
     }
 `;
 
-export const EmptyCart = styled.p`
-    position: absolute;
-    left: 10vw;
-    top: 50%;
+export const EmptyCart = styled.td`
+    padding: 24px;
+    text-align: center;
     font-size: 17/px;
     font-weight: bold;
 `;

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 
 import {
 	Content,
@@ -17,12 +16,11 @@ import { formatePrice } from '../../utils/formatePrice';
 import { CheckoutForm } from '../Stripe/CheckoutForm';
 
 export function CartResume() {
-	const navigate = useNavigate();
-
 	const { cartProducts, clearCart } = useCart();
 
 	const [finalPrice, setFinalPrice] = useState(0);
 	const [deliveryTax] = useState(500);
+	const [clientSecret, setClientSecret] = useState('');
 
 	useEffect(() => {
 		const sumAllItems = cartProducts.reduce((acc, current) => {
@@ -34,64 +32,29 @@ export function CartResume() {
 
 	const click = () => {
 		const submitOrder = async () => {
-		const products = cartProducts.map((product) => {
-			return {
-				id: product.id,
-				quantity: product.quantity,
-				price: parseInt(product.price),
-			};
-		});
-
-		try {
-			const response = await api.post('/create-payment-intent', { products });
-			navigate('/carrinho', {
-				state: response.data,
+			const products = cartProducts.map((product) => {
+				return {
+					id: product.id,
+					quantity: product.quantity,
+					price: parseInt(product.price),
+				};
 			});
 
-			if (response.status === 200) {
-				activeSideBar();
+			try {
+				const response = await api.post('/create-payment-intent', { products });
+
+				if (response.status === 200) {
+					setClientSecret(response.data.clientSecret);
+					activeSideBar();
+				}
+			} catch {
+				toast.error('Error! Tente novamente');
 			}
+		};
 
-		} catch {
-			toast.error('Error! Tente novamente', {
-				position: 'top-right',
-				hideProgressBar: false,
-				closeOnClick: false,
-				pauseOnHover: true,
-				draggable: true,
-				progress: undefined,
-				theme: 'dark',
-			});
-		}
+		const activeSideBar = () => setSideBar(!sideBar);
 
-		// try {
-		// 	const response = await api.post(
-		// 		'/orders',
-		// 		{ products },
-		// 		{
-		// 			validateStatus: () => true,
-		// 		},
-		// 	);
-		// 	console.log(response.data)
-		// 	if (response.status === 200 || response.status === 201) {
-		// 		toast.success('Pedido realizado com sucesso!');
-		// 		setTimeout(() => {
-		// 			navigate('/home');
-		// 			clearCart();
-		// 		}, 1000);
-		// 	} else if (response.status === 400) {
-		// 		toast.error('Falha ao realizar seu pedido!');
-		// 	} else {
-		// 		throw new Error();
-		// 	}
-		// } catch {
-		// 	toast.error('Ocorreu um erro! Tente novamente.');
-		// }
-	};
-
-	const activeSideBar = () => setSideBar(!sideBar);
-
-	submitOrder();
+		submitOrder();
 	};
 
 	const [sideBar, setSideBar] = useState(false);
@@ -114,8 +77,12 @@ export function CartResume() {
 					</h3>
 				</ValueOrderAll>
 
-				<ButtonOrder onClick={click}>Finalizar pedido</ButtonOrder>
-				{sideBar && <CheckoutForm active={setSideBar} />}
+				<ButtonOrder onClick={click}>
+					Finalizar pedido <i className='ri-arrow-right-line'></i>
+				</ButtonOrder>
+				{sideBar && (
+					<CheckoutForm active={setSideBar} clientSecret={clientSecret} />
+				)}
 				<ButtonClearCart onClick={clearCart}>Limpar carrinho</ButtonClearCart>
 			</Content>
 		</Section>

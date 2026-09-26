@@ -42,12 +42,16 @@ export const ButtonMenu = styled.button`
     transition: transform 0.8s ease;
 
     i {
+        position: relative;
+        top: 3px;
+        font-weight: bold;
         font-size: 25px;
     }
 
     &:hover {
         opacity: 0.9;
-        transform: scale(1.1);
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(232, 120, 24, 0.2);
 
         i {
             animation: mover 0.6s infinite alternate;
@@ -213,16 +217,16 @@ export const ButtonCombo = styled.button`
     justify-self: center;
 
     i {
-        font-size: 20px;
-
-        &:hover {
-            
-        }
+        position: relative;
+        top: 3px;
+        font-size: 24px;
     }
 
     &:hover {
         opacity: 0.9;
-        transform: scale(1.1);
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(232, 120, 24, 0.2);
+
 
         i {
             animation: mover 0.6s infinite alternate;

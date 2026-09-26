@@ -119,7 +119,8 @@
   gap: 10px;
 }
 
-.checkout-form label {
+.checkout-form label,
+.checkout-form .field-label {
   color: #d8d8d8;
   font-size: 13px;
   font-weight: 600;
@@ -182,6 +183,7 @@
 
 .checkout-form button {
   position: relative;
+  bottom: 10px;
   width: 100%;
   min-height: 58px;
   margin-top: 8px;
@@ -220,8 +222,11 @@
 ============================ */
 
 .checkout-form .error {
+  position: relative;
+  bottom: 28px;
+
   margin: 0;
-  padding: 14px;
+  padding: 5px;
 
   color: #ff7777;
   background: rgba(239, 68, 68, 0.1);
@@ -233,8 +238,11 @@
 }
 
 .checkout-form .success {
+  position: relative;
+  bottom: 28px;
+
   margin: 0;
-  padding: 14px;
+  padding: 5px;
 
   color: #65d99b;
   background: rgba(34, 197, 94, 0.1);

@@ -1,11 +1,19 @@
 import { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
-import './styles.css';
+import { useCart } from '../../../hooks/CartContext';
 
-export function CheckoutForm({ active }) {
+import './styles.css';
+import { api } from '../../../services/api';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+export function CheckoutForm({ active, clientSecret }) {
 	const stripe = useStripe();
 	const elements = useElements();
+
+	const { cartProducts, clearCart } = useCart();
+	const navigate = useNavigate();
 
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState('');
@@ -23,58 +31,70 @@ export function CheckoutForm({ active }) {
 		setError('');
 		setSuccess(false);
 
-		const { error, paymentIntent } = await stripe.confirmPayment({
-			elements,
-			redirect: 'if_required',
-		});
-
 		try {
-			const response = await fetch('/create-payment-intent', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					amount: 5000,
-					currency: 'brl',
-				}),
-			});
-
-			const data = await response.json();
-
-			if (!response.ok || !data.clientSecret) {
-				throw new Error(data.error || 'Não foi possível iniciar o pagamento.');
+			if (!clientSecret) {
+				throw new Error('Não foi possível iniciar o pagamento.');
 			}
 
-			// Confirma o pagamento com o cartão
-			const result = await stripe.confirmCardPayment(data.clientSecret, {
+			const result = await stripe.confirmCardPayment(clientSecret, {
 				payment_method: {
 					card: elements.getElement(CardElement),
 				},
 			});
 
 			if (result.error) {
-				throw new Error(result.error.message);
+				toast.error('Error! Tente novamente');
 			}
 
 			if (result.paymentIntent.status === 'succeeded') {
+				try {
+					const products = cartProducts.map((product) => {
+						return {
+							id: product.id,
+							quantity: product.quantity,
+							price: parseInt(product.price),
+						};
+					});
+
+					const response = await api.post(
+						'/orders',
+						{ products },
+						{
+							validateStatus: () => true,
+						},
+					);
+
+					if (response.status === 200 || response.status === 201) {
+						toast.success('Pedido realizado com sucesso!');
+						setTimeout(() => {
+							navigate(`/complete?payment_intent_client_secret=${clientSecret}`);
+							clearCart();
+						}, 1000);
+					} else if (response.status === 400) {
+						toast.error('Falha ao realizar seu pedido!');
+					} else {
+						throw new Error();
+					}
+				} catch {
+					toast.error('Ocorreu um erro! Tente novamente.');
+				}
 				setSuccess(true);
 			} else {
 				setError('O pagamento ainda não foi confirmado.');
 			}
-		} catch (err) {
-			setError(err.message || 'Erro ao processar pagamento.');
-		} finally {
-			setLoading(false);
+		} catch {
+			setError('Erro ao processar pagamento.');
 		}
+
+		setLoading(false);
 	};
 
 	const closeSideBar = () => {
-		active(false);
+		active?.(false);
 	};
 
 	return (
-		<div className='container-all'>
+		<div className="container-all">
 			<form
 				CheckoutForm={active}
 				className="checkout-form"
@@ -96,7 +116,7 @@ export function CheckoutForm({ active }) {
 				</div>
 
 				<div>
-					<label>Dados do cartão</label>
+					<span className="field-label">Dados do cartão</span>
 
 					<CardElement
 						options={{
@@ -118,14 +138,13 @@ export function CheckoutForm({ active }) {
 					/>
 				</div>
 
-				{error && <p className="error">{error}</p>}
-
-				{success && <p className="success">Pagamento realizado com sucesso!</p>}
-
-				<button type="submit" disabled={!stripe || loading}>
+				<button type="submit" disabled={!stripe || !clientSecret || loading}>
 					{loading ? 'Processando...' : 'Realizar compra!'}
 				</button>
+				{error && <p className="error">{error}</p>}
+				{success && <p className="success">Pagamento realizado com sucesso!</p>}
 			</form>
+
 		</div>
 	);
 }
