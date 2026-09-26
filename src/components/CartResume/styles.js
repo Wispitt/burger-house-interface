@@ -48,20 +48,27 @@ export const ValueOrderAndDelivery = styled.div`
 
     .subtotal {
         grid-area: subtotal;
+        font-size: 17px;
     }
 
     .value-subtotal {
         grid-area: value-subtotal;
         width: 100px;
+        font-size: 17px;
     }
 
     .delivery {
         grid-area: delivery;
-        width: 110px;
+        width: 150px;
+        font-size: 16px;
     }
 
     .value-delivery {
         grid-area: value-delivery;
+    }
+
+    p {
+        color: black;
     }
 `;
 
@@ -95,6 +102,10 @@ export const ValueOrderAll = styled.div`
         height: 1.3px;
         width: 90%;
         background-color: #c9a879;
+    }
+
+    h2, h3 {
+        color: black;
     }
 `;
 

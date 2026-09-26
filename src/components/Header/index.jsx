@@ -1,12 +1,13 @@
 
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Container, Title, TitleWrapper, SnackBar, Content, Links, NavItem } from './styles';
+import { Container, Title, TitleWrapper, SnackBar, Content, Links, NavItem, CartIcon, UserIcon } from './styles';
 import { SideBar } from '../SideBar';
 
 export function HeaderAll() {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
+	const isCartActive = pathname === '/carrinho';
 
 	const [sideBar, setSideBar] = useState(false);
 
@@ -38,8 +39,8 @@ export function HeaderAll() {
 					<a>Promoções</a>
 					<a>Sobre nós</a>
 					<a>Contato</a>
-					<i onClick={() => navigate('/carrinho')} className="ri-shopping-cart-line"></i>
-					<i onClick={activeSideBar} className="ri-user-3-line"></i>
+					<CartIcon onClick={() => navigate('/carrinho')} className="ri-shopping-cart-line" $isActiveCart={isCartActive} />
+					<UserIcon onClick={activeSideBar} className="ri-user-3-line"></UserIcon>
 					{sideBar && <SideBar active={setSideBar} />}
 				</Links>
 			</Content>

@@ -21,15 +21,22 @@ export const Container = styled.div`
     left: ${(props) => (props.sideBar ? '0' : '-100%')};
     animation: showSideBar .4s;
 
-    i {
+    .ri-user-3-line {
         position: fixed;
         margin: 32px 0 0 32px;
         font-size: 28px;
-        transition: transform 0.6s ease;
+        color: #9b9b9b;
+    }
+
+    .ri-close-fill {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 35px;
         color: #9b9b9b;
 
         &:hover {
-        transform: scale(1.2);
+        color: #d8d8d8;
         cursor: pointer;
         }
     }

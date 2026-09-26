@@ -19,8 +19,9 @@ export function SideBar({ active }) {
 		<CoonatinerAll>
 			<Container sideBar={active}>
 				<Bar>
-					<i onClick={closeSideBar} className="ri-user-3-line"></i>
+					<i className="ri-user-3-line"></i>
 					<p>Olá, {userInfo.data.name}!</p>
+					<i className="ri-close-fill" onClick={closeSideBar} ></i>
 				</Bar>
 				<Content>
 					<a className="data">Acessar seus dados</a>

@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         max-width: 1900px;
         outline: none;
+        font-family: "Roboto", sans-serif;
     }
 
     button, a {

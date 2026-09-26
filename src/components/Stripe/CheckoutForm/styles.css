@@ -1,0 +1,270 @@
+
+/* ============================
+   CONFIGURAÇÕES GERAIS
+============================ */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ============================
+   ÁREA PRINCIPAL
+============================ */
+
+.container-all {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  color: #f5f5f5;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(232, 120, 24, 0.12),
+      transparent 35%
+    ),
+    #171717;
+}
+
+/* ============================
+   CONTAINER DO CHECKOUT
+============================ */
+
+.checkout-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  background: #222222;
+  border: 1px solid #353535;
+  border-radius: 24px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+/* ============================
+   FORMULÁRIO
+============================ */
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: absolute;
+  background-color: #171717;
+  width: 550px;
+  height: 400px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* ============================
+   TÍTULO
+============================ */
+
+.checkout-form h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.ri-close-fill {
+  font-size: 28px;
+  color: #fff;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  transition: transform 0.7s ease;
+
+    &:hover {
+      transform: scale(1.12);
+      cursor: pointer;
+    }
+}
+
+.checkout-form h2::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 4px;
+  margin-top: 12px;
+  background: #e87818;
+  border-radius: 10px;
+}
+
+/* ============================
+   CAMPOS
+============================ */
+
+.checkout-form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkout-form label {
+  color: #d8d8d8;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.checkout-form input {
+  width: 100%;
+  height: 54px;
+  padding: 0 16px;
+
+  color: #ffffff;
+  background: #2c2c2c;
+
+  border: 1px solid #414141;
+  border-radius: 12px;
+
+  font-size: 14px;
+  outline: none;
+
+  transition: 0.25s;
+}
+
+.checkout-form input::placeholder {
+  color: #858585;
+}
+
+.checkout-form input:focus {
+  border-color: #e87818;
+  background: #303030;
+  box-shadow: 0 0 0 3px rgba(232, 120, 24, 0.12);
+}
+
+/* ============================
+   CAMPO DO CARTÃO
+============================ */
+
+.checkout-form .StripeElement {
+  min-height: 54px;
+  padding: 18px 16px;
+
+  background: #2c2c2c;
+  border: 1px solid #414141;
+  border-radius: 12px;
+
+  transition: 0.25s;
+}
+
+.checkout-form .StripeElement--focus {
+  border-color: #e87818;
+  box-shadow: 0 0 0 3px rgba(232, 120, 24, 0.12);
+}
+
+.checkout-form .StripeElement--invalid {
+  border-color: #ef4444;
+}
+
+/* ============================
+   BOTÃO DE PAGAMENTO
+============================ */
+
+.checkout-form button {
+  position: relative;
+  width: 100%;
+  min-height: 58px;
+  margin-top: 8px;
+
+  color: #171717;
+  background: #e87818;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.checkout-form button:hover:not(:disabled) {
+  background: #ff922e;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(232, 120, 24, 0.2);
+}
+
+.checkout-form button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.checkout-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================
+   MENSAGENS
+============================ */
+
+.checkout-form .error {
+  margin: 0;
+  padding: 14px;
+
+  color: #ff7777;
+  background: rgba(239, 68, 68, 0.1);
+
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px;
+
+  font-size: 13px;
+}
+
+.checkout-form .success {
+  margin: 0;
+  padding: 14px;
+
+  color: #65d99b;
+  background: rgba(34, 197, 94, 0.1);
+
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 10px;
+
+  font-size: 13px;
+}
+
+/* ============================
+   RESPONSIVIDADE
+============================ */
+
+@media (max-width: 600px) {
+  .App {
+    padding: 25px 15px;
+    align-items: flex-start;
+  }
+
+  .checkout-container {
+    padding: 28px 22px;
+    border-radius: 20px;
+  }
+
+  .checkout-form h2 {
+    font-size: 24px;
+  }
+
+  .checkout-form {
+    gap: 20px;
+  }
+}

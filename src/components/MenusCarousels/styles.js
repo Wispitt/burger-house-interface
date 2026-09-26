@@ -99,5 +99,5 @@ export const ValueAndIcon = styled.div`
 
 export const ProductValue = styled.h3`
     margin: 0 0 20px 15px;
-    font-size: 31px;
+    font-size: 26px;
 `;

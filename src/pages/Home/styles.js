@@ -158,7 +158,7 @@ export const ValueAndIcon = styled.div`
 
 export const ProductValue = styled.h3`
     margin: 0 0 20px 15px;
-    font-size: 28px;
+    font-size: 25px;
 `;
 
 export const HouseSpecifications = styled.div`

@@ -66,6 +66,31 @@ export const NavItem = styled.span`
     }
 `;
 
+export const CartIcon = styled.i`
+    font-size: 28px;
+    color: ${({ $isActiveCart }) => ($isActiveCart ? '#bd2f47' : 'black')};
+    border-bottom: ${({ $isActiveCart }) => ($isActiveCart ? '2.9px solid #bd2f47' : 'none')};
+    transition: transform 0.6s ease, opacity 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        opacity: ${({ $isActiveCart }) => ($isActiveCart ? 0.7 : 1)};
+        transform: ${({ $isActiveCart }) => ($isActiveCart ? 'none' : 'scale(1.1)')};
+        color: #bd2f47;
+    }
+`;
+
+export const UserIcon = styled.i`
+    font-size: 28px;
+    transition: transform 0.6s ease;
+    
+    &:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    }
+
+`;
+
+
 export const Links = styled.div`
     display: flex;
     justify-content: end;
@@ -79,16 +104,6 @@ export const Links = styled.div`
     font-size: 18px;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
-
-    i {
-        font-size: 28px;
-        transition: transform 0.6s ease;
-
-        &:hover {
-        transform: scale(1.2);
-        cursor: pointer;
-        }
-    }
     
     a {
         transition: transform 0.6s ease;

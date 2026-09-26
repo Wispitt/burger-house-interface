@@ -14,6 +14,7 @@ import {
 import { useCart } from '../../hooks/CartContext';
 import { api } from '../../services/api';
 import { formatePrice } from '../../utils/formatePrice';
+import { CheckoutForm } from '../Stripe/CheckoutForm';
 
 export function CartResume() {
 	const navigate = useNavigate();
@@ -31,18 +32,37 @@ export function CartResume() {
 		setFinalPrice(sumAllItems);
 	}, [cartProducts]);
 
-	const submitOrder = async () => {
+	const click = () => {
+		const submitOrder = async () => {
 		const products = cartProducts.map((product) => {
 			return {
 				id: product.id,
 				quantity: product.quantity,
-				price: product.price,
+				price: parseInt(product.price),
 			};
 		});
 
 		try {
 			const response = await api.post('/create-payment-intent', { products });
-		} catch (err) {}
+			navigate('/carrinho', {
+				state: response.data,
+			});
+
+			if (response.status === 200) {
+				activeSideBar();
+			}
+
+		} catch {
+			toast.error('Error! Tente novamente', {
+				position: 'top-right',
+				hideProgressBar: false,
+				closeOnClick: false,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: 'dark',
+			});
+		}
 
 		// try {
 		// 	const response = await api.post(
@@ -69,6 +89,13 @@ export function CartResume() {
 		// }
 	};
 
+	const activeSideBar = () => setSideBar(!sideBar);
+
+	submitOrder();
+	};
+
+	const [sideBar, setSideBar] = useState(false);
+
 	return (
 		<Section>
 			<h4>RESUMO DO PEDIDO</h4>
@@ -87,8 +114,9 @@ export function CartResume() {
 					</h3>
 				</ValueOrderAll>
 
-				<ButtonOrder onClick={submitOrder}>Finalizar pedido</ButtonOrder>
-				<ButtonClearCart>Limpar carrinho</ButtonClearCart>
+				<ButtonOrder onClick={click}>Finalizar pedido</ButtonOrder>
+				{sideBar && <CheckoutForm active={setSideBar} />}
+				<ButtonClearCart onClick={clearCart}>Limpar carrinho</ButtonClearCart>
 			</Content>
 		</Section>
 	);
