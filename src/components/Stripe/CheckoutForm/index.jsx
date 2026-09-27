@@ -68,8 +68,8 @@ export function CheckoutForm({ active, clientSecret }) {
 						toast.success('Pedido realizado com sucesso!');
 						setTimeout(() => {
 							navigate(`/complete?payment_intent_client_secret=${clientSecret}`);
-							clearCart();
 						}, 1000);
+						clearCart();
 					} else if (response.status === 400) {
 						toast.error('Falha ao realizar seu pedido!');
 					} else {
@@ -83,7 +83,7 @@ export function CheckoutForm({ active, clientSecret }) {
 				setError('O pagamento ainda não foi confirmado.');
 			}
 		} catch {
-			setError('Erro ao processar pagamento.');
+			navigate(`/complete?payment_intent_client_secret=${clientSecret}`);
 		}
 
 		setLoading(false);
