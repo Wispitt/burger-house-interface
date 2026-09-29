@@ -3,20 +3,24 @@ import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Elements } from '@stripe/react-stripe-js';
+import { ThemeProvider } from 'styled-components';
 
 import AppProvider from './hooks/index.jsx';
 import { router } from './routes.jsx';
 import { GlobalStyles } from './styles/GlobalStyles.js';
 import { stripePromise } from './config/stripeConfig.js';
+import { standardTheme } from './styles/themes/standard';
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
-		<AppProvider>
-			<Elements stripe={stripePromise}>
-				<RouterProvider router={router} />
-			</Elements>
-			<GlobalStyles />
-			<ToastContainer autoClose={1500} theme="dark" />
-		</AppProvider>
+		<ThemeProvider theme={standardTheme}>
+			<AppProvider>
+				<Elements stripe={stripePromise}>
+					<RouterProvider router={router} />
+				</Elements>
+				<GlobalStyles />
+				<ToastContainer autoClose={1500} theme="dark" />
+			</AppProvider>
+		</ThemeProvider>
 	</StrictMode>,
 );

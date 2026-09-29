@@ -2,6 +2,13 @@ import styled from 'styled-components';
 
 import backGround from '../../assets/img/backgound-interface.jpeg';
 
+export const AllContent = styled.div`
+    background-image: url(${backGround});
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 export const Container = styled.div`
     background-image: url(${backGround});
     min-height: 100%;
@@ -9,7 +16,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2% 4% 0 4%;
+    padding: 0 4% 0 4%;
 `;
 
 export const Section = styled.div`
@@ -17,6 +24,7 @@ export const Section = styled.div`
     width: 96%;
     display: flex;
     flex-direction: column;
+
 `;
 
 export const ContainerMainAndButton = styled.div`
@@ -36,16 +44,18 @@ export const ButtonMenu = styled.button`
     width: 17%;
     height: 9%;
     border-radius: 18px;
-    background-color: #f1a026;
+    background-color: ${(props) => props.theme.brightOrange};
     font-size: 17px;
     font-weight: bold;
     transition: transform 0.8s ease;
 
-    i {
+    .ri-arrow-right-line {
         position: relative;
         top: 3px;
         font-weight: bold;
         font-size: 25px;
+        transition: transform 0.8s ease;
+        display: inline-block;
     }
 
     &:hover {
@@ -53,18 +63,8 @@ export const ButtonMenu = styled.button`
         transform: scale(1.05);
         box-shadow: 0 10px 25px rgba(232, 120, 24, 0.2);
 
-        i {
-            animation: mover 0.6s infinite alternate;
-             display: inline-block;
-
-            @keyframes mover {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(6px);
-                }
-            }
+        .ri-arrow-right-line {
+            transform: translateX(5px);
         }
     }
 
@@ -91,7 +91,7 @@ export const Highlights = styled.div`
         content: "";
         width: 70px;
         height: 2px;
-        background: black;
+        background: ${(props) => props.theme.black};
     }
 `;
 
@@ -179,7 +179,7 @@ export const Specifications = styled.img`
     width: 110%;
     height: 85%;
     margin-top: 10px;
-    border: 2px solid #ebc9a3;
+    border: 2px solid ${(props) => props.theme.lightGold};
     border-radius: 15px;
     transition: transform 0.9s ease;
 
@@ -207,7 +207,7 @@ export const ButtonCombo = styled.button`
     width: 52%;
     height: 40px;
     border-radius: 18px;
-    background-color: #f19710;
+    background-color: ${(props) => props.theme.brightOrange};
     font-size: 16px;
     font-weight: bold;
     transition: transform 0.8s ease;
@@ -216,10 +216,12 @@ export const ButtonCombo = styled.button`
     align-self: end;
     justify-self: center;
 
-    i {
+    .ri-arrow-right-line {
         position: relative;
         top: 3px;
         font-size: 24px;
+        transition: transform 0.8s ease;
+        display: inline-block;
     }
 
     &:hover {
@@ -228,26 +230,14 @@ export const ButtonCombo = styled.button`
         box-shadow: 0 10px 25px rgba(232, 120, 24, 0.2);
 
 
-        i {
-            animation: mover 0.6s infinite alternate;
-            display: inline-block;
-
-            @keyframes mover {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(6px);
-                }
-            }
+        .ri-arrow-right-line {
+            transform: translateX(4.5px);
         }
     }
 
     &:active {
         opacity: 1;
     }
-
-
 `;
 
 export const BannerCombo = styled.img`

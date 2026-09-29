@@ -1,4 +1,7 @@
+import { useNavigate } from 'react-router-dom';
+
 import {
+	AllContent,
 	Container,
 	Banner,
 	CartInterfaceMain,
@@ -13,28 +16,34 @@ import bannerCart from '../../assets/img/banner-cart.png';
 import { FooterAll, HeaderAll, CartItems, CartResume } from '../../components';
 
 export function Cart() {
-	return (
-		<Container>
-			<ContainerCart>
-				<Header>
-					<HeaderAll />
-					<Banner src={bannerCart} alt="banner do carrinho" />
-				</Header>
-				<Main>
-					<CartInterfaceMain>
-						<h4>SEUS ITENS</h4>
-						<UserItems>
-							<CartItems />
-						</UserItems>
-							<ButtonReturn>
-								<i className="ri-arrow-left-line"></i>
-								Continuar comprando</ButtonReturn>
-					</CartInterfaceMain>
-					<CartResume />
-				</Main>
-			</ContainerCart>
+	const navigate = useNavigate();
 
-			<FooterAll />
-		</Container>
+	return (
+		<AllContent>
+			<HeaderAll />
+			<Container>
+				<ContainerCart>
+					<Header>
+						
+						<Banner src={bannerCart} alt="banner do carrinho" />
+					</Header>
+					<Main>
+						<CartInterfaceMain>
+							<h4>SEUS ITENS</h4>
+							<UserItems>
+								<CartItems />
+							</UserItems>
+							<ButtonReturn onClick={() => navigate('/hamburguers')}>
+								<i className="ri-arrow-left-line"></i>
+								Continuar comprando
+							</ButtonReturn>
+						</CartInterfaceMain>
+						<CartResume />
+					</Main>
+				</ContainerCart>
+
+				<FooterAll />
+			</Container>
+		</AllContent>
 	);
 }

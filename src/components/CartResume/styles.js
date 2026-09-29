@@ -5,16 +5,16 @@ export const Section = styled.div`
     flex-direction: column;
     height: 100%;
     width: 30%;
-    border: 1px solid #c9a879;
+    border: 1px solid ${(props) => props.theme.gold};
     border-radius: 7px;
-    background-color: #f9e5cc;
+    background-color: ${(props) => props.theme.peach};
 
     h4 {
         font-family: "Sekuya", system-ui;
         display: flex;
         align-items: center;
         margin: 10px 0 15px 20px;
-        color: #3c2114;
+        color: ${(props) => props.theme.darkBrown};
         font-weight: 500;
         font-size: 0.8vw;
 
@@ -22,7 +22,7 @@ export const Section = styled.div`
             content: '';
             height: 1.3px;
             width: 12vw;
-            background-color: black;
+            background-color: ${(props) => props.theme.black};
             margin-left: 9px;
         }
     }
@@ -101,7 +101,7 @@ export const ValueOrderAll = styled.div`
         top: -17px;
         height: 1.3px;
         width: 90%;
-        background-color: #c9a879;
+        background-color: ${(props) => props.theme.gold};
     }
 
     h2, h3 {
@@ -114,8 +114,8 @@ export const ButtonOrder = styled.button`
     height: 35px;
     font-size: 14px;
     font-weight: bold;
-    background-color: #3c2114;
-    border: 1px solid black;
+    background-color: ${(props) => props.theme.darkBrown};
+    border: 1px solid ${(props) => props.theme.black};
     color: #fff;
     margin: 25px 0 17px 0;
     border-radius: 7px;
@@ -143,10 +143,10 @@ export const ButtonClearCart = styled.button`
     border-radius: 7px;
 
     &:hover {
-        background-color: #acacac46;
+        background-color: ${(props) => props.theme.gray};
     }
 
     &:active {
-        background-color: #acacac70;
+        opacity: 0.7;
     }
 `;

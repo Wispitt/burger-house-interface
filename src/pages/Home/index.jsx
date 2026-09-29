@@ -3,6 +3,7 @@ import { api } from '../../services/api';
 import { useEffect, useState } from 'react';
 
 import {
+	AllContent,
 	Container,
 	Section,
 	BannerMain,
@@ -40,56 +41,60 @@ export function Home() {
 
 			setProducts(data);
 		}
-
 		fetchProducts();
 	}, []);
 
 	return (
-		<Container>
+		<AllContent>
 			<HeaderAll />
-			<Section>
-				<ContainerMainAndButton>
-					<BannerMain src={bannerMain} />
-					<ButtonMenu onClick={() => navigate('/hamburguers')}>
+			<Container>
+				<Section>
+					<ContainerMainAndButton>
+						<BannerMain src={bannerMain} />
+						<ButtonMenu
+							onClick={() => navigate('/hamburguers')}
+							className="buttonMenu"
+						>
 							Ver Cardápio <i className="ri-arrow-right-line"></i>{' '}
-					</ButtonMenu>
-				</ContainerMainAndButton>
-			</Section>
+						</ButtonMenu>
+					</ContainerMainAndButton>
+				</Section>
 
-			<Highlights>
-				<span>ESCOLHAS DIVERSAS</span>
-			</Highlights>
+				<Highlights>
+					<span>ESCOLHAS DIVERSAS</span>
+				</Highlights>
 
-			<AllProducts>
-				{products
-					.filter((product) => [44, 45, 46, 69].includes(product.id))
-					.map((product) => (
-						<ProductsMain key={product.id}>
-							<ProductImage
-								style={product.id === 44 ? { width: '40%' } : undefined}
-								src={product.url}
-							/>
-							<NameProduct> {product.name} </NameProduct>
-							<ValueAndIcon>
-								<ProductValue> {formatePrice(product.price)} </ProductValue>
-								<CartButton product={product} />
-							</ValueAndIcon>
-						</ProductsMain>
-					))}
+				<AllProducts>
+					{products
+						.filter((product) => [44, 45, 46, 69].includes(product.id))
+						.map((product) => (
+							<ProductsMain key={product.id}>
+								<ProductImage
+									style={product.id === 44 ? { width: '40%' } : undefined}
+									src={product.url}
+								/>
+								<NameProduct> {product.name} </NameProduct>
+								<ValueAndIcon>
+									<ProductValue> {formatePrice(product.price)} </ProductValue>
+									<CartButton product={product} />
+								</ValueAndIcon>
+							</ProductsMain>
+						))}
 
-				<HouseBannerCombo>
-					<BannerCombo src={combosSpecial} />
-					<ButtonCombo>
-						Combo <i className="ri-arrow-right-line"></i>
-					</ButtonCombo>
-				</HouseBannerCombo>
+					<HouseBannerCombo>
+						<BannerCombo src={combosSpecial} />
+						<ButtonCombo>
+							Combo <i className="ri-arrow-right-line"></i>
+						</ButtonCombo>
+					</HouseBannerCombo>
 
-				<HouseSpecifications>
-					<Specifications src={specifications} />
-				</HouseSpecifications>
-			</AllProducts>
+					<HouseSpecifications>
+						<Specifications src={specifications} />
+					</HouseSpecifications>
+				</AllProducts>
 
-			<FooterAll />
-		</Container>
+				<FooterAll />
+			</Container>
+		</AllContent>
 	);
 }

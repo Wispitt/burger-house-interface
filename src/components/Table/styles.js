@@ -17,12 +17,12 @@ export const Tr = styled.tr`
 export const Th = styled.th`
     padding: 16px;
     text-align: left;
-    color: #484848;
+    color: ${(props) => props.theme.lightBlack};
 `;
 
 export const Td = styled.td`
     padding: 16px;
-    color: #484848;
+    color: ${(props) => props.theme.lightBlack};
     font-weight: 500;
     line-height: 115%;
 `;

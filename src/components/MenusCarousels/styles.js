@@ -36,7 +36,7 @@ export const Container = styled.div`
     };
 
     .buttonNext {
-        z-index: 9999;
+        z-index: 999;
         font-size: 1vw;
         position: absolute;
         right: -50px;
@@ -45,7 +45,7 @@ export const Container = styled.div`
     }
 
     .buttonPrev {
-        z-index: 9999;
+        z-index: 999;
         font-size: 1vw;
         position: absolute;
         left: -50px;
@@ -55,7 +55,7 @@ export const Container = styled.div`
 `;
 
 export const ProductsMain = styled.div`
-    border: 2px solid #ebc9a3;
+    border: 2px solid ${(props) => props.theme.lightGold};
     border-radius: 15px;
     width: 100%;
     height: 100%;
@@ -63,7 +63,7 @@ export const ProductsMain = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    background-color: #fce6ce;
+    background-color: ${(props) => props.theme.lightCream};
     transition: transform 0.9s ease;
 
     &:hover {

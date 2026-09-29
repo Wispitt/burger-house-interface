@@ -2,13 +2,20 @@ import styled from 'styled-components';
 
 import backGround from '../../assets/img/backgound-interface.jpeg';
 
+export const AllContent = styled.div`
+    background-image: url(${backGround});
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 export const Container = styled.div`
     background-image: url(${backGround});
     padding-left: 1px;
 `;
 
 export const ContainerCart = styled.div`
-    padding: 2% 4% 0 4%;
+    padding: 0 2% 0 2%;
 `;
 
 export const Header = styled.div`
@@ -37,9 +44,9 @@ export const CartInterfaceMain = styled.div`
     flex-direction: column;
     height: 100%;
     width: 70%;
-    border: 1px solid #c9a879;
+    border: 1px solid ${(props) => props.theme.gold};
     border-radius: 7px;
-    background-color: #f9e5cc;
+    background-color: ${(props) => props.theme.peach};
     margin-right: 16px;
 
     h4 {
@@ -47,7 +54,7 @@ export const CartInterfaceMain = styled.div`
         display: flex;
         align-items: center;
         margin: 10px 0 0 20px;
-        color: #3c2114;
+        color: ${(props) => props.theme.darkBrown};
         font-weight: 500;
         font-size: 0.8vw;
 
@@ -55,7 +62,7 @@ export const CartInterfaceMain = styled.div`
             content: '';
             height: 1.3px;
             width: 52vw;
-            background-color: black;
+            background-color: ${(props) => props.theme.black};
             margin-left: 9px;
         }
     }
@@ -76,16 +83,16 @@ export const ButtonReturn = styled.button`
     height: 37px;
     font-weight: bold;
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid ${(props) => props.theme.black};
     border-radius: 7px;
     margin-left: 20px;
 
     &:hover {
-        background-color: #acacac46;
+        background-color: ${(props) => props.theme.gray};
     }
 
     &:active {
-        background-color: #acacac70;
+        opacity: 0.7;
     }
 
     .ri-arrow-left-line {

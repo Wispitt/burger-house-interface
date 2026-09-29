@@ -52,7 +52,7 @@ export const ContainersForm = styled.div`
     span {
         font-size: 12px;
         margin-left: 5px;
-        color: #c50233;
+        color: ${(props) => props.theme.red};
         font-weight: 600;
         height: 20px;
     }
@@ -85,7 +85,7 @@ export const Name = styled.h3`
     cursor: pointer;
 
     &:hover {
-        color: #cf3057;
+        color: ${(props) => props.theme.darkRed};
         text-decoration: underline;
     }
 `;
@@ -99,14 +99,14 @@ export const EndParagraph = styled.p`
     a {
         margin-left: 3px;
         font-weight: 600;
-        color: #cf3057;
+        color: ${(props) => props.theme.darkRed};
 
         &:hover {
             text-decoration: underline;
         }
 
         &:active {
-            color: #e72525;
+            color: ${(props) => props.theme.hotRed};
         }
         
     }

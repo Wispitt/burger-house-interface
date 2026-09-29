@@ -16,12 +16,12 @@ export const ButtonGroup = styled.div`
         height: 30px;
         width: 30px;
         border-radius: 100%;
-        background-color: #dc9c41;
+        background-color: ${(props) => props.theme.brightOrange};
         opacity: 0.8;
         border: none;
 
         &:hover {
-            background-color: #e6a54c;
+            opacity: 0.7;
             box-shadow: 0 0 0 3px rgba(232, 120, 24, 0.12);
         }
 
@@ -35,7 +35,6 @@ export const ButtonGroup = styled.div`
 export const EmptyCart = styled.td`
     padding: 24px;
     text-align: center;
-    font-size: 17/px;
     font-weight: bold;
 `;
 

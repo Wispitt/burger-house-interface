@@ -11,7 +11,7 @@ export const CoonatinerAll = styled.div`
     background-color: rgba(0, 0, 0, 0.4);
 `;
 export const Container = styled.div`
-    background-color: #171923;
+    background-color: ${(props) => props.theme.darkBlue};
     position: fixed;
     z-index: 9999;
     height: 100%;
@@ -25,7 +25,7 @@ export const Container = styled.div`
         position: fixed;
         margin: 32px 0 0 32px;
         font-size: 28px;
-        color: #9b9b9b;
+        color: ${(props) => props.theme.darkGray};
     }
 
     .ri-close-fill {
@@ -33,10 +33,10 @@ export const Container = styled.div`
         right: 15px;
         top: 10px;
         font-size: 35px;
-        color: #9b9b9b;
+        color: ${(props) => props.theme.darkGray};
 
         &:hover {
-        color: #d8d8d8;
+        opacity: 0.4;
         cursor: pointer;
         }
     }
@@ -54,14 +54,14 @@ export const Container = styled.div`
 `;
 
 export const Bar = styled.div`
-    background-color: #0b0d13;
+    background-color: ${(props) => props.theme.lightBlack};
     box-shadow: 0 0 16px 1px;
     width: 97%;
     height: 100px;
 
     p {
         position: absolute;
-        color: #b1b1b1;
+        color: ${(props) => props.theme.darkGray};
         right: 220px;
         top: 38px;
     }
@@ -74,7 +74,7 @@ export const Content = styled.div`
         top: 50px;
         display: flex;
         align-items: center;
-        background-color: #1A202C;
+        background-color: ${(props) => props.theme.lightBlue};
         font-size: 20px;
         color: white;
         padding: 10px;
@@ -85,8 +85,8 @@ export const Content = styled.div`
         transition: transform 0.6s ease;
 
         &:hover {
-            color: white;
-            background-color: black;
+            color: ${(props) => props.theme.white};
+            background-color: ${(props) => props.theme.black};
             transform: scale(1.02);
         }
 

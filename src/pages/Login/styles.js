@@ -6,9 +6,6 @@ export const Container = styled.div`
     background-image: url(${backGround});
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 `;
 
 export const ContainerMain = styled.div`
@@ -47,7 +44,7 @@ export const ContainersForm = styled.div`
         font-size: 97%;
         width: 140px;
         margin-left: 5px;
-        color: #cf3057;
+        color: ${(props) => props.theme.darkRed};
 
         &:hover {
             text-decoration: underline;
@@ -58,7 +55,7 @@ export const ContainersForm = styled.div`
     span {
         font-size: 12px;
         margin-left: 5px;
-        color: #c50233;
+        color: ${(props) => props.theme.red};
         font-weight: 600;
         height: 20px;
     }
@@ -68,7 +65,7 @@ export const InputLogin = styled.input`
     width: 100%;
     height: 38px;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: ${(props) => props.theme.white};
     padding: 0 10px;
     font-size: 13px;
     border: 1px solid black;
@@ -91,7 +88,7 @@ export const Name = styled.h3`
     cursor: pointer;
 
     &:hover {
-        color: #cf3057;
+        color: ${(props) => props.theme.darkRed};
         text-decoration: underline;
     }
 `;
@@ -104,14 +101,14 @@ export const EndParagraph = styled.div`
     a {
         margin-left: 3px;
         font-weight: 600;
-        color: #cf3057;
+        color: ${(props) => props.theme.darkRed};
 
         &:hover {
             text-decoration: underline;
         }
 
         &:active {
-            color: #e72525;
+            color: ${(props) => props.theme.hotRed};
         }
         
     }

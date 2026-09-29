@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: 96%;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0 2.1%;
     display: flex;
     justify-content: space-between;
 `;
+
 export const Title = styled.div`
     display: flex;
     flex-direction: column;
@@ -22,7 +27,7 @@ export const TitleWrapper = styled.div`
         font-size: 140%;
         height: 15px;
         font-family: "Sekuya", system-ui;
-        color: #4d2b12;
+        color: ${(props) => props.theme.brown};
         margin-bottom: 3px;
     }
 `;
@@ -33,7 +38,7 @@ export const SnackBar = styled.div`
     justify-content: start;
     width: 100%;
     gap: 7px;
-    color: black;
+    color: ${(props) => props.theme.black};
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 4px;
@@ -54,7 +59,7 @@ const isActive = ({ $isActive, $isActiveApps, $isActiveDrinks, $isActiveDesserts
     $isActive || $isActiveApps || $isActiveDrinks || $isActiveDesserts;
 
 export const NavItem = styled.span`
-    color: ${({ ...props }) => (isActive(props) ? '#bd2f47' : 'black')};
+    color: ${({ ...props }) => (isActive(props) ? (props) => props.theme.burgundy : (props) => props.theme.black)};
     cursor: pointer;
     border-bottom: ${({ ...props }) => (isActive(props) ? '2.9px solid #bd2f47' : 'none')};
     transition: transform 0.6s ease, opacity 0.2s ease, color 0.2s ease;
@@ -62,20 +67,20 @@ export const NavItem = styled.span`
     &:hover {
         opacity: ${({ ...props }) => (isActive(props) ? 0.7 : 1)};
         transform: ${({ ...props }) => (isActive(props) ? 'none' : 'scale(1.1)')};
-        color: #bd2f47;
+        color: ${(props) => props.theme.burgundy};
     }
 `;
 
 export const CartIcon = styled.i`
     font-size: 28px;
-    color: ${({ $isActiveCart }) => ($isActiveCart ? '#bd2f47' : 'black')};
-    border-bottom: ${({ $isActiveCart }) => ($isActiveCart ? '2.9px solid #bd2f47' : 'none')};
+    color: ${({ $isActiveCart }) => ($isActiveCart ? (props) => props.theme.burgundy : (props) => props.theme.black)};
     transition: transform 0.6s ease, opacity 0.2s ease, color 0.2s ease;
+    transform: ${({ $isActiveCart }) => ($isActiveCart ? 'scale(1.1)' : 'none')};
 
     &:hover {
         opacity: ${({ $isActiveCart }) => ($isActiveCart ? 0.7 : 1)};
         transform: ${({ $isActiveCart }) => ($isActiveCart ? 'none' : 'scale(1.1)')};
-        color: #bd2f47;
+        color: ${(props) => props.theme.burgundy};
     }
 `;
 
@@ -84,12 +89,10 @@ export const UserIcon = styled.i`
     transition: transform 0.6s ease;
     
     &:hover {
-    transform: scale(1.2);
-    cursor: pointer;
+        transform: scale(1.2);
+        cursor: pointer;
     }
-
 `;
-
 
 export const Links = styled.div`
     display: flex;
@@ -98,8 +101,7 @@ export const Links = styled.div`
     gap: 22px;
     width: 100%;
     position: relative;
-    bottom: 51px;
-
+    bottom: 39px;
     margin-top: 66px;
     font-size: 18px;
     font-family: "Roboto", sans-serif;
@@ -110,7 +112,7 @@ export const Links = styled.div`
 
         &:hover {
         transform: scale(1.1);
-        color: #ca0627;
+        color: ${(props) => props.theme.red};
         }
 
         &:active {

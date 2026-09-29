@@ -5,7 +5,7 @@ export const Footer = styled.div`
   width: 99vw;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  background-color: #3f1d0c;
+  background-color: ${(props) => props.theme.deepBrown};
   display: flex;
   gap: 28%;
   justify-content: center;

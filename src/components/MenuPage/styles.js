@@ -2,6 +2,13 @@ import styled from 'styled-components';
 
 import backGround from '../../assets/img/backgound-interface.jpeg';
 
+export const AllContent = styled.div`
+    background-image: url(${backGround});
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 export const Container = styled.div`
     background-image: url(${backGround});
     min-height: 100%;
@@ -9,7 +16,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2% 4% 0 4%;
+    padding: 0 4% 0 4%;
 `;
 
 export const Section = styled.div`
@@ -30,7 +37,7 @@ export const TitleWrapper = styled.div`
         font-size: 140%;
         height: 15px;
         font-family: "Sekuya", system-ui;
-        color: #4d2b12;
+        color: ${(props) => props.theme.brown};
         margin-bottom: 3px;
     }
 `;
@@ -50,7 +57,7 @@ export const SnackBar = styled.div`
         content: "";
         width: 86px;
         height: 2px;
-        background: black;
+        background: ${(props) => props.theme.black};
     }
 `;
 
@@ -68,9 +75,9 @@ export const Header = styled.div`
     font-weight: 500;
 
     span {
-            color: #bd2f47;
+            color: ${(props) => props.theme.burgundy};
             cursor: pointer;
-            border-bottom: 2.9px solid #bd2f47;
+            border-bottom: 2.9px solid ${(props) => props.theme.burgundy};
 
             &:hover {
                 opacity: 0.6;
@@ -92,7 +99,7 @@ export const Header = styled.div`
 
         &:hover {
         transform: scale(1.1);
-        color: #ca0627;
+        color: ${(props) => props.theme.burgunreddy};
         }
 
         &:active {
@@ -111,14 +118,14 @@ export const ContainerMenuAndButtons = styled.div`
         font-family: "Sekuya", system-ui;
         font-size: 50px;
         font-weight: 500;
-        color: #f6f0e4;
+        color: ${(props) => props.theme.cream};
         margin: 35px 0 0 25px;
     }
 
     p {
         font-family: "Sekuya", system-ui;
         font-size: 15px;
-        color: #f6f0e4;
+        color: ${(props) => props.theme.cream};
         margin-left: 35px;
     }
 `;
@@ -142,8 +149,8 @@ export const ButtonsMenus = styled.button`
     margin-left: 20px;
     height: 37px;
     border-radius: 18px;
-    border: 1px solid #fff;
-    color: #f6f0e4;
+    border: 1px solid ${(props) => props.theme.white};
+    color: ${(props) => props.theme.cream};
     background-color: transparent;
     font-weight: 500;
     transition: transform 0.5s ease;
@@ -155,7 +162,7 @@ export const ButtonsMenus = styled.button`
     &:hover {
         opacity: 0.9;
         transform: scale(1.02);
-        background-color: #f19710;
+        background-color: ${(props) => props.theme.brightOrange};
 
 
         i {
