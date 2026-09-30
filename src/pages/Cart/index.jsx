@@ -13,14 +13,13 @@ import {
 } from './styles';
 
 import bannerCart from '../../assets/img/banner-cart.png';
-import { FooterAll, HeaderAll, CartItems, CartResume } from '../../components';
+import { CartItems, CartResume } from '../../components';
 
 export function Cart() {
 	const navigate = useNavigate();
 
 	return (
 		<AllContent>
-			<HeaderAll />
 			<Container>
 				<ContainerCart>
 					<Header>
@@ -41,8 +40,6 @@ export function Cart() {
 						<CartResume />
 					</Main>
 				</ContainerCart>
-
-				<FooterAll />
 			</Container>
 		</AllContent>
 	);

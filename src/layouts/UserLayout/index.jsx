@@ -1,13 +1,12 @@
-import { Outlet } from "react-router-dom";
-import { Header } from "../../components/MenuPage/styles";
-import { Footer } from "../../components/Footer/styles";
+import { Outlet } from 'react-router-dom';
+import { Header, Footer } from '../../components';
 
 export function UserLayout() {
-    return (
-        <>
-            <Header />
-                <Outlet />
-            <Footer />
-        </>
-    )
+	return (
+		<>
+			<Header />
+			<Outlet />
+			<Footer />
+		</>
+	);
 }

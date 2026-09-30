@@ -10,9 +10,6 @@ import {
 	MenuProducts,
 } from './styles';
 
-import { FooterAll } from '../Footer';
-import { HeaderAll } from '../../components/Header';
-
 const menuItems = [
 	['Hambúrguers', '/hamburguers'],
 	['Entradas', '/entradas'],
@@ -25,7 +22,6 @@ export function MenuPage({ activeCategory, Carousel }) {
 
 	return (
 		<AllContent>
-			<HeaderAll />
 			<Container>
 				<Section>
 					<ContainerMenuAndButtons>
@@ -53,7 +49,7 @@ export function MenuPage({ activeCategory, Carousel }) {
 					<Carousel />
 				</MenuProducts>
 
-				<FooterAll />
+				
 			</Container>
 		</AllContent>
 	);

@@ -81,8 +81,7 @@ export const Content = styled.div`
         cursor: pointer;
         border-radius: 10px;
         margin: 0 15px 20px;
-        transition: transform 0.6s ease;
-        transition: transform 0.6s ease;
+        gap: 5px;
 
         &:hover {
             color: ${(props) => props.theme.white};

@@ -4,13 +4,14 @@ import backGround from '../../assets/img/backgound-interface.jpeg';
 
 export const AllContent = styled.div`
     background-image: url(${backGround});
+    background-position: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 `;
 
 export const Container = styled.div`
-    background-image: url(${backGround});
     min-height: 100%;
     display: flex;
     flex-direction: column;

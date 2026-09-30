@@ -119,31 +119,48 @@ export const ButtonOrder = styled.button`
     color: #fff;
     margin: 25px 0 17px 0;
     border-radius: 7px;
+    transition: transform 0.8s ease;
+
+    .ri-arrow-right-line {
+        transition: transform 0.8s ease;
+        display: inline-block;
+    }
 
     &:hover {
         opacity: 0.9;
+        transform: scale(1.02);
+
+        .ri-arrow-right-line {
+            transform: translateX(5px);
+        }
     }
 
     &:active {
-        opacity: 0.7;
-    }
-
-    .ri-arrow-right-line {
-        
+        opacity: 1;
     }
 `;
 
 export const ButtonClearCart = styled.button`
     width: 60%;
     height: 35px;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     background-color: transparent;
     border: 1px solid black;
     border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.8s ease;
+    
+    img {
+        width: 15px;
+        margin-right: 2px;
+    }
 
     &:hover {
         background-color: ${(props) => props.theme.gray};
+        transform: scale(1.02);
     }
 
     &:active {

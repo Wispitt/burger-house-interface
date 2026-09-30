@@ -3,7 +3,6 @@ import { api } from '../../services/api';
 import { useEffect, useState } from 'react';
 
 import {
-	AllContent,
 	Container,
 	Section,
 	BannerMain,
@@ -27,7 +26,7 @@ import bannerMain from '../../assets/img/banner-main.png';
 import specifications from '../../assets/img/specifications-house.png';
 import combosSpecial from '../../assets/img/combo-special.png';
 
-import { FooterAll, CartButton, HeaderAll } from '../../components';
+import { CartButton } from '../../components';
 import { formatePrice } from '../../utils/formatePrice';
 
 export function Home() {
@@ -45,8 +44,6 @@ export function Home() {
 	}, []);
 
 	return (
-		<AllContent>
-			<HeaderAll />
 			<Container>
 				<Section>
 					<ContainerMainAndButton>
@@ -92,9 +89,6 @@ export function Home() {
 						<Specifications src={specifications} />
 					</HouseSpecifications>
 				</AllProducts>
-
-				<FooterAll />
 			</Container>
-		</AllContent>
 	);
 }

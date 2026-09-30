@@ -13,7 +13,7 @@ import {
 } from './styles';
 import { SideBar } from '../SideBar';
 
-export function HeaderAll() {
+export function Header() {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
 	const isCartActive = pathname === '/carrinho';

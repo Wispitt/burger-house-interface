@@ -62,11 +62,7 @@ export function Login() {
 			if (response.status === 200 || response.status === 201) {
 				toast.success('Login realizado com sucesso!');
 				setTimeout(() => {
-					if (response.data?.admin === true) {
-						navigate('/admin/pedidos');
-					} else {
-						navigate('/home');
-					}
+					navigate('/home');
 				}, 1000);
 			} else if (response.status === 400) {
 				toast.error('E-mail ou senha incorretos!');

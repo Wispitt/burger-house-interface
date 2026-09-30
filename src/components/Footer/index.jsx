@@ -1,4 +1,4 @@
-import { Footer, FooterLeft, FooterMain, FooterRight } from './styles';
+import { FooterContainer, FooterLeft, FooterMain, FooterRight } from './styles';
 
 import instagramIcon from '../../assets/img/instagram-icon.png';
 import facebookIcon from '../../assets/img/facebook-icon.png';
@@ -8,10 +8,10 @@ import masterCardIcon from '../../assets/img/mastercard-icon.png';
 import eloIcon from '../../assets/img/elo-icon.png';
 import pixIcon from '../../assets/img/pix-icon.jpg';
 
-export function FooterAll() {
+export function Footer() {
 	return (
 		<div>
-			<Footer>
+			<FooterContainer>
 				<FooterLeft>
 					<h4>BURGER HOUSE SNACK BAR</h4>
 					<p>2024 Todos os direitos reservados.</p>
@@ -34,7 +34,7 @@ export function FooterAll() {
 						<img src={pixIcon} alt="Pix" />
 					</div>
 				</FooterRight>
-			</Footer>
+			</FooterContainer>
 		</div>
 	);
 }

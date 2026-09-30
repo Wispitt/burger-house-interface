@@ -10,6 +10,7 @@ import {
 	ButtonOrder,
 } from './styles';
 
+import TrashIcon from '../../assets/img/trash.svg';
 import { useCart } from '../../hooks/CartContext';
 import { api } from '../../services/api';
 import { formatePrice } from '../../utils/formatePrice';
@@ -78,12 +79,15 @@ export function CartResume() {
 				</ValueOrderAll>
 
 				<ButtonOrder onClick={click}>
-					Finalizar pedido <i className='ri-arrow-right-line'></i>
+					Finalizar pedido <i className="ri-arrow-right-line"></i>
 				</ButtonOrder>
 				{sideBar && (
 					<CheckoutForm active={setSideBar} clientSecret={clientSecret} />
 				)}
-				<ButtonClearCart onClick={clearCart}>Limpar carrinho</ButtonClearCart>
+				<ButtonClearCart onClick={clearCart}>
+					<img src={TrashIcon} alt="lixeira" />
+					Limpar carrinho
+				</ButtonClearCart>
 			</Content>
 		</Section>
 	);

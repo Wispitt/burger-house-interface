@@ -1,20 +1,19 @@
 import styled from 'styled-components';
 
-export const Footer = styled.div`
-  height: 110px;
-  width: 99vw;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  background-color: ${(props) => props.theme.deepBrown};
-  display: flex;
-  gap: 28%;
-  justify-content: center;
-  align-items: center;
+export const FooterContainer = styled.div`
+    height: 110px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: ${(props) => props.theme.deepBrown};
+    display: flex;
+    gap: 28%;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const FooterLeft = styled.div`
     display: flex;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
     width: 14%;
     height: 50px;

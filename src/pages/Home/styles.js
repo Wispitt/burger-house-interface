@@ -2,15 +2,9 @@ import styled from 'styled-components';
 
 import backGround from '../../assets/img/backgound-interface.jpeg';
 
-export const AllContent = styled.div`
-    background-image: url(${backGround});
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
 export const Container = styled.div`
     background-image: url(${backGround});
+    background-position: 30%;
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -194,6 +188,11 @@ export const HouseBannerCombo = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     height: 136.4%;
+    transition: transform 0.8s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 
     @media screen and (max-width: 1320px){
         display: none;
@@ -204,7 +203,7 @@ export const ButtonCombo = styled.button`
     position: absolute;
     bottom: 3px;
     font-family: "Sekuya", system-ui;
-    width: 52%;
+    width: 58%;
     height: 40px;
     border-radius: 18px;
     background-color: ${(props) => props.theme.brightOrange};

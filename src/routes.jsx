@@ -1,4 +1,4 @@
-import { createHashRouter } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import {
 	Login,
@@ -10,43 +10,37 @@ import {
 	MenuApps,
 	MenuDrinks,
 	CompletePayment,
+	Orders,
+	NewProduct,
+	EditProducts,
+	Products,
 } from './pages';
 
-export const router = createHashRouter([
-	{
-		path: '/',
-		element: <Login />,
-	},
-	{
-		path: '/cadastro-de-usuario',
-		element: <CadastroUser />,
-	},
-	{
-		path: '/home',
-		element: <Home />,
-	},
-	{
-		path: '/hamburguers',
-		element: <MenuBurger />,
-	},
-	{
-		path: '/entradas',
-		element: <MenuApps />,
-	},
-	{
-		path: '/bebidas',
-		element: <MenuDrinks />,
-	},
-	{
-		path: '/sobremesas',
-		element: <MenuDesserts />,
-	},
-	{
-		path: '/carrinho',
-		element: <Cart />,
-	},
-	{
-		path: '/complete',
-		element: <CompletePayment />,
-	},
-]);
+import { UserLayout } from './layouts/UserLayout';
+import { AdminLayout } from './layouts/AdminLayout';
+
+export function Router() {
+	return (
+		<Routes>
+			<Route element={<UserLayout />}>
+				<Route path="/home" element={<Home />} />
+				<Route path="/hamburguers" element={<MenuBurger />} />
+				<Route path="/entradas" element={<MenuApps />} />
+				<Route path="/bebidas" element={<MenuDrinks />} />
+				<Route path="/sobremesas" element={<MenuDesserts />} />
+				<Route path="/carrinho" element={<Cart />} />
+			</Route>
+
+			<Route path='/admin' element={<AdminLayout />} >
+				<Route path='/admin/pedidos' element={<Orders />} />
+				<Route path='/admin/novo-produto' element={<NewProduct />} />
+				<Route path='/admin/editar-produto' element={<EditProducts />} />
+				<Route path='/admin/produtos' element={<Products />} />
+			</Route>
+
+			<Route path="/complete" element={<CompletePayment />} />
+			<Route path="/" element={<Login />} />
+			<Route path="/cadastro-de-usuario" element={<CadastroUser />} />
+		</Routes>
+	);
+}

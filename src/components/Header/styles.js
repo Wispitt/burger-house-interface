@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
+import backGround from '../../assets/img/backgound-interface.jpeg';
+
+
 export const Container = styled.div`
-    width: 100%;
-    position: sticky;
+    background-image: url(${backGround});
+    background-position: top;
     top: 0;
     z-index: 1000;
-    padding: 0 2.1%;
+    padding: 0 2.3vw;
     display: flex;
     justify-content: space-between;
 `;

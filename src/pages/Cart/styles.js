@@ -7,10 +7,12 @@ export const AllContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 `;
 
 export const Container = styled.div`
     background-image: url(${backGround});
+    background-position: 30%;
     padding-left: 1px;
 `;
 
@@ -86,18 +88,26 @@ export const ButtonReturn = styled.button`
     border: 1px solid ${(props) => props.theme.black};
     border-radius: 7px;
     margin-left: 20px;
-
-    &:hover {
-        background-color: ${(props) => props.theme.gray};
-    }
-
-    &:active {
-        opacity: 0.7;
-    }
+    transition: transform 0.8s ease;
 
     .ri-arrow-left-line {
         font-weight: bold;
         font-size: 15px;
         margin-right: 5px;
+        display: inline-block;
+        transition: transform 0.8s ease;
+    }
+
+    &:hover {
+        background-color: ${(props) => props.theme.gray};
+        transform: scale(1.02);
+
+        .ri-arrow-left-line {
+            transform: translateX(-5px);
+        }
+    }
+
+    &:active {
+        opacity: 0.7;
     }
 `;

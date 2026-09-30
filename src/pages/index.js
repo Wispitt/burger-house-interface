@@ -4,3 +4,7 @@ export * from './Home';
 export * from './Login';
 export * from './MenusProducts';
 export * from './CompletePayment';
+export * from './Admin/EditProducts';
+export * from './Admin/NewProduct';
+export * from './Admin/Orders';
+export * from './Admin/Products';
