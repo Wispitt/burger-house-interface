@@ -12,7 +12,7 @@ export const Container = styled.nav`
         font-size: 25px;
         text-align: center;
         margin: 40px 0;
-        color: ${(props) => props.theme.deepBrown};
+        color: ${(props) => props.theme.gold};
         font-family: ${(props) => props.theme.roadSekuyaFont};
     }
 `;
@@ -28,8 +28,12 @@ export const NavLink = styled(Link)`
     align-items: center;
     gap: 12px;
     padding: 12px 20px;
+    margin-bottom: 5px;
     text-decoration: none;
     color: ${(props) => props.theme.darkGray};
+    background-color: ${(props) =>
+		props.$isActive ? (props) => 
+        props.theme.lightBlack : 'tranparent'};
 
     &:hover {
         background-color: ${(props) => props.theme.lightBlack};
