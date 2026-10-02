@@ -21,5 +21,6 @@ export const standardTheme = {
 	white: '#fff',
 	darkBlue: '#171923',
 	lightBlue: '#1A202C',
+	green: '#61A120',
 	roadSekuyaFont: '"Sekuya", sans-serif',
 };

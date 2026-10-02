@@ -5,7 +5,7 @@ import backGround from '../../assets/img/backgound-interface.jpeg';
 
 export const Container = styled.div`
     background-image: url(${backGround});
-    background-position: top;
+    background-position: 30px;
     top: 0;
     z-index: 1000;
     padding: 0 2.3vw;

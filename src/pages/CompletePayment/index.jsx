@@ -63,7 +63,7 @@ export function CompletePayment() {
         };
     }, [stripe, search]);
 
-    const homeLink = '/burger-house-interface/#/home';
+    const homeLink = '/burger-house-interface/home';
 
     if (status === 'loading') {
         return (

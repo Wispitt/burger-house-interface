@@ -154,8 +154,8 @@ export const ButtonClearCart = styled.button`
     transition: transform 0.8s ease;
     
     img {
-        width: 15px;
-        margin-right: 2px;
+        height: 22px;
+        margin-right: 5px;
     }
 
     &:hover {

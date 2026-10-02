@@ -4,7 +4,7 @@ import backGround from '../../assets/img/backgound-interface.jpeg';
 
 export const AllContent = styled.div`
     background-image: url(${backGround});
-    background-position: 30%;
+    background-position: -20px;
     display: flex;
     flex-direction: column;
     align-items: center;

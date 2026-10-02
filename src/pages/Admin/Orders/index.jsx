@@ -15,7 +15,7 @@ import { options } from './orderStatus';
 
 export function Orders() {
 	const [orders, setOrders] = useState([]);
-	const [filteredOrders, seFilteredOrders] = useState([]);
+	const [filteredOrders, setFilteredOrders] = useState([]);
 	const [rows, setRows] = useState([]);
 	const [activeStatus, setActiveStatus] = useState(0);
 
@@ -23,7 +23,7 @@ export function Orders() {
 		async function loadOrders() {
 			const { data } = await api.get('/orders');
 
-			seFilteredOrders(data);
+			setFilteredOrders(data);
 			setOrders(data);
 		}
 		loadOrders();
@@ -47,29 +47,43 @@ export function Orders() {
 
 	function handleStatus(status) {
 		if (status.id === 0) {
-
-			seFilteredOrders(orders);
+			setFilteredOrders(orders);
 		} else {
-			const newOrders = orders.filter( order => order.status === status.value);
+			const newOrders = orders.filter((order) => order.status === status.value);
 
-			seFilteredOrders(newOrders);
+			setFilteredOrders(newOrders);
 		}
 
 		setActiveStatus(status.id);
 	}
 
+	useEffect(() => {
+		if (activeStatus === 0) {
+			setFilteredOrders(orders);
+		} else {
+			const statusIndex = options.findIndex((item) => item.id === activeStatus);
+
+			const newFilterOrders = orders.filter(
+				(order) => order.status === options[statusIndex].value,
+			);
+			setFilteredOrders(newFilterOrders);
+		}
+	}, [orders]);
+
 	return (
 		<Container>
 			<Filter>
 				{options.map((status) => (
-					<FilterOption key={status.id} 
-					onClick={() => handleStatus(status)} 
-					$isActive={activeStatus === status.id} >
+					<FilterOption
+						key={status.id}
+						onClick={() => handleStatus(status)}
+						$isActive={activeStatus === status.id}
+					>
 						{status.label}
 					</FilterOption>
 				))}
 			</Filter>
-			<TableContainer component={Paper} className='container-table'>
+			<TableContainer component={Paper} className="container-table">
 				<Table aria-label="collapsible table">
 					<TableHead>
 						<TableRow>
@@ -77,7 +91,7 @@ export function Orders() {
 							<TableCell>Pedido</TableCell>
 							<TableCell>Cliente</TableCell>
 							<TableCell>Data do Pedido</TableCell>
-							<TableCell>Status</TableCell>
+							<TableCell >Status</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>

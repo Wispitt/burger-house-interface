@@ -19,26 +19,24 @@ import { options } from './orderStatus';
 import { api } from '../../../services/api';
 
 export function Row({ row, orders, setOrders }) {
-
-  const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(false);
 	const [open, setOpen] = useState(false);
 	const detailsId = useId();
 
 	async function newStatusOrder(id, status) {
 		try {
-      setLoading(true);
+			setLoading(true);
 			await api.put(`/orders/${id}`, { status: status });
 			const newOrder = orders.map((order) =>
 				order._id === id ? { ...order, status: status } : order,
 			);
 
-      setOrders(newOrder);
+			setOrders(newOrder);
 		} catch (err) {
 			console.error(err);
+		} finally {
+			setLoading(false);
 		}
-    finally {
-      setLoading(false);
-    }
 	}
 
 	return (
@@ -68,7 +66,8 @@ export function Row({ row, orders, setOrders }) {
 						)}
 						placeholder="Status do Pedido"
 						onChange={(status) => newStatusOrder(row.orderId, status.value)}
-            isLoading={loading}
+						isLoading={loading}
+						menuPortalTarget={document.body}
 					/>
 				</TableCell>
 			</TableRow>
@@ -82,23 +81,35 @@ export function Row({ row, orders, setOrders }) {
 							<Table size="small" aria-label="purchases">
 								<TableHead>
 									<TableRow>
-										<TableCell>Quantidade</TableCell>
-										<TableCell>Nome do Produto</TableCell>
+										<TableCell align="center">Id</TableCell>
+										<TableCell align="center">Quantidade</TableCell>
+										<TableCell >Nome do Produto</TableCell>
 										<TableCell>Categoria</TableCell>
-										<TableCell>Imagem do Produto</TableCell>
+										<TableCell >Imagem do Produto</TableCell>
 										<TableCell />
 									</TableRow>
 								</TableHead>
 								<TableBody>
 									{row.products.map((product) => (
 										<TableRow key={product.id}>
-											<TableCell component="th" scope="row">
+											<TableCell align="center" component="th">
 												{product.id}
 											</TableCell>
-											<TableCell>{product.name}</TableCell>
-											<TableCell>{product.category}</TableCell>
+											<TableCell align="center" component="th">
+												{product.quantity}
+											</TableCell>
+											<TableCell className='table-value'>{product.name}</TableCell>
+											<TableCell className='table-value'>{product.category}</TableCell>
 											<TableCell>
-												<ProductImage src={product.url} alt={product.name} />
+												<ProductImage
+													src={product.url}
+													alt={product.name}
+													style={
+														product.id === 44
+															? { height: '100px', marginLeft: '25px' }
+															: undefined
+													}
+												/>
 											</TableCell>
 										</TableRow>
 									))}
