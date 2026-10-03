@@ -12,6 +12,10 @@ export const Container = styled.div`
         display: flex;
         margin-top: 20px;
         padding-bottom: 20px;
+
+        @media screen and (max-width: 725px){
+            flex-direction: column;
+        }
     }
 
     .embla__slide {
@@ -19,6 +23,26 @@ export const Container = styled.div`
         display: flex;
         flex: 0 0 20%;
         margin-left: 11px;
+
+        @media screen and (max-width: 1480px){
+            flex: 0 0 26%;
+        }
+
+        @media screen and (max-width: 1180px){
+            flex: 0 0 28%;
+        }
+
+        @media screen and (max-width: 900px){
+            flex: 0 0 37%;
+            padding: 20px 0;
+        }
+
+        @media screen and (max-width: 725px){
+            flex: 0 0 37%;
+            overflow: hidden;
+            padding: 5px 0;
+            justify-content: center;
+        }
     }
 
     .embla {
@@ -33,6 +57,14 @@ export const Container = styled.div`
         &:active {
             cursor: grabbing;
         }
+
+        @media screen and (max-width: 725px){
+            cursor: default;
+
+            &:active {
+                cursor: default;
+            }
+        }
     };
 
     .buttonNext {
@@ -42,6 +74,10 @@ export const Container = styled.div`
         right: -50px;
         background-color: transparent;
         opacity: 0.8;
+
+        @media screen and (max-width: 1300px){
+            display: none;
+        }
     }
 
     .buttonPrev {
@@ -51,6 +87,25 @@ export const Container = styled.div`
         left: -50px;
         background-color: transparent;
         opacity: 0.8;
+
+        @media screen and (max-width: 1300px){
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 725px){
+        overflow: hidden;
+        overflow-y: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        margin-top: 30px;
+        padding-top: 600px;
+        -webkit-mask-image: linear-gradient(to top, transparent 0%, black 4%, black 96%, transparent 0%);
+        mask-image: linear-gradient(to top, transparent 0%, black 4%, black 96%, transparent 100%);
+    }
+
+    @media screen and (max-width: 520px){
+        padding-top: 540px;
     }
 `;
 
@@ -76,6 +131,24 @@ export const ProductsMain = styled.div`
         width: 90%;
         margin-top: 3px;
     }
+
+    @media screen and (max-width: 1480px){
+        height: 90%;
+    }
+
+    @media screen and (max-width: 725px){
+        height: 400px;
+        width: 78%;
+
+        &:hover {
+        transform: scale(1.03);
+    }
+    }
+
+    @media screen and (max-width: 520px){
+        height: 350px;
+        width: 95%;
+    }
 `;
 
 export const ProductImage = styled.img`
@@ -86,6 +159,10 @@ export const ProductImage = styled.img`
 export const NameProduct = styled.h4`
     font-size: 21px;
     margin-top: 6px;
+
+    @media screen and (max-width: 1480px){
+        font-size: 18px;
+    }
 `;
 
 export const ValueAndIcon = styled.div`
@@ -100,4 +177,8 @@ export const ValueAndIcon = styled.div`
 export const ProductValue = styled.h3`
     margin: 0 0 20px 15px;
     font-size: 26px;
+
+    @media screen and (max-width: 1480px){
+        font-size: 23px;
+    }
 `;

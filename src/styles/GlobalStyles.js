@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const GlobalStyles = createGlobalStyle`
+
     *{
         margin: 0;
         padding: 0;
@@ -9,6 +10,11 @@ export const GlobalStyles = createGlobalStyle`
         max-width: 1900px;
         outline: none;
         font-family: "Roboto", sans-serif;
+    }
+
+    body {
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 
     button, a {

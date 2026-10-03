@@ -18,7 +18,6 @@ export const Section = styled.div`
     width: 96%;
     display: flex;
     flex-direction: column;
-
 `;
 
 export const ContainerMainAndButton = styled.div`
@@ -39,7 +38,7 @@ export const ButtonMenu = styled.button`
     height: 9%;
     border-radius: 18px;
     background-color: ${(props) => props.theme.brightOrange};
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
     transition: transform 0.8s ease;
 
@@ -87,6 +86,10 @@ export const Highlights = styled.div`
         height: 2px;
         background: ${(props) => props.theme.black};
     }
+
+    @media screen and (max-width: 914px){
+        font-size: 1.4vw;
+    }
 `;
 
 export const AllProducts = styled.div`
@@ -103,11 +106,8 @@ export const AllProducts = styled.div`
         grid-template-rows: 57% 30%;
     }
 
-    @media screen and (max-width: 1100px){
-        width: 80%;
-        height: 60vh;
-        grid-template-columns: 30% 30%;
-        grid-template-rows: 50% 30% 30%;
+    @media screen and (max-width: 1000px){
+        grid-template-rows: 50% 25%;
     }
 `;
 
@@ -134,6 +134,10 @@ export const ProductsMain = styled.div`
         width: 90%;
         margin-top: 3px;
     }
+
+    @media screen and (max-width: 1000px){
+        min-height: 100%;
+    }
 `;
 
 export const ProductImage = styled.img`
@@ -144,6 +148,10 @@ export const ProductImage = styled.img`
 export const NameProduct = styled.h4`
     font-size: 21px;
     margin-top: 8px;
+
+    @media screen and (max-width: 1000px){
+        font-size: 18px;
+    }
 `;
 
 export const ValueAndIcon = styled.div`
@@ -157,6 +165,10 @@ export const ValueAndIcon = styled.div`
 export const ProductValue = styled.h3`
     margin: 0 0 20px 15px;
     font-size: 25px;
+
+    @media screen and (max-width: 1000px){
+        font-size: 18px;
+    }
 `;
 
 export const HouseSpecifications = styled.div`
@@ -165,6 +177,7 @@ export const HouseSpecifications = styled.div`
    grid-column: 1/5;
 
     @media screen and (max-width: 1320px){
+        margin-top: 10px;
         grid-column: 1/6;
     }
 `;

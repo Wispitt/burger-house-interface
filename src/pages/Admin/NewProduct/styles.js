@@ -8,6 +8,12 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     min-height: 90vh;
+
+    ::placeholder {
+        font-size: 14px;
+        font-weight: 500;
+        word-spacing: 1px;
+    }
 `;
 
 export const Form = styled.form`
@@ -39,7 +45,9 @@ export const Input = styled.input`
     height: 48px;
     border-radius: 9px;
     padding: 0 12px;
-    border: 1px solid ${(props) => props.theme.lightBlack}
+    border: 1px solid ${(props) => props.theme.lightBlack};
+
+    
 `;
 
 export const ErrorMessage = styled.span`
@@ -88,4 +96,17 @@ export const Select = styled(ReactSelect)`
 
 export const SubmitButton = styled(Button)`
     margin-top: 15px;
+`;
+
+export const ContainerCheckBox = styled.div`
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+
+    input {
+        cursor: pointer;
+    }
 `;

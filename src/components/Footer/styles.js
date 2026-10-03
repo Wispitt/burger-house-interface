@@ -6,16 +6,21 @@ export const FooterContainer = styled.div`
     border-top-left-radius: 10px;
     background-color: ${(props) => props.theme.deepBrown};
     display: flex;
-    gap: 28%;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 1260px){
+        p, h4 {
+            font-size: 11px;
+        }
+    }
 `;
 
 export const FooterLeft = styled.div`
     display: flex;
     align-items: start;
     flex-direction: column;
-    width: 14%;
+    width: 70%;
     height: 50px;
     font-size: 13px;
     color: #fff;
@@ -27,10 +32,10 @@ export const FooterMain = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 6px;
-    width: 18%;
+    width: 100%;
     height: 65px;
     color: #fff;
-    font-size: 16px;
+    font-size: 13px;
 
     img {
         width: 22px;
@@ -46,16 +51,23 @@ export const FooterMain = styled.div`
 
 export const FooterRight = styled.div`
     display: flex;
-    align-items: center;
+    align-items: end;
     flex-direction: column;
-    width: 14%;
+    width: 70%;
     height: 50px;
     color: #fff;
     margin-right: 20px;
-    font-size: 16px;
+    font-size: 13px;
 
     img {
         width: 22px;
-        margin: 5px 3px;
+        margin: 5px 7px 5px 0;
+    }
+
+    @media screen and (max-width: 1090px){
+
+        img {
+            width: 17px;
+        }
     }
 `;

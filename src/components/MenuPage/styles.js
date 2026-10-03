@@ -8,7 +8,16 @@ export const AllContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-x: hidden;
+
+    @media screen and (max-width: 725px){
+        background-position: 10%;
+        background-position-y: -28%;
+    }
+
+    @media screen and (max-width: 520px){
+        background-position: 10%;
+        background-position-y: -50%;
+    }
 `;
 
 export const Container = styled.div`
@@ -25,88 +34,6 @@ export const Section = styled.div`
     width: 96%;
     display: flex;
     flex-direction: column;
-`;
-
-export const TitleWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    height: 50px;
-    width: 25%;
-
-    h1 {
-        margin-left: 28px;
-        font-size: 140%;
-        height: 15px;
-        font-family: "Sekuya", system-ui;
-        color: ${(props) => props.theme.brown};
-        margin-bottom: 3px;
-    }
-`;
-
-export const SnackBar = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    width: 43%;
-    gap: 7px;
-    color: black;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 4px;
-
-    &::before, &::after {
-        content: "";
-        width: 86px;
-        height: 2px;
-        background: ${(props) => props.theme.black};
-    }
-`;
-
-export const Header = styled.div`
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 22px;
-    width: 100%;
-    position: relative;
-    bottom: 51px;
-    right: 10px;
-    font-size: 18px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-
-    span {
-            color: ${(props) => props.theme.burgundy};
-            cursor: pointer;
-            border-bottom: 2.9px solid ${(props) => props.theme.burgundy};
-
-            &:hover {
-                opacity: 0.6;
-            }
-        }
-
-    i {
-        font-size: 28px;
-        transition: transform 0.6s ease;
-
-        &:hover {
-        transform: scale(1.2);
-        cursor: pointer;
-        }
-    }
-
-    a {
-        transition: transform 0.6s ease;
-
-        &:hover {
-        transform: scale(1.1);
-        color: ${(props) => props.theme.burgunreddy};
-        }
-
-        &:active {
-        opacity: 0.5;
-        }
-    }
 `;
 
 export const ContainerMenuAndButtons = styled.div`
@@ -129,25 +56,56 @@ export const ContainerMenuAndButtons = styled.div`
         color: ${(props) => props.theme.cream};
         margin-left: 35px;
     }
+
+    @media screen and (max-width: 725px){
+        background: none;
+        width: 100vw;
+        padding-left: 55px;
+
+        h2 {
+            color: ${(props) => props.theme.black};
+            margin: 0;
+            font-size: 35px;
+        }
+
+        p {
+            color: ${(props) => props.theme.black};
+            margin: 0;
+            font-size: 10px;
+        }
+    }
 `;
 
 export const Banner = styled.img`
     position: relative;
     width: 100%;
     height: 200px;
+
+    @media screen and (max-width: 680px){
+        position: absolute;
+        left: 10px;
+        width: 100%;
+    }
 `;
 
 export const AllButtonsMenus = styled.div`
     width: 100%;
     display: flex;
+
+    @media screen and (max-width: 680px){
+        position: absolute;
+        left: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
 `;
 
 export const ButtonsMenus = styled.button`
     font-family: "Sekuya", system-ui;
     position: relative;
     bottom: -90px;
-    width: 12%;
-    margin-left: 20px;
+    width: 160px;
+    margin: 0 10px;
     height: 37px;
     border-radius: 18px;
     border: 1px solid ${(props) => props.theme.white};
@@ -185,8 +143,14 @@ export const ButtonsMenus = styled.button`
         opacity: 1;
     }
 
-    @media screen and (max-width: 1350px){
-        display: none;
+    @media screen and (max-width: 725px){
+        width: 120px;
+        background-color: black;
+        font-size: 11px;
+    }
+
+    @media screen and (max-width: 680px){
+        margin-bottom: 10px;
     }
 `;
 

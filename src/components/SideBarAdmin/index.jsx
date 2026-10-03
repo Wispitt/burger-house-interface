@@ -27,7 +27,7 @@ export function SideBarAdmin() {
 			</NavLinkContainer>
 			<Footer>
 				<NavLink to="/" onClick={logout}>
-					<SignOut />
+					<SignOut fill='#e72525' />
 					<span>Sair</span>
 				</NavLink>
 			</Footer>

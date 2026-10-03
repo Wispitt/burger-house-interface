@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { Image } from '@phosphor-icons/react';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import {
 	Container,
@@ -33,12 +33,14 @@ const schema = Yup.object({
 		})
 		.required('Escolha uma categoria')
 		.typeError('Escolha uma categoria'),
-	offer: Yup.bool(),
+	offer: Yup.boolean(),
 });
 
 export function EditProducts() {
 	const [fileName, setFileName] = useState(null);
 	const [categories, setCategory] = useState([]);
+
+	const navigate = useNavigate();
 
 	const {
 		state: { product },
@@ -76,6 +78,10 @@ export function EditProducts() {
 			success: 'Produto editado com sucesso!',
 			error: 'Erro ao editar o produto, tente novamente',
 		});
+
+		setTimeout(() => {
+			navigate('/admin/produtos');
+		}, 1000);
 	};
 
 	return (
@@ -86,6 +92,7 @@ export function EditProducts() {
 					<Input
 						type="text"
 						{...register('name')}
+						placeholder='Digite o novo nome do produto'
 						defaultValue={product.name}
 					/>
 					<ErrorMessage>{errors?.name?.message}</ErrorMessage>
@@ -96,7 +103,8 @@ export function EditProducts() {
 					<Input
 						type="number"
 						{...register('price')}
-						defaultValue={product.price / 100}
+						placeholder='Digite o novo preço do produto'
+						defaultValue={product.price}
 					/>
 					<ErrorMessage>{errors?.price?.message}</ErrorMessage>
 				</InputGrup>
@@ -139,13 +147,14 @@ export function EditProducts() {
 				</InputGrup>
 
 				<InputGrup>
-				<ContainerCheckBox>
-					<input type='checkbox'
-					defaoltCheaked={product.offer} 
-					{...register('offer')}
-					/>
-					<Label>Produto em orferta?</Label>
-				</ContainerCheckBox>
+					<ContainerCheckBox>
+						<input
+							type="checkbox"
+							defaultChecked={product.offer}
+							{...register('offer')}
+						/>
+						<Label>Produto em orferta?</Label>
+					</ContainerCheckBox>
 				</InputGrup>
 
 				<SubmitButton>Adicionar Produto</SubmitButton>

@@ -42,5 +42,8 @@ export const NavLink = styled(Link)`
 
 export const Footer = styled.footer`
     width: 100%;
-    margin-top: auto;
+
+    span {
+        color: ${(props) => props.theme.hotRed};
+    }
 `;

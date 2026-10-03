@@ -5,18 +5,26 @@ import backGround from '../../assets/img/backgound-interface.jpeg';
 
 export const Container = styled.div`
     background-image: url(${backGround});
-    background-position: 30px;
+    background-position-y: 23%;
     top: 0;
     z-index: 1000;
     padding: 0 2.3vw;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 800px){
+        justify-content: end;
+    }
 `;
 
 export const Title = styled.div`
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 300px;
+
+    @media screen and (max-width: 800px){
+        display: none;
+    }
 `;
 
 export const TitleWrapper = styled.div`
@@ -32,6 +40,10 @@ export const TitleWrapper = styled.div`
         font-family: "Sekuya", system-ui;
         color: ${(props) => props.theme.brown};
         margin-bottom: 3px;
+
+        @media screen and (max-width: 900px){
+            font-size: 125%;
+        }
     }
 `;
 
@@ -51,6 +63,14 @@ export const SnackBar = styled.div`
         width: 86px;
         height: 2px;
         background: black;
+
+        @media screen and (max-width: 900px){
+            width: 80px;
+        }
+    }
+
+    @media screen and (max-width: 900px){
+        font-size: 10px;
     }
 `;
 export const Content = styled.div`
@@ -85,6 +105,10 @@ export const CartIcon = styled.i`
         transform: ${({ $isActiveCart }) => ($isActiveCart ? 'none' : 'scale(1.1)')};
         color: ${(props) => props.theme.burgundy};
     }
+
+    @media screen and (max-width: 800px){
+        font-size: 20px;
+    }
 `;
 
 export const UserIcon = styled.i`
@@ -94,6 +118,10 @@ export const UserIcon = styled.i`
     &:hover {
         transform: scale(1.2);
         cursor: pointer;
+    }
+
+    @media screen and (max-width: 800px){
+        font-size: 20px;
     }
 `;
 
@@ -121,5 +149,23 @@ export const Links = styled.div`
         &:active {
         opacity: 0.5;
         }
+    }
+
+    @media screen and (max-width: 1107px){
+        font-size: 16px;
+    }
+
+    @media screen and (max-width: 900px){
+        font-size: 15px;
+    }
+
+    @media screen and (max-width: 520px){
+        font-size: 12px;
+        gap: 15px;
+    }
+
+    @media screen and (max-width: 400px){
+        font-size: 11px;
+        gap: 14px;
     }
 `;

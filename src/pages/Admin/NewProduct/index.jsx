@@ -15,6 +15,7 @@ import {
 	LabelUpload,
 	Select,
 	SubmitButton,
+	ContainerCheckBox,
 } from './styles';
 
 import { api } from '../../../services/api';
@@ -46,6 +47,8 @@ const schema = Yup.object({
 export function NewProduct() {
 	const [fileName, setFileName] = useState(null);
 	const [categories, setCategory] = useState([]);
+	const [name, setNome] = useState('');
+	const [price, setPrice] = useState('');
 
 	useEffect(() => {
 		async function loadCategories() {
@@ -68,16 +71,19 @@ export function NewProduct() {
 	const onSubmit = async (data) => {
 		const productFormData = new FormData();
 
-        productFormData.append('name', data.name);
-        productFormData.append('price', data.price);
-        productFormData.append('category_id', data.category.id);
-        productFormData.append('file', data.file[0]);
+		productFormData.append('name', data.name);
+		productFormData.append('price', data.price);
+		productFormData.append('category_id', data.category.id);
+		productFormData.append('file', data.file[0]);
 
-        await toast.promise(api.post('/products', productFormData), {
-            pending: 'Adicionando o produto...',
-            success: 'Produto adicionado com sucesso!',
-            error: 'Erro ao adicionar o produto, tente novamente',
-        });
+		await toast.promise(api.post('/products', productFormData), {
+			pending: 'Adicionando o produto...',
+			success: 'Produto adicionado com sucesso!',
+			error: 'Erro ao adicionar o produto, tente novamente',
+		});
+
+		setNome('');
+		setPrice('');
 	};
 
 	return (
@@ -85,13 +91,25 @@ export function NewProduct() {
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<InputGrup>
 					<Label>Nome:</Label>
-					<Input type="text" {...register('name')} />
+					<Input
+						type="text"
+						{...register('name')}
+						placeholder='Digite o nome do produto'
+						value={name}
+						onChange={(valueName) => setNome(valueName.target.value)}
+					/>
 					<ErrorMessage>{errors?.name?.message}</ErrorMessage>
 				</InputGrup>
 
 				<InputGrup>
 					<Label>Preço:</Label>
-					<Input type="number" {...register('price')} />
+					<Input
+						type="number"
+						{...register('price')}
+						placeholder='Digite o preço do produto'
+						value={price}
+						onChange={(valuePrice) => setPrice(valuePrice.target.value)}
+					/>
 					<ErrorMessage>{errors?.price?.message}</ErrorMessage>
 				</InputGrup>
 				<InputGrup>
@@ -104,6 +122,7 @@ export function NewProduct() {
 							onChange={(value) => {
 								setFileName(value?.target?.files[0]?.name);
 								register('file').onChange(value);
+								
 							}}
 						/>
 						{fileName || 'Adicione uma imagem do produto'}
@@ -128,6 +147,13 @@ export function NewProduct() {
 						)}
 					/>
 					<ErrorMessage>{errors?.category?.message}</ErrorMessage>
+				</InputGrup>
+
+				<InputGrup>
+					<ContainerCheckBox>
+						<input type="checkbox" {...register('offer')} />
+						<Label>Produto em orferta?</Label>
+					</ContainerCheckBox>
 				</InputGrup>
 
 				<SubmitButton>Adicionar Produto</SubmitButton>

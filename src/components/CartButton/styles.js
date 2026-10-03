@@ -10,4 +10,28 @@ export const IconAdd = styled.img`
         transform: scale(1.2);
         cursor: pointer;
     }
+
+    @media screen and (max-width: 1480px){
+        width: 3.5vw;
+    }
+
+    @media screen and (max-width: 1180px){
+        width: 4.5vw;
+    }
+
+    @media screen and (max-width: 900px){
+        width: 5.5vw;
+    }
+
+    @media screen and (max-width: 725px){
+        width: 6.5vw;
+    }
+
+    @media screen and (max-width: 600px){
+        width: 9.5vw;
+    }
+
+    @media screen and (max-width: 520px){
+        width: 12vw;
+    }
 `;
