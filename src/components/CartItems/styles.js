@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const ProductImage = styled.img`
     width: 80px;
+
+    @media screen and (max-width: 540px){
+        width: 40px;
+    }
 `;
 
 export const ButtonGroup = styled.div`
@@ -28,6 +32,15 @@ export const ButtonGroup = styled.div`
         .ri-subtract-line, .ri-add-line {
             font-weight: bold;
             font-size: 16px;
+
+            @media screen and (max-width: 600px){
+                font-size: 10px;
+            }
+        }
+
+        @media screen and (max-width: 600px){
+            height: 15px;
+            width: 15px;
         }
     }
 `;
@@ -45,5 +58,9 @@ export const TrashImage = styled.img`
 
     &:hover {
         transform: scale(1.20);
+    }
+
+    @media screen and (max-width: 600px){
+        display: none;
     }
 `;

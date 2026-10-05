@@ -16,15 +16,42 @@ export const Section = styled.div`
         margin: 10px 0 15px 20px;
         color: ${(props) => props.theme.darkBrown};
         font-weight: 500;
-        font-size: 0.8vw;
+        font-size: 12px;
 
         &::after {
             content: '';
             height: 1.3px;
-            width: 12vw;
+            width: 50%;
             background-color: ${(props) => props.theme.black};
             margin-left: 9px;
+
+            @media screen and (max-width: 1360px){
+                width: 40%;
+            }
+
+            @media screen and (max-width: 1170px){
+                width: 30%;
+            }
+
+            @media screen and (max-width: 1050px){
+                width: 60%;
+            }
+
+            @media screen and (max-width: 662px){
+                width: 48%;
+            }
+
+            @media screen and (max-width: 520px){
+                width: 35%;
+            }
         }
+    }
+
+    @media screen and (max-width: 1050px){
+        width: 90%;
+        height: 100%;
+        margin: 10px auto 0;
+        padding-bottom: 10px;
     }
 `;
 
@@ -36,11 +63,11 @@ export const Content = styled.div`
 `;
 
 export const ValueOrderAndDelivery = styled.div`
-    text-align: left;
+    position: absolute;
+    left: 30px;
     font-weight: bold;
-    margin-right: 150px;
     display: grid;
-    grid-gap: 4px 60%;
+    grid-gap: 4px 12vw;
     grid-template-areas: 
     'subtotal value-subtotal'
     'delivery value-delivery'
@@ -53,13 +80,12 @@ export const ValueOrderAndDelivery = styled.div`
 
     .value-subtotal {
         grid-area: value-subtotal;
-        width: 100px;
         font-size: 17px;
     }
 
     .delivery {
         grid-area: delivery;
-        width: 150px;
+        width: 120px;
         font-size: 16px;
     }
 
@@ -70,15 +96,27 @@ export const ValueOrderAndDelivery = styled.div`
     p {
         color: black;
     }
+
+    @media screen and (max-width: 1580px){
+        gap: 4px 10vw;
+    }
+
+    @media screen and (max-width: 1300px){
+        gap: 4px 7vw;
+    }
+
+    @media screen and (max-width: 1115px){
+        gap: 4px 5vw;
+    }
 `;
 
 export const ValueOrderAll = styled.div`
-    position: relative;
+    position: absolute;
+    top: 50px;
     font-size: 17px;
     font-weight: bold;
     width: 100%;
     margin: 40px 0 0 40px;
-    gap: 60px;
     display: grid;
     grid-gap: 0 20%;
     grid-template-areas: 
@@ -117,7 +155,7 @@ export const ButtonOrder = styled.button`
     background-color: ${(props) => props.theme.darkBrown};
     border: 1px solid ${(props) => props.theme.black};
     color: #fff;
-    margin: 25px 0 17px 0;
+    margin: 150px 0 17px 0;
     border-radius: 7px;
     transition: transform 0.8s ease;
 
@@ -137,6 +175,11 @@ export const ButtonOrder = styled.button`
 
     &:active {
         opacity: 1;
+    }
+
+    @media screen and (max-width: 600px){
+        width: 200px;
+        height: 33px;
     }
 `;
 
@@ -165,5 +208,10 @@ export const ButtonClearCart = styled.button`
 
     &:active {
         opacity: 0.7;
+    }
+
+    @media screen and (max-width: 600px){
+        width: 200px;
+        height: 33px;
     }
 `;

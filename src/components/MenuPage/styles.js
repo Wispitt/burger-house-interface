@@ -93,9 +93,7 @@ export const AllButtonsMenus = styled.div`
     display: flex;
 
     @media screen and (max-width: 680px){
-        position: absolute;
-        left: 20px;
-        width: 100%;
+        margin-left: -10px;
         flex-wrap: wrap;
     }
 `;

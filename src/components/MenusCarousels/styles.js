@@ -38,7 +38,6 @@ export const Container = styled.div`
         }
 
         @media screen and (max-width: 725px){
-            flex: 0 0 37%;
             overflow: hidden;
             padding: 5px 0;
             justify-content: center;
@@ -94,18 +93,18 @@ export const Container = styled.div`
     }
 
     @media screen and (max-width: 725px){
-        overflow: hidden;
-        overflow-y: auto;
-        -ms-overflow-style: none;
+        overflow: hidden auto;
         scrollbar-width: none;
-        margin-top: 30px;
-        padding-top: 600px;
+        display: flex;
+        align-items: start;
+        margin-bottom: 5px;
+        height: 100vh;
         -webkit-mask-image: linear-gradient(to top, transparent 0%, black 4%, black 96%, transparent 0%);
-        mask-image: linear-gradient(to top, transparent 0%, black 4%, black 96%, transparent 100%);
+        mask-image: linear-gradient(to top, transparent 0%, black 8%, black 96%, transparent 100%);
     }
 
     @media screen and (max-width: 520px){
-        padding-top: 540px;
+        padding-top: 10px;
     }
 `;
 

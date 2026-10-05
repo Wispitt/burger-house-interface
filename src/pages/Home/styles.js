@@ -11,6 +11,10 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     padding: 0 4% 0 4%;
+
+    @media screen and (max-width: 650px){
+        background-position-y: -30px;
+    }
 `;
 
 export const Section = styled.div`
@@ -27,6 +31,10 @@ export const ContainerMainAndButton = styled.div`
 export const BannerMain = styled.img`
     width: 100%;
     border-radius: 20px;
+
+    @media screen and (max-width: 650px){
+        display: none;
+    }
 `;
 
 export const ButtonMenu = styled.button`
@@ -75,20 +83,25 @@ export const Highlights = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 43%;
+    width: 500px;
     gap: 7px;
     font-weight: 700;
     letter-spacing: 2px;
 
     &::before, &::after {
         content: "";
-        width: 70px;
+        width: 80px;
         height: 2px;
         background: ${(props) => props.theme.black};
     }
 
-    @media screen and (max-width: 914px){
-        font-size: 1.4vw;
+    @media screen and (max-width: 800px){
+        margin: 7px 20px 10px;
+    }
+
+    @media screen and (max-width: 526px){
+        width: 400px;
+        font-size: 2.5vw;
     }
 `;
 
@@ -108,6 +121,18 @@ export const AllProducts = styled.div`
 
     @media screen and (max-width: 1000px){
         grid-template-rows: 50% 25%;
+    }
+
+    @media screen and (max-width: 800px){
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 9px;
+        height: auto;
+    }
+
+    @media screen and (max-width: 526px){
+        margin-bottom: 50px;
     }
 `;
 
@@ -137,6 +162,16 @@ export const ProductsMain = styled.div`
 
     @media screen and (max-width: 1000px){
         min-height: 100%;
+    }
+
+    @media screen and (max-width: 800px){
+        width: 49%;
+        height: auto;
+    }
+
+    @media screen and (max-width: 526px){
+        width: 80%;
+        height: 370px;
     }
 `;
 
@@ -180,6 +215,15 @@ export const HouseSpecifications = styled.div`
         margin-top: 10px;
         grid-column: 1/6;
     }
+    
+    @media screen and (max-width: 800px){
+        height: auto;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 526px){
+        display: none;
+    }
 `;
 
 export const Specifications = styled.img`
@@ -192,6 +236,11 @@ export const Specifications = styled.img`
 
     &:hover {
         transform: scale(1.02);
+    }
+
+    @media screen and (max-width: 800px){
+        margin: 0 0 14px 0;
+        width: 100%;
     }
 `;
 

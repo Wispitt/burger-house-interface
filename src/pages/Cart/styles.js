@@ -13,10 +13,18 @@ export const Container = styled.div`
     background-image: url(${backGround});
     background-position: 30%;
     padding-left: 1px;
+
+    @media screen and (max-width: 450px){
+        margin-bottom: 40px;
+    }
 `;
 
 export const ContainerCart = styled.div`
     padding: 0 2% 0 2%;
+
+    @media screen and (max-width: 600px){
+        padding: 0;
+    }
 `;
 
 export const Header = styled.div`
@@ -37,6 +45,16 @@ export const Main = styled.div`
     display: flex;
     margin: 25px 0;
     padding: 0 1% 0 1%;
+
+    @media screen and (max-width: 1050px){
+        flex-direction: column;
+        margin-bottom: 280px;
+    }
+
+    @media screen and (max-width: 600px){
+        flex-direction: column;
+        margin-bottom: 90px;
+    }
 `;
 
 export const CartInterfaceMain = styled.div`
@@ -57,7 +75,7 @@ export const CartInterfaceMain = styled.div`
         margin: 10px 0 0 20px;
         color: ${(props) => props.theme.darkBrown};
         font-weight: 500;
-        font-size: 0.8vw;
+        font-size: 17px;
 
         &::after {
             content: '';
@@ -65,7 +83,32 @@ export const CartInterfaceMain = styled.div`
             width: 52vw;
             background-color: ${(props) => props.theme.black};
             margin-left: 9px;
+
+            @media screen and (max-width: 1360px){
+                width: 48vw;
+            }
+
+            @media screen and (max-width: 1050px){
+                width: 65vw;
+            }
+
+            @media screen and (max-width: 662px){
+                width: 60vw;
+            }
+
+            @media screen and (max-width: 520px){
+                width: 50vw;
+            }
+
+            @media screen and (max-width: 370px){
+                width: 43vw;
+            }
         }
+    }
+
+    @media screen and (max-width: 1050px){
+        height: 140%;
+        width: 100%;
     }
 `;
 
@@ -108,5 +151,10 @@ export const ButtonReturn = styled.button`
 
     &:active {
         opacity: 0.7;
+    }
+
+    @media screen and (max-width: 600px){
+        width: 160px;
+        height: 30px;
     }
 `;

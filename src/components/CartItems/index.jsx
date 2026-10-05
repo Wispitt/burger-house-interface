@@ -35,9 +35,13 @@ export function CartItems() {
 							<Table.Td>{product.currencyValue}</Table.Td>
 							<Table.Td>
 								<ButtonGroup>
-									<button onClick={() => decreaseProduct(product.id)}><i className='ri-subtract-line'></i></button>
+									<button onClick={() => decreaseProduct(product.id)}>
+										<i className="ri-subtract-line"></i>
+									</button>
 									{product.quantity}
-									<button onClick={() => increaseProduct(product.id)}><i className='ri-add-line'></i></button>
+									<button onClick={() => increaseProduct(product.id)}>
+										<i className="ri-add-line"></i>
+									</button>
 								</ButtonGroup>
 							</Table.Td>
 							<Table.Td>
