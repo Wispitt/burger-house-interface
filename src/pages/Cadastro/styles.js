@@ -12,8 +12,8 @@ export const Container = styled.div`
 `;
 
 export const ContainerMain = styled.div`
-    width: 29%;
-    height: 60%;
+    width: 100%;
+    max-width: 550px;
     display: flex;
     flex-direction: column;
     align-items: center;

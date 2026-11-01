@@ -13,7 +13,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        overflow-y: scroll;
         overflow-x: hidden;
     }
 
