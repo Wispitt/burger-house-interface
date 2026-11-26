@@ -1,5 +1,4 @@
-import { SignOut } from '@phosphor-icons/react'
-
+import { SignOut } from '@phosphor-icons/react';
 
 import { CoonatinerAll, Container, Bar, Content } from './styles';
 import { useUser } from '../../hooks/UserContext';
@@ -24,13 +23,18 @@ export function SideBar({ active }) {
 				<Bar>
 					<i className="ri-user-3-line"></i>
 					<p>Olá, {userInfo.data.name}!</p>
-					<i className="ri-close-fill" onClick={closeSideBar} ></i>
+					<i className="ri-close-fill" onClick={closeSideBar}></i>
 				</Bar>
 				<Content>
-					<a className="data" onClick={() => navigate('/carrinho')} >
+					<a className="data" onClick={() => navigate('/carrinho')}>
 						<i className="ri-shopping-cart-line"></i>
-						Carrinho</a>
-					<a style={{ color: '#9E1C00' }} className="logout" onClick={logoutUser}>
+						Carrinho
+					</a>
+					<a
+						style={{ color: '#9E1C00' }}
+						className="logout"
+						onClick={logoutUser}
+					>
 						<SignOut /> Sair da conta
 					</a>
 				</Content>

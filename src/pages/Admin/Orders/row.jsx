@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
@@ -122,24 +121,3 @@ export function Row({ row, orders, setOrders }) {
 		</>
 	);
 }
-
-Row.propTypes = {
-	order: PropTypes.array.isRequired,
-	setOrders: PropTypes.func.isRequired,
-	row: PropTypes.shape({
-		name: PropTypes.string.isRequired,
-		orderId: PropTypes.string.isRequired,
-		date: PropTypes.string.isRequired,
-		products: PropTypes.arrayOf(
-			PropTypes.shape({
-				category: PropTypes.string.isRequired,
-				id: PropTypes.number.isRequired,
-				name: PropTypes.string.isRequired,
-				price: PropTypes.string.isRequired,
-				quantity: PropTypes.number.isRequired,
-				url: PropTypes.string.isRequired,
-			}),
-		).isRequired,
-		status: PropTypes.string.isRequired,
-	}).isRequired,
-};

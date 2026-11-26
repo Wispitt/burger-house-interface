@@ -20,6 +20,7 @@ export const UserProvider = ({ children }) => {
 
 		if (userInfoLocalStorage) {
 
+			// eslint-disable-next-line react-hooks/set-state-in-effect
 			setUserInfo(JSON.parse(userInfoLocalStorage));
 		}
 	}, []);
@@ -31,6 +32,7 @@ export const UserProvider = ({ children }) => {
 	);
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useUser = () => {
 	const context = useContext(UserContext);
 
