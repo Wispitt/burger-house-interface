@@ -45,7 +45,6 @@ export const ContainersForm = styled.div`
 
     a {
         font-size: 97%;
-        width: 140px;
         margin-left: 5px;
         color: ${(props) => props.theme.darkRed};
 
@@ -87,7 +86,7 @@ export const ContainersSocial = styled.div`
 
 export const Name = styled.h3`
     font-family: "Roboto", sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     cursor: pointer;
 
     &:hover {

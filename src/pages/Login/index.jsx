@@ -108,7 +108,9 @@ export function Login() {
 					</ContainersForm>
 
 					<ContainersForm>
-						<a>Esqueceu a senha?</a>
+						<div className='link-container'>
+							<a>Esqueceu a senha?</a>
+						</div>
 						<Button type="submit">Entrar</Button>
 					</ContainersForm>
 				</Form>
