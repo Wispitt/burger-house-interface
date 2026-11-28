@@ -13,11 +13,13 @@ export const CartProvider = ({ children }) => {
 	const putProductInCart = (product) => {
 		const cartIndex = cartProducts.findIndex((prd) => prd.id === product.id);
 
+		// eslint-disable-next-line no-useless-assignment
 		let newProductsInCart = [];
 
 		if (cartIndex >= 0) {
 			newProductsInCart = cartProducts;
 
+			// eslint-disable-next-line react-hooks/immutability
 			newProductsInCart[cartIndex].quantity +=
 
 			setCartProducts(newProductsInCart);

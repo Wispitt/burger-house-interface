@@ -22,9 +22,27 @@ import {
 import { Title, Button } from '../../components';
 import logoGoogle from '../../assets/img/google.png';
 import logoApple from '../../assets/img/apple.png';
+import { useAuth } from '../../hooks/AuthContextFirebase.jsx';
+import { useEffect } from 'react';
 
 export function CadastroUser() {
 	const navigate = useNavigate();
+
+	const { signWithGoogle, authState } = useAuth();
+
+	useEffect(() => {
+		if (authState && !authState.loading) {
+			navigate('/home');
+		}
+	}, [authState, navigate]);
+
+	const handleCadastro = async () => {
+		try {
+			await signWithGoogle();
+		} catch (err) {
+			console.error('Error when logging in with Google', err);
+		}
+	};
 
 	const schema = Yup.object({
 		name: Yup.string().required('O nome é obrigatório'),
@@ -135,7 +153,7 @@ export function CadastroUser() {
 				<ContainersSocial>
 					<GoogleContainer>
 						<img src={logoGoogle} alt="Google" />
-						<Name>Google</Name>
+						<Name onClick={handleCadastro}>Google</Name>
 					</GoogleContainer>
 
 					<AppleContainer>

@@ -24,11 +24,28 @@ import { useUser } from '../../hooks/UserContext.jsx';
 import { Title, Button } from '../../components';
 import logoGoogle from '../../assets/img/google.png';
 import logoApple from '../../assets/img/apple.png';
+import { useAuth } from '../../hooks/AuthContextFirebase.jsx';
+import { useEffect } from 'react';
 
 export function Login() {
 	const navigate = useNavigate();
 
 	const { putUserData } = useUser();
+	const { signWithGoogle, authState } = useAuth();
+
+	useEffect(() => {
+		if (authState && !authState.loading) {
+			navigate('/home');
+		}
+	}, [authState, navigate]);
+
+	const handleLogin = async () => {
+		try {
+			await signWithGoogle();
+		} catch (err) {
+			console.error('Error when logging in with Google', err);
+		}
+	};
 
 	const schema = Yup.object({
 		email: Yup.string()
@@ -108,7 +125,7 @@ export function Login() {
 					</ContainersForm>
 
 					<ContainersForm>
-						<div className='link-container'>
+						<div className="link-container">
 							<a>Esqueceu a senha?</a>
 						</div>
 						<Button type="submit">Entrar</Button>
@@ -124,7 +141,7 @@ export function Login() {
 
 					<AppleContainer>
 						<img src={logoApple}></img>
-						<Name>Apple</Name>
+						<Name onClick={handleLogin}>Apple</Name>
 					</AppleContainer>
 				</ContainersSocial>
 
